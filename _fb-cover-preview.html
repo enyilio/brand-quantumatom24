@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原子量子 24 · FB 粉專封面原檔（3 版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #354238;
+    --mist: #EBEBEB;
+    --amethyst: #9E91B2;
+    --paper: #F5F5F5;
+    --line: rgba(53,66,56,0.12);
+    --fb-bg: #f0f2f5;
+    --fb-card: #ffffff;
+    --fb-rule: #e4e6eb;
+    --fb-text: #050505;
+    --fb-text-soft: #65676b;
+    --fb-blue: #1877f2;
+    --ff-serif-cjk: 'Noto Serif TC', serif;
+    --ff-serif-lat: 'EB Garamond', 'Times New Roman', serif;
+    --ff-sans-lat:  'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    padding: 64px 24px 96px;
+    font-family: var(--ff-sans-lat);
+    -webkit-font-smoothing: antialiased;
+    color: var(--ink);
+  }
+
+  .hdr {
+    max-width: 960px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  .hdr .eyebrow {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-bottom: 12px;
+  }
+  .hdr h1 {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .hdr .sub {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(53,66,56,0.55);
+  }
+  .hdr .usage {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(53,66,56,0.65);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .variant {
+    max-width: 960px;
+    margin: 0 auto 72px;
+  }
+  .variant-head {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .variant-head strong { color: var(--ink); font-weight: 500; margin-right: 14px; font-size: 13px; letter-spacing: 0.18em; }
+  .variant-head .sub {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    letter-spacing: 0.06em;
+    color: rgba(53,66,56,0.55);
+    text-transform: none;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+
+  /* FB Desktop card simulation */
+  .fb-card {
+    background: var(--fb-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .fb-card .cover {
+    width: 100%;
+    aspect-ratio: 1640 / 624;
+    background: #ddd;
+    background-size: cover;
+    background-position: center;
+  }
+  .fb-card .profile-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 24px 12px;
+    margin-top: -28px;
+  }
+  .fb-card .avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: var(--mist);
+    border: 4px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .fb-card .avatar img { width: 64%; height: auto; }
+  .fb-card .page-info .name {
+    font-family: var(--ff-sans-lat);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--fb-text);
+    margin-bottom: 2px;
+  }
+  .fb-card .page-info .meta {
+    font-size: 12px;
+    color: var(--fb-text-soft);
+  }
+  .fb-card .tabs {
+    display: flex;
+    gap: 24px;
+    padding: 8px 24px 0;
+    border-bottom: 1px solid var(--fb-rule);
+    font-size: 13px;
+    color: var(--fb-text-soft);
+  }
+  .fb-card .tabs span {
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .fb-card .tabs span.active {
+    color: var(--fb-blue);
+    border-bottom-color: var(--fb-blue);
+    font-weight: 600;
+  }
+
+  .mobile-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .mobile-preview .label {
+    font-family: var(--ff-sans-lat);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.55);
+    margin-bottom: 8px;
+  }
+  .mobile-preview img {
+    width: 100%;
+    aspect-ratio: 1640 / 624;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .mobile-preview .mobile-crop {
+    aspect-ratio: 820 / 360;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--line);
+  }
+
+  .note {
+    max-width: 960px;
+    margin: 24px auto 0;
+    padding: 24px 28px;
+    background: var(--mist);
+    border-left: 3px solid var(--amethyst);
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(53,66,56,0.75);
+  }
+  .note strong { color: var(--ink); font-weight: 500; }
+  .note code {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    background: var(--paper);
+    padding: 1px 6px;
+    border-radius: 2px;
+  }
+  .note a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+  @media (max-width: 720px) {
+    body { padding: 40px 16px 72px; }
+    .mobile-preview { grid-template-columns: 1fr; }
+    .fb-card .profile-row { padding: 12px 16px 10px; gap: 10px; }
+    .fb-card .avatar { width: 56px; height: 56px; border-width: 3px; margin-top: -20px; }
+    .fb-card .tabs { padding: 8px 16px 0; gap: 16px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="eyebrow">QuantumAtom24 · FB Page Cover</div>
+  <h1>FB 粉絲專頁封面原檔</h1>
+  <p class="sub">三版依檔期使用　·　1640 × 624 桌面尺寸　·　手機顯示中央 820 × 360 安全區</p>
+  <p class="usage">
+    v1 為長期主版，v2 Slogan 強化檔期使用，v3 新品檔期使用。<br>
+    互動原檔（可改文案、重新截圖）：
+    <a href="_fb-v1.html" target="_blank">_fb-v1.html</a>　·
+    <a href="_fb-v2.html" target="_blank">_fb-v2.html</a>　·
+    <a href="_fb-v3.html" target="_blank">_fb-v3.html</a>
+  </p>
+</header>
+
+<!-- v1 · Mist 編輯感書封 -->
+<section class="variant">
+  <div class="variant-head">
+    <strong>v1　Mist 編輯感書封</strong>
+    <span class="sub">長期主版 · 日常對外識別 · 新客第一眼</span>
+  </div>
+  <div class="fb-card">
+    <div class="cover" style="background-image: url('assets/fb-cover-v1-mist.png');"></div>
+    <div class="profile-row">
+      <div class="avatar"><img src="assets/logo.svg" alt=""></div>
+      <div class="page-info">
+        <div class="name">原子量子 24</div>
+        <div class="meta">@quantumatom24 · 居家風水擺件 · 營業中</div>
+      </div>
+    </div>
+    <div class="tabs">
+      <span class="active">Posts</span><span>About</span><span>Shop</span><span>Photos</span><span>Reviews</span>
+    </div>
+  </div>
+  <div class="mobile-preview">
+    <div>
+      <div class="label">Desktop · 1640 × 624</div>
+      <img src="assets/fb-cover-v1-mist.png" alt="FB v1 desktop">
+    </div>
+    <div>
+      <div class="label">Mobile · 安全區 820 × 360（中央裁切）</div>
+      <div class="mobile-crop" style="background-image: url('assets/fb-cover-v1-mist.png');"></div>
+    </div>
+  </div>
+</section>
+
+<!-- v2 · Moss Slogan -->
+<section class="variant">
+  <div class="variant-head">
+    <strong>v2　Moss Slogan 苔綠底</strong>
+    <span class="sub">活動／儀式 · Slogan 強化檔期 · 深色氛圍</span>
+  </div>
+  <div class="fb-card">
+    <div class="cover" style="background-image: url('assets/fb-cover-v2-ink.png');"></div>
+    <div class="profile-row">
+      <div class="avatar" style="background: var(--ink);"><img src="assets/logo-mist.svg" alt=""></div>
+      <div class="page-info">
+        <div class="name">原子量子 24</div>
+        <div class="meta">@quantumatom24 · 居家風水擺件 · 營業中</div>
+      </div>
+    </div>
+    <div class="tabs">
+      <span class="active">Posts</span><span>About</span><span>Shop</span><span>Photos</span><span>Reviews</span>
+    </div>
+  </div>
+  <div class="mobile-preview">
+    <div>
+      <div class="label">Desktop · 1640 × 624</div>
+      <img src="assets/fb-cover-v2-ink.png" alt="FB v2 desktop">
+    </div>
+    <div>
+      <div class="label">Mobile · 安全區 820 × 360（中央裁切）</div>
+      <div class="mobile-crop" style="background-image: url('assets/fb-cover-v2-ink.png');"></div>
+    </div>
+  </div>
+</section>
+
+<!-- v3 · Stone 左字右照 -->
+<section class="variant">
+  <div class="variant-head">
+    <strong>v3　Stone 左字右照型錄</strong>
+    <span class="sub">新品檔期 · 型錄感視覺 · 商品優先</span>
+  </div>
+  <div class="fb-card">
+    <div class="cover" style="background-image: url('assets/fb-cover-v3-stone.png');"></div>
+    <div class="profile-row">
+      <div class="avatar"><img src="assets/logo.svg" alt=""></div>
+      <div class="page-info">
+        <div class="name">原子量子 24</div>
+        <div class="meta">@quantumatom24 · 居家風水擺件 · 營業中</div>
+      </div>
+    </div>
+    <div class="tabs">
+      <span class="active">Posts</span><span>About</span><span>Shop</span><span>Photos</span><span>Reviews</span>
+    </div>
+  </div>
+  <div class="mobile-preview">
+    <div>
+      <div class="label">Desktop · 1640 × 624</div>
+      <img src="assets/fb-cover-v3-stone.png" alt="FB v3 desktop">
+    </div>
+    <div>
+      <div class="label">Mobile · 安全區 820 × 360（中央裁切）</div>
+      <div class="mobile-crop" style="background-image: url('assets/fb-cover-v3-stone.png');"></div>
+    </div>
+  </div>
+</section>
+
+<div class="note">
+  <strong>重新渲染 PNG：</strong>開啟 <code>_fb-v1.html</code> / <code>_fb-v2.html</code> / <code>_fb-v3.html</code>，用 headless Chrome <code>--window-size=1640,624 --screenshot</code> 輸出，覆寫 <code>assets/fb-cover-v*.png</code>。<br>
+  <strong>改文案：</strong>編輯 <code>_fb-v*.html</code>（各自獨立檔）。統合多版一次渲染用 <code>_fb-render.html#v1/#v2/#v3</code>。<br>
+  <strong>對應手冊章節：</strong><a href="index.html#ch06">Ch.06 · 應用範例</a>
+</div>
+
+</body>
+</html>

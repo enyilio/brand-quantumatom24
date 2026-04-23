@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原子量子 24 · IG 貼文三模板原檔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #354238;
+    --mist: #EBEBEB;
+    --amethyst: #9E91B2;
+    --stone: #BEB6A6;
+    --paper: #F5F5F5;
+    --line: rgba(53,66,56,0.12);
+    --line-strong: rgba(53,66,56,0.24);
+    --ff-serif-cjk: 'Noto Serif TC', serif;
+    --ff-sans-cjk:  'Noto Sans TC', sans-serif;
+    --ff-serif-lat: 'EB Garamond', 'Times New Roman', serif;
+    --ff-sans-lat:  'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-feature-settings: "onum" 1; }
+  body {
+    background: var(--paper);
+    padding: 64px 32px 96px;
+    font-family: var(--ff-sans-lat);
+    -webkit-font-smoothing: antialiased;
+    color: var(--ink);
+  }
+  .hdr {
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+  .hdr .eyebrow {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-bottom: 12px;
+  }
+  .hdr h1 {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .hdr .sub {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(53,66,56,0.55);
+  }
+  .hdr .usage {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(53,66,56,0.65);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hdr .usage code {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    background: var(--mist);
+    padding: 1px 6px;
+    border-radius: 2px;
+  }
+  .posts {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .post-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .tpl-label {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+  }
+  .tpl-label strong {
+    color: var(--ink);
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  .post {
+    aspect-ratio: 1;
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    container-type: inline-size;
+  }
+
+  /* T1 · 擺字書封 */
+  .post.t1 {
+    background: var(--mist);
+    padding: 8%;
+    justify-content: space-between;
+  }
+  .post.t1 .t1-top {
+    font-family: var(--ff-sans-lat);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.5);
+    display: flex;
+    justify-content: space-between;
+  }
+  .post.t1 .t1-top em {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 13px;
+    text-transform: none;
+  }
+  .post.t1 .t1-char {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 42cqw;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .post.t1 .t1-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(53,66,56,0.18);
+    padding-top: 14px;
+  }
+  .post.t1 .t1-bottom .nm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.42em;
+    margin-bottom: 3px;
+  }
+  .post.t1 .t1-bottom .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(53,66,56,0.5);
+    letter-spacing: 0.04em;
+  }
+
+  /* T2 · 規格透明商品卡 */
+  .post.t2 {
+    background: var(--mist);
+    padding: 0;
+  }
+  .post.t2 .t2-photo {
+    flex: 1.5;
+    background: linear-gradient(135deg, #DCD6C8 0%, #BEB6A6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(53,66,56,0.4);
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(53,66,56,0.1);
+  }
+  .post.t2 .t2-body {
+    flex: 1;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .post.t2 .t2-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .post.t2 .t2-row .label {
+    font-family: var(--ff-sans-lat);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.5);
+    font-size: 10px;
+  }
+  .post.t2 .t2-row .val {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .post.t2 .t2-name {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .post.t2 .t2-no {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--amethyst);
+  }
+  .post.t2 .t2-cta {
+    font-family: var(--ff-sans-cjk);
+    font-size: 11px;
+    color: rgba(53,66,56,0.55);
+    letter-spacing: 0.1em;
+    text-align: right;
+    border-top: 1px dashed rgba(53,66,56,0.2);
+    padding-top: 8px;
+  }
+
+  /* T3 · 直球品牌話 */
+  .post.t3 {
+    background: var(--ink);
+    color: var(--mist);
+    padding: 8%;
+    justify-content: space-between;
+  }
+  .post.t3 .t3-top {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: rgba(235,235,235,0.5);
+  }
+  .post.t3 .t3-line {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--ff-serif-cjk);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 48px;
+    letter-spacing: 0.18em;
+    padding: 16px 0;
+  }
+  .post.t3 .t3-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--ff-sans-lat);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(235,235,235,0.45);
+    border-top: 1px solid rgba(235,235,235,0.18);
+    padding-top: 12px;
+  }
+
+  .note {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding: 24px 28px;
+    background: var(--mist);
+    border-left: 3px solid var(--amethyst);
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(53,66,56,0.75);
+  }
+  .note strong { color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 960px) {
+    body { padding: 40px 20px 72px; }
+    .posts { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="eyebrow">QuantumAtom24 · IG Post Templates</div>
+  <h1>IG 貼文三模板原檔</h1>
+  <p class="sub">T1 擺字書封　／　T2 規格透明商品卡　／　T3 直球品牌話</p>
+  <p class="usage">
+    三套模板混排九宮格不打架。協作方可直接修改此檔文案，<br>
+    以瀏覽器 1080×1080 視窗截圖後匯出 IG 貼文原圖。<br>
+    配色已同步 v1.3.0 Moss 色系。
+  </p>
+</header>
+
+<main class="posts">
+  <div class="post-wrap">
+    <div class="tpl-label"><strong>T1</strong>擺字書封</div>
+    <div class="post t1">
+      <div class="t1-top"><span>QA24</span><em>vol. 01</em></div>
+      <div class="t1-char">擺</div>
+      <div class="t1-bottom">
+        <div class="nm">原子量子 24</div>
+        <div class="en">居家風水擺件</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-wrap">
+    <div class="tpl-label"><strong>T2</strong>規格透明商品卡</div>
+    <div class="post t2">
+      <div class="t2-photo">商品實拍 · 不修色</div>
+      <div class="t2-body">
+        <div>
+          <div class="t2-name">紫水晶洞</div>
+          <div class="t2-no">No. 017</div>
+        </div>
+        <div>
+          <div class="t2-row"><span class="label">產地</span><span class="val">巴西</span></div>
+          <div class="t2-row"><span class="label">尺寸</span><span class="val">12 × 8 × 6 cm</span></div>
+          <div class="t2-row"><span class="label">重量</span><span class="val">680 g</span></div>
+          <div class="t2-row"><span class="label">售價</span><span class="val">NT$ 12,800</span></div>
+        </div>
+        <div class="t2-cta">看對眼歡迎私訊聊聊 →</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-wrap">
+    <div class="tpl-label"><strong>T3</strong>直球品牌話</div>
+    <div class="post t3">
+      <div class="t3-top">No. 023</div>
+      <div class="t3-line">不急。<br>慢慢看。<br>隨時都在。</div>
+      <div class="t3-bottom"><span>原子量子 24</span><span>QA24</span></div>
+    </div>
+  </div>
+</main>
+
+<div class="note">
+  <strong>使用方式：</strong>把瀏覽器視窗調到 1080×1080（或任意正方形）後單獨截圖每張 post，即為 IG 貼文原圖。<br>
+  <strong>改文案：</strong>直接在此 HTML 檔中修改文字節點，例如把 T2 的「紫水晶洞」「No. 017」換成實際商品。<br>
+  <strong>對應手冊章節：</strong><a href="index.html#ch06">Ch.06 · 應用範例</a>
+</div>
+
+</body>
+</html>

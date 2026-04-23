@@ -1,0 +1,3096 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>原子量子 24 · VI 守則手冊 · v1.5.2</title>
+<meta name="description" content="QuantumAtom24 · 原子量子 24 · 全時開放邀請 · A Standing Invitation, Always Open · 品牌視覺識別手冊">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ===== COLOR ===== */
+    --ink: #354238;        /* Moss · 苔綠（v1.3.0 取代純黑感 Ink） */
+    --mist: #EBEBEB;
+    --amethyst: #9E91B2;
+    --stone: #BEB6A6;
+    --paper: #F5F5F5;
+    --line: rgba(53,66,56,0.12);
+    --line-strong: rgba(53,66,56,0.28);
+
+    /* ===== TYPE SCALE ===== */
+    --fs-display-xl: 56px; --lh-display-xl: 72px;
+    --fs-display-l:  40px; --lh-display-l:  52px;
+    --fs-heading:    24px; --lh-heading:    32px;
+    --fs-body:       16px; --lh-body:       28px;
+    --fs-caption:    13px; --lh-caption:    20px;
+    --fs-legal:      11px; --lh-legal:      16px;
+
+    /* ===== FONT STACKS ===== */
+    --ff-serif-cjk: 'Noto Serif TC', serif;
+    --ff-sans-cjk:  'Noto Sans TC', sans-serif;
+    --ff-serif-lat: 'EB Garamond', 'Times New Roman', serif;
+    --ff-sans-lat:  'Inter', system-ui, sans-serif;
+
+    /* ===== LAYOUT ===== */
+    --col-w: 960px;
+    --col-narrow: 720px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--mist);
+    color: var(--ink);
+    font-family: var(--ff-serif-cjk), var(--ff-serif-lat);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    letter-spacing: 0.02em;
+    font-feature-settings: "onum" 1;
+  }
+
+  img, svg { max-width: 100%; height: auto; display: block; }
+  p { margin: 0 0 16px; }
+  strong { font-weight: 500; color: var(--ink); }
+  a { color: var(--amethyst); text-decoration: none; border-bottom: 1px solid rgba(158,145,178,0.4); transition: opacity 0.2s; }
+  a:hover { opacity: 0.7; }
+  hr { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
+
+  /* ===== EYEBROW / CAPTION ===== */
+  .eyebrow {
+    font-family: var(--ff-sans-lat);
+    font-weight: 500;
+    font-size: var(--fs-legal);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+  }
+  .caption {
+    font-family: var(--ff-sans-cjk), var(--ff-sans-lat);
+    font-size: var(--fs-caption);
+    line-height: var(--lh-caption);
+    letter-spacing: 0.08em;
+    color: rgba(53,66,56,0.55);
+  }
+
+  /* ===== COVER ===== */
+  .cover {
+    min-height: clamp(680px, 90vh, 900px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 48px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .cover .eyebrow { margin-bottom: 24px; }
+  .cover h1 {
+    font-family: var(--ff-serif-cjk), var(--ff-serif-lat);
+    font-weight: 600;
+    font-size: var(--fs-display-xl);
+    line-height: var(--lh-display-xl);
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+  .cover .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.03em;
+    color: rgba(53,66,56,0.55);
+    margin-bottom: 40px;
+  }
+  .cover .tagline {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 44px;
+    letter-spacing: 0.32em;
+    color: var(--ink);
+    max-width: 560px;
+    margin: 0 auto 56px;
+    padding: 28px 0 24px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-indent: 0.32em;
+  }
+  .cover .tagline .tagline-en {
+    display: block;
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    color: rgba(53,66,56,0.45);
+    margin-top: 14px;
+    text-indent: 0;
+  }
+  .cover-logo-wrap {
+    position: relative;
+    width: 160px;
+    margin: 0 auto 56px;
+  }
+  .cover-logo-wrap .cover-logo {
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+  .logo-sparkle {
+    position: absolute;
+    width: 22%;
+    height: 22%;
+    /* 軟邊 bloom：中心 Mist 實色，邊緣漸進透明——避免硬圓切到晶簇線 */
+    background: radial-gradient(circle, var(--mist) 35%, rgba(235,235,235,0) 72%);
+    pointer-events: none;
+    opacity: 0;
+    animation: sparkle-blink 1800ms ease-in-out infinite;
+  }
+  .logo-sparkle--l { top: 28%; left: 16%; }
+  .logo-sparkle--r { top: 28%; left: 62%; animation-delay: 600ms; }
+  @keyframes sparkle-blink {
+    0%, 55%, 100% { opacity: 0; }  /* sparkles visible */
+    75%           { opacity: 1; }  /* sparkles hidden briefly */
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-sparkle { animation: none; opacity: 0; }
+  }
+  .cover-meta {
+    font-family: var(--ff-sans-lat);
+    font-size: var(--fs-caption);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.5);
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cover-meta .v {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    color: var(--amethyst);
+  }
+
+  /* ===== TOC ===== */
+  .toc {
+    max-width: var(--col-w);
+    margin: 0 auto;
+    padding: 96px 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .toc .section-label { margin-bottom: 48px; }
+  .toc h2 {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: var(--fs-display-l);
+    line-height: var(--lh-display-l);
+    letter-spacing: 0.04em;
+    margin: 0 0 48px;
+  }
+  .toc-list { list-style: none; margin: 0; padding: 0; }
+  .toc-list li {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 24px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+  }
+  .toc-list li:last-child { border-bottom: 1px solid var(--line); }
+  .toc-list .num {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--amethyst);
+  }
+  .toc-list .ttl {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+  }
+  .toc-list .ttl a { color: var(--ink); border: none; }
+  .toc-list .ttl a:hover { color: var(--amethyst); }
+  .toc-list .ttl .sub {
+    display: block;
+    font-family: var(--ff-sans-cjk);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: rgba(53,66,56,0.55);
+    margin-top: 4px;
+  }
+  .toc-list .page {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(53,66,56,0.4);
+  }
+
+  /* ===== SECTION ===== */
+  section.chapter {
+    max-width: var(--col-w);
+    margin: 0 auto;
+    padding: 96px 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-label {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .section-label .ch-num {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--amethyst);
+  }
+  .section-label .ch-label {
+    font-family: var(--ff-sans-lat);
+    font-size: var(--fs-legal);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.5);
+  }
+  .chapter h2 {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: var(--fs-display-l);
+    line-height: var(--lh-display-l);
+    letter-spacing: 0.04em;
+    margin: 0 0 16px;
+  }
+  .chapter h2 .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
+    color: rgba(53,66,56,0.5);
+    margin-left: 12px;
+  }
+  .chapter .lede {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    color: rgba(53,66,56,0.75);
+    margin: 0 0 56px;
+    max-width: var(--col-narrow);
+  }
+
+  h3 {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: var(--fs-heading);
+    line-height: var(--lh-heading);
+    letter-spacing: 0.03em;
+    margin: 56px 0 20px;
+  }
+  h3 .num {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--amethyst);
+    margin-right: 12px;
+  }
+  h4 {
+    font-family: var(--ff-sans-cjk);
+    font-weight: 500;
+    font-size: var(--fs-caption);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.7);
+    margin: 32px 0 14px;
+  }
+
+  /* ===== TABLES ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+  }
+  thead th {
+    text-align: left;
+    padding: 12px 16px;
+    font-family: var(--ff-sans-cjk);
+    font-weight: 500;
+    font-size: var(--fs-caption);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.65);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  tbody td {
+    padding: 14px 16px;
+    line-height: 26px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* ===== LIST ===== */
+  ul, ol {
+    margin: 16px 0 24px;
+    padding-left: 24px;
+    line-height: 28px;
+  }
+  ul li, ol li { margin-bottom: 6px; }
+  ul li::marker { color: var(--amethyst); }
+
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .do-dont .col {
+    padding: 24px 28px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .do-dont .col h4 { margin-top: 0; }
+  .do-dont .do h4 { color: var(--amethyst); }
+  .do-dont .dont h4 { color: rgba(53,66,56,0.5); }
+  .do-dont .col ul { margin: 0; padding-left: 18px; }
+  .do-dont .col li { font-size: 14px; line-height: 24px; }
+  .do-dont .dont li {
+    color: rgba(53,66,56,0.6);
+    text-decoration: line-through;
+    text-decoration-color: rgba(53,66,56,0.3);
+  }
+
+  /* ===== KEYLINE BOX ===== */
+  .callout {
+    padding: 24px 28px;
+    background: rgba(158,145,178,0.1);
+    border-left: 3px solid var(--amethyst);
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 26px;
+  }
+  .callout strong { color: var(--amethyst); font-weight: 500; }
+
+  /* ===== MI SUMMARY CARD ===== */
+  .mi-summary {
+    padding: 48px 56px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    margin: 32px 0 48px;
+  }
+  .mi-summary .hero-key {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 56px;
+    letter-spacing: 0.16em;
+    text-align: center;
+    padding: 16px 0 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .mi-summary .hero-key .hero-key-sub {
+    display: block;
+    font-size: 19px;
+    line-height: 36px;
+    letter-spacing: 0.18em;
+    color: rgba(53,66,56,0.5);
+    font-weight: 300;
+    margin-top: 6px;
+  }
+  .mi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
+  }
+  .mi-grid .item .k {
+    font-family: var(--ff-sans-lat);
+    font-size: var(--fs-legal);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-bottom: 6px;
+  }
+  .mi-grid .item .v {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+  }
+  .slogan-hero {
+    margin: 48px 0;
+    padding: 56px 48px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(158,145,178,0.14) 0%, rgba(158,145,178,0.04) 100%);
+    border: 1px solid var(--amethyst);
+  }
+  .slogan-hero .eyebrow { margin-bottom: 20px; }
+  .slogan-hero .headline {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 1.3;
+    letter-spacing: 0.18em;
+    margin-bottom: 16px;
+  }
+  .slogan-hero .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: rgba(53,66,56,0.55);
+  }
+
+  /* ===== LOGO SHOWCASE ===== */
+  .logo-hero {
+    padding: 80px 48px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    text-align: center;
+    margin: 32px 0;
+  }
+  .logo-hero img { width: 280px; margin: 0 auto 32px; }
+  .logo-hero .cn {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 0.4em;
+    margin-bottom: 8px;
+  }
+  .logo-hero .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: rgba(53,66,56,0.55);
+  }
+
+  .logo-variants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .logo-variants .variant {
+    text-align: center;
+  }
+  .logo-variants .swatch {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border: 1px solid var(--line);
+    margin-bottom: 12px;
+  }
+  .logo-variants .swatch.mist { background: var(--mist); }
+  .logo-variants .swatch.ink { background: var(--ink); }
+  .logo-variants .swatch.amethyst { background: var(--amethyst); }
+  .logo-variants .swatch img { max-width: 70%; }
+  .logo-variants .lbl {
+    font-family: var(--ff-sans-cjk);
+    font-weight: 500;
+    font-size: var(--fs-caption);
+    letter-spacing: 0.1em;
+  }
+  .logo-variants .sub {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(53,66,56,0.5);
+    margin-top: 2px;
+  }
+
+  .safe-area {
+    padding: 48px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .safe-area .frame {
+    position: relative;
+    padding: 60px;
+    border: 1px dashed var(--amethyst);
+    max-width: 360px;
+  }
+  .safe-area .frame img { width: 100%; }
+  .safe-area .frame::before {
+    content: "x";
+    position: absolute;
+    top: -10px; left: -10px;
+    width: 20px; height: 20px;
+    background: var(--mist);
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--amethyst);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .safe-area .frame::after {
+    content: "x";
+    position: absolute;
+    bottom: -10px; right: -10px;
+    width: 20px; height: 20px;
+    background: var(--mist);
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--amethyst);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== COLOR SWATCHES ===== */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .swatch-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .swatch-card .sw {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+  .swatch-card .sw.ink { background: var(--ink); color: var(--mist); }
+  .swatch-card .sw.mist { background: var(--mist); color: var(--ink); border: 1px solid var(--line); }
+  .swatch-card .sw.amethyst { background: var(--amethyst); color: #fff; }
+  .swatch-card .sw.stone { background: var(--stone); color: var(--ink); }
+  .swatch-card .sw .nm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 0.06em;
+  }
+  .swatch-card .sw .nm span {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    margin-left: 8px;
+    opacity: 0.75;
+  }
+  .swatch-card .meta {
+    padding: 20px 24px;
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+  }
+  .swatch-card .meta .hex {
+    font-family: var(--ff-serif-lat);
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .swatch-card .meta .role {
+    font-family: var(--ff-sans-cjk);
+    font-size: var(--fs-caption);
+    letter-spacing: 0.08em;
+    color: rgba(53,66,56,0.65);
+    line-height: 20px;
+  }
+
+  .proportion {
+    display: flex;
+    margin: 24px 0 8px;
+    height: 48px;
+    border: 1px solid var(--line);
+  }
+  .proportion .p-ink { background: var(--ink); flex: 45; }
+  .proportion .p-mist { background: var(--mist); flex: 40; border-left: 1px solid var(--line); }
+  .proportion .p-stone { background: var(--stone); flex: 12; }
+  .proportion .p-amethyst { background: var(--amethyst); flex: 3; }
+  .proportion-legend {
+    display: flex;
+    gap: 24px;
+    font-family: var(--ff-sans-cjk);
+    font-size: var(--fs-caption);
+    color: rgba(53,66,56,0.65);
+    margin-bottom: 24px;
+  }
+  .proportion-legend span strong {
+    font-family: var(--ff-serif-lat);
+    font-size: 14px;
+  }
+
+  /* ===== TYPE SPECIMEN ===== */
+  .type-families {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .type-family {
+    padding: 32px 36px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+  .type-family .role {
+    font-family: var(--ff-sans-lat);
+    font-size: var(--fs-legal);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-bottom: 12px;
+  }
+  .type-family .family-name {
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .type-family .specimen {
+    font-size: 40px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+  .type-family .weights {
+    font-family: var(--ff-sans-cjk);
+    font-size: var(--fs-caption);
+    color: rgba(53,66,56,0.6);
+    letter-spacing: 0.08em;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .tf-noto-serif-tc { font-family: var(--ff-serif-cjk); }
+  .tf-noto-serif-tc .family-name { font-family: var(--ff-serif-cjk); font-weight: 600; }
+  .tf-noto-sans-tc { font-family: var(--ff-sans-cjk); }
+  .tf-noto-sans-tc .family-name { font-family: var(--ff-sans-cjk); font-weight: 500; }
+  .tf-eb-garamond { font-family: var(--ff-serif-lat); }
+  .tf-eb-garamond .family-name { font-family: var(--ff-serif-lat); font-weight: 500; font-style: italic; }
+  .tf-inter { font-family: var(--ff-sans-lat); }
+  .tf-inter .family-name { font-family: var(--ff-sans-lat); font-weight: 500; }
+
+  .scale-list { margin: 24px 0; }
+  .scale-row {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 24px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .scale-row .meta {
+    font-family: var(--ff-sans-cjk);
+    font-size: var(--fs-caption);
+    letter-spacing: 0.08em;
+    color: rgba(53,66,56,0.65);
+  }
+  .scale-row .meta .stage {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--amethyst);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .scale-row .demo { font-family: var(--ff-serif-cjk); }
+  .scale-row .token {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(53,66,56,0.5);
+    white-space: nowrap;
+  }
+  .scale-row.s-display-xl .demo { font-size: 56px; line-height: 72px; font-weight: 600; letter-spacing: 0.04em; }
+  .scale-row.s-display-l  .demo { font-size: 40px; line-height: 52px; font-weight: 600; letter-spacing: 0.04em; }
+  .scale-row.s-heading    .demo { font-size: 24px; line-height: 32px; font-weight: 500; letter-spacing: 0.03em; }
+  .scale-row.s-body       .demo { font-size: 16px; line-height: 28px; font-weight: 400; letter-spacing: 0.02em; }
+  .scale-row.s-caption    .demo { font-family: var(--ff-sans-cjk); font-size: 13px; line-height: 20px; font-weight: 400; letter-spacing: 0.08em; }
+  .scale-row.s-legal      .demo { font-family: var(--ff-sans-cjk); font-size: 11px; line-height: 16px; font-weight: 400; letter-spacing: 0.1em; }
+
+  /* ===== GRAPHICS GRID ===== */
+  .graphics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .graphic-card {
+    padding: 32px 20px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .graphic-card .frame {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .graphic-card .frame img { max-height: 120px; max-width: 85%; }
+  .graphic-card .nm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .graphic-card .fn {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(53,66,56,0.5);
+  }
+
+  /* ===== APPLICATION ===== */
+  .app-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .app-card {
+    text-align: center;
+  }
+  .app-card img {
+    width: 100%;
+    border: 1px solid var(--line);
+  }
+  .app-card .nm {
+    font-family: var(--ff-sans-cjk);
+    font-weight: 500;
+    font-size: var(--fs-caption);
+    letter-spacing: 0.1em;
+    margin-top: 12px;
+  }
+  .app-card .sub {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(53,66,56,0.5);
+    margin-top: 2px;
+  }
+
+  .fb-cover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+  .fb-cover-grid .cv {
+    text-align: center;
+  }
+  .fb-cover-grid img {
+    width: 100%;
+    border: 1px solid var(--line);
+  }
+  .fb-cover-grid .nm {
+    font-family: var(--ff-sans-cjk);
+    font-weight: 500;
+    font-size: var(--fs-caption);
+    letter-spacing: 0.1em;
+    margin-top: 12px;
+  }
+
+  /* IG post templates · 馮宇體 v2 */
+  .ig-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .ig-posts .post {
+    aspect-ratio: 1;
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  /* T1 · 擺字書封 */
+  .ig-posts .post.t1 {
+    background: var(--mist);
+    padding: 24px 22px;
+    justify-content: space-between;
+  }
+  .ig-posts .post.t1 .t1-top {
+    font-family: var(--ff-sans-lat);
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.5);
+    display: flex;
+    justify-content: space-between;
+  }
+  .ig-posts .post.t1 .t1-top em {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 10px;
+    text-transform: none;
+  }
+  .ig-posts .post.t1 .t1-char {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 130px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--ink);
+  }
+  .ig-posts .post.t1 .t1-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(53,66,56,0.18);
+    padding-top: 10px;
+  }
+  .ig-posts .post.t1 .t1-bottom .nm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.42em;
+    margin-bottom: 2px;
+  }
+  .ig-posts .post.t1 .t1-bottom .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 9px;
+    color: rgba(53,66,56,0.5);
+    letter-spacing: 0.04em;
+  }
+
+  /* T2 · 規格透明商品卡 */
+  .ig-posts .post.t2 {
+    background: var(--mist);
+    padding: 0;
+  }
+  .ig-posts .post.t2 .t2-photo {
+    flex: 1.5;
+    background: linear-gradient(135deg, #DCD6C8 0%, #BEB6A6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(53,66,56,0.4);
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(53,66,56,0.1);
+  }
+  .ig-posts .post.t2 .t2-body {
+    flex: 1;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ig-posts .post.t2 .t2-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .ig-posts .post.t2 .t2-row .label {
+    font-family: var(--ff-sans-lat);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.5);
+    font-size: 8px;
+  }
+  .ig-posts .post.t2 .t2-row .val {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .ig-posts .post.t2 .t2-name {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .ig-posts .post.t2 .t2-no {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 10px;
+    color: var(--amethyst);
+  }
+  .ig-posts .post.t2 .t2-cta {
+    font-family: var(--ff-sans-cjk);
+    font-size: 9px;
+    color: rgba(53,66,56,0.55);
+    letter-spacing: 0.1em;
+    text-align: right;
+    border-top: 1px dashed rgba(53,66,56,0.2);
+    padding-top: 6px;
+  }
+
+  /* T3 · 直球品牌話 */
+  .ig-posts .post.t3 {
+    background: var(--ink);
+    color: var(--mist);
+    padding: 24px 22px;
+    justify-content: space-between;
+  }
+  .ig-posts .post.t3 .t3-top {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(235,235,235,0.5);
+  }
+  .ig-posts .post.t3 .t3-line {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--ff-serif-cjk);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: 0.18em;
+    padding: 16px 0;
+  }
+  .ig-posts .post.t3 .t3-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--ff-sans-lat);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(235,235,235,0.45);
+    border-top: 1px solid rgba(235,235,235,0.18);
+    padding-top: 10px;
+  }
+
+  .tpl-caption {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    font-family: var(--ff-sans-cjk);
+    font-size: var(--fs-caption);
+    color: rgba(53,66,56,0.65);
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+  }
+  .tpl-caption span strong {
+    display: block;
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--amethyst);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  /* ===== APPENDIX ===== */
+  .appendix {
+    max-width: var(--col-w);
+    margin: 0 auto;
+    padding: 96px 48px 120px;
+  }
+  .changelog {
+    background: var(--paper);
+    padding: 32px 36px;
+    border: 1px solid var(--line);
+    margin: 24px 0;
+  }
+  .changelog .ver {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .changelog .ver .v {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--amethyst);
+  }
+  .changelog .ver .date {
+    font-family: var(--ff-sans-lat);
+    font-size: var(--fs-caption);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.5);
+  }
+  .changelog ul { margin: 0; padding-left: 22px; }
+
+  /* ===== FOOTER ===== */
+  footer.site-foot {
+    background: var(--ink);
+    color: var(--mist);
+    padding: 64px 48px;
+    text-align: center;
+  }
+  footer.site-foot .foot-logo {
+    width: 56px;
+    margin: 0 auto 24px;
+    filter: invert(1);
+  }
+  footer.site-foot .wm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    margin-bottom: 8px;
+  }
+  footer.site-foot .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(235,235,235,0.6);
+    margin-bottom: 32px;
+  }
+  footer.site-foot .meta {
+    font-family: var(--ff-sans-lat);
+    font-size: var(--fs-legal);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(235,235,235,0.45);
+    line-height: 22px;
+  }
+  footer.site-foot .meta .v {
+    color: var(--amethyst);
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    font-size: 13px;
+  }
+
+  /* ===== NAV ===== */
+  .top-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(235,235,235,0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    z-index: 50;
+    font-family: var(--ff-sans-lat);
+    font-size: var(--fs-legal);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .top-nav .brand {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+  .top-nav .brand .ver {
+    color: var(--amethyst);
+    margin-left: 8px;
+    font-size: 12px;
+  }
+  .top-nav .nav-chapters {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    flex: 1;
+    justify-content: center;
+    scrollbar-width: none;
+  }
+  .top-nav .nav-chapters::-webkit-scrollbar { display: none; }
+  .top-nav .nav-chapters a {
+    color: rgba(53,66,56,0.55);
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: none;
+    transition: color 0.3s cubic-bezier(.4,0,.2,1);
+    white-space: nowrap;
+  }
+  .top-nav .nav-chapters a:hover { color: var(--ink); opacity: 1; }
+  .top-nav .nav-lang {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(53,66,56,0.5);
+    text-transform: none;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  /* ===== CH.06 AVATAR PAIRS ===== */
+  .avatar-pairs { margin: 32px 0; }
+  .pair-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+  }
+  .pair-row:last-child { border-bottom: 1px solid var(--line); }
+  .pair-label .pair-name {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .pair-label .pair-en {
+    font-family: var(--ff-sans-cjk);
+    font-size: 13px;
+    color: rgba(53,66,56,0.6);
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .pair-label .pair-spec {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+  }
+  .pair-cell { text-align: center; }
+  .pair-frame {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--mist);
+    border: 1px solid var(--line);
+    margin: 0 auto 14px;
+    max-width: 220px;
+  }
+  .pair-frame.dark { background: var(--ink); }
+  .pair-frame.purple { background: var(--amethyst); }
+  .pair-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pair-cap {
+    font-family: var(--ff-sans-cjk);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: rgba(53,66,56,0.55);
+  }
+
+  /* ===== CH.09 GRADIENTS ===== */
+  .gradient-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 32px 0 16px;
+  }
+  .gradient-card .swatch {
+    aspect-ratio: 4/5;
+    border: 1px solid var(--line);
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gradient-card .swatch .glow {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.04em;
+  }
+  .gradient-card .glow.dark { color: rgba(53,66,56,0.55); }
+  .gradient-card .name {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+  }
+  .gradient-card .name .en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(53,66,56,0.5);
+    margin-left: 8px;
+    font-size: 14px;
+  }
+  .gradient-card .desc {
+    font-family: var(--ff-sans-cjk);
+    font-size: 13px;
+    line-height: 22px;
+    color: rgba(53,66,56,0.6);
+    letter-spacing: 0.05em;
+  }
+  .gradient-card .meta {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-top: 8px;
+  }
+  /* 漸層本體 */
+  .grad-deep   { background: linear-gradient(135deg, #354238 0%, #4A3F5C 50%, #9E91B2 100%); }
+  .grad-soft   { background: linear-gradient(135deg, #EBEBEB 0%, #DCD6C8 50%, #BEB6A6 100%); }
+  .grad-mystic { background: linear-gradient(135deg, #9E91B2 0%, #B5A8B8 60%, #BEB6A6 100%); }
+
+  /* ===== CH.10 ICONS ===== */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .icon-cell {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 28px 16px 16px;
+    text-align: center;
+    transition: border-color 0.4s cubic-bezier(.4,0,.2,1), background 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .icon-cell:hover {
+    border-color: var(--amethyst);
+    background: rgba(158,145,178,0.06);
+  }
+  .icon-cell svg {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 16px;
+    color: var(--ink);
+    transition: color 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .icon-cell:hover svg { color: var(--amethyst); }
+  .icon-cell .icon-name {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+  .icon-cell .icon-en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(53,66,56,0.5);
+    margin-top: 2px;
+  }
+  .icon-spec {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    align-items: center;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 32px 36px;
+    margin: 24px 0;
+  }
+  .icon-spec .demo {
+    background:
+      linear-gradient(rgba(158,145,178,0.18) 1px, transparent 1px) 0 0 / 100% calc(100%/12),
+      linear-gradient(90deg, rgba(158,145,178,0.18) 1px, transparent 1px) 0 0 / calc(100%/12) 100%,
+      var(--mist);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line-strong);
+  }
+  .icon-spec .demo svg {
+    width: 70%;
+    height: 70%;
+    color: var(--ink);
+  }
+  .icon-spec .specs { font-size: 14px; line-height: 26px; }
+  .icon-spec .specs strong { color: var(--amethyst); }
+
+  /* ===== CH.11 MOTION ===== */
+  .motion-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .motion-card {
+    border: 1px solid var(--line);
+    padding: 28px 24px;
+    background: var(--paper);
+  }
+  .motion-card .ms {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--amethyst);
+    margin-bottom: 8px;
+  }
+  .motion-card h4 { margin: 0 0 10px; }
+  .motion-card .use {
+    font-size: 13px;
+    line-height: 22px;
+    color: rgba(53,66,56,0.65);
+  }
+  .motion-bar {
+    height: 6px;
+    background: var(--line);
+    border-radius: 3px;
+    margin: 14px 0 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .motion-bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 0;
+    background: var(--amethyst);
+    border-radius: 3px;
+  }
+  /* 三軸示範動效——01 量（靜態）／02 質（600ms 節奏）／03 時機（hover 觸發） */
+  .motion-card.axis-amount .motion-bar::after { width: 100%; }
+  .motion-card.axis-quality .motion-bar::after {
+    animation: mb-quality 2400ms cubic-bezier(.4,0,.2,1) infinite;
+  }
+  @keyframes mb-quality {
+    0%, 100% { width: 0; }
+    25%, 75% { width: 100%; }
+  }
+  .motion-card.axis-timing .motion-bar::after {
+    width: 0;
+    transition: width 600ms cubic-bezier(.4,0,.2,1);
+  }
+  .motion-card.axis-timing:hover .motion-bar::after { width: 100%; }
+  .easing-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 80px;
+    gap: 16px;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .easing-row:first-child { border-top: none; }
+  .easing-row .label { font-family: var(--ff-sans-cjk); font-weight: 500; }
+  .easing-row .curve {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--amethyst);
+  }
+  .easing-row .use {
+    text-align: right;
+    color: rgba(53,66,56,0.55);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .reveal-demo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .reveal-demo .block {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, rgba(158,145,178,0.18) 0%, rgba(190,182,166,0.18) 100%);
+    border: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: reveal 1200ms cubic-bezier(.4,0,.2,1) forwards;
+  }
+  .reveal-demo .block:nth-child(1) { animation-delay: 0ms; }
+  .reveal-demo .block:nth-child(2) { animation-delay: 120ms; }
+  .reveal-demo .block:nth-child(3) { animation-delay: 240ms; }
+  .reveal-demo .block:nth-child(4) { animation-delay: 360ms; }
+  @keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== CH.11 DOWNLOADS ===== */
+  .dl-section { margin: 48px 0 16px; }
+  .dl-section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .dl-section-head h4 {
+    margin: 0;
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-transform: none;
+  }
+  .dl-section-head .count {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(53,66,56,0.45);
+  }
+  .dl-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .dl-card {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.4s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+  .dl-card:hover {
+    border-color: var(--amethyst);
+    transform: translateY(-3px);
+  }
+  .dl-card .preview {
+    aspect-ratio: 1;
+    background: var(--mist);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .dl-card .preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .dl-card .preview .icon-preview {
+    width: 48px;
+    height: 48px;
+    color: var(--ink);
+    transition: color 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .dl-card:hover .preview .icon-preview { color: var(--amethyst); }
+  .dl-card .preview.dark { background: var(--ink); }
+  .dl-card .preview.dark .icon-preview { color: var(--mist); }
+  .dl-card .preview.amethyst { background: var(--amethyst); }
+  .dl-card .preview.amethyst .icon-preview { color: var(--ink); }
+  .dl-card .preview.stone { background: var(--stone); }
+  .dl-card .preview.gradient-deep { background: linear-gradient(135deg, #354238 0%, #4A3F5C 50%, #9E91B2 100%); }
+  .dl-card .preview.gradient-soft { background: linear-gradient(135deg, #EBEBEB 0%, #DCD6C8 50%, #BEB6A6 100%); }
+  .dl-card .preview.gradient-mystic { background: linear-gradient(135deg, #9E91B2 0%, #B5A8B8 60%, #BEB6A6 100%); }
+  .dl-card .preview .type-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.85);
+    color: var(--ink);
+    font-family: var(--ff-sans-lat);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    padding: 3px 8px;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+  }
+  .dl-card .preview.dark .type-badge { background: rgba(53,66,56,0.7); color: var(--mist); }
+  .dl-card .info {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+  .dl-card .info .nm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+  .dl-card .info .nm-en {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(53,66,56,0.5);
+    margin-bottom: 4px;
+  }
+  .dl-card .info .meta {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-top: 6px;
+  }
+  .dl-card .action {
+    padding: 12px 18px;
+    border-top: 1px solid var(--line);
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.55);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.4s cubic-bezier(.4,0,.2,1), background 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .dl-card:hover .action {
+    color: var(--ink);
+    background: rgba(158,145,178,0.08);
+  }
+  .dl-card .action .arrow {
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .dl-card:hover .action .arrow { transform: translateX(4px); }
+
+  /* 色票卡 — copy 互動 */
+  .dl-card.color .preview { border-bottom: 1px solid rgba(53,66,56,0.08); }
+  .dl-card.color .info .meta { font-family: var(--ff-serif-lat); font-style: italic; text-transform: none; letter-spacing: 0.05em; font-size: 14px; }
+
+  .dl-section-note {
+    font-family: var(--ff-sans-cjk);
+    font-size: 13px;
+    line-height: 22px;
+    color: rgba(53,66,56,0.55);
+    margin: 0 0 24px;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 720px) {
+    .cover { padding: 120px 24px 60px; }
+    .cover h1 { font-size: 36px; line-height: 46px; }
+    .cover .en { font-size: 20px; }
+    .cover .tagline { font-size: 17px; line-height: 32px; }
+    .toc { padding: 64px 24px; }
+    .toc h2 { font-size: 32px; line-height: 44px; }
+    .toc-list li { grid-template-columns: 48px 1fr; }
+    .toc-list .page { display: none; }
+    section.chapter { padding: 64px 24px; }
+    .chapter h2 { font-size: 30px; line-height: 40px; }
+    .chapter h2 .en { display: block; margin: 6px 0 0; font-size: 18px; }
+    .chapter .lede { font-size: 17px; line-height: 30px; }
+    .mi-grid, .color-grid, .logo-variants, .graphics-grid, .app-grid-3, .ig-posts, .type-families, .do-dont { grid-template-columns: 1fr; }
+    .slogan-hero .headline { font-size: 36px; letter-spacing: 0.1em; }
+    .scale-row { grid-template-columns: 1fr; gap: 8px; }
+    .scale-row.s-display-xl .demo { font-size: 36px; line-height: 48px; }
+    .scale-row.s-display-l .demo { font-size: 30px; line-height: 42px; }
+    .tpl-caption { grid-template-columns: 1fr; }
+    .top-nav { padding: 8px 12px; font-size: 10px; gap: 8px; }
+    .top-nav .brand { font-size: 11px; }
+    .top-nav .brand .ver { font-size: 10px; margin-left: 4px; }
+    .top-nav .nav-chapters { gap: 12px; justify-content: flex-start; padding: 0 4px; }
+    .top-nav .nav-chapters a { font-size: 10px; letter-spacing: 0.1em; }
+    .top-nav .nav-lang { display: none; }
+    .pair-row { grid-template-columns: 1fr 1fr; }
+    .pair-label { grid-column: 1 / -1; text-align: center; padding-bottom: 8px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+    .gradient-grid { grid-template-columns: 1fr; }
+    .icon-grid { grid-template-columns: repeat(2, 1fr); }
+    .icon-spec { grid-template-columns: 1fr; }
+    .motion-cards { grid-template-columns: 1fr; }
+    .reveal-demo { grid-template-columns: repeat(2, 1fr); }
+    .dl-cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .dl-section-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+    /* 字體卡片收縮——小畫面減 padding、字級、放寬 weights 換行 */
+    .type-family { padding: 24px 20px; }
+    .type-family .family-name { font-size: 24px; }
+    .type-family .specimen { font-size: 32px; }
+    .type-family .weights { word-break: break-word; }
+    /* Easing row 垂直堆疊，避免三欄擠壓 */
+    .easing-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 12px 0;
+    }
+    .easing-row .use { text-align: left; }
+    /* 表格 cells 允許斷詞，避免長字串撐寬 */
+    tbody td, thead th { padding-left: 10px; padding-right: 10px; word-break: break-word; overflow-wrap: anywhere; }
+  }
+  /* 超小螢幕（iPhone SE 1 代等）再補一層 */
+  @media (max-width: 400px) {
+    section.chapter { padding: 56px 16px; }
+    .cover { padding: 96px 16px 56px; }
+    .toc { padding: 56px 16px; }
+    .type-family { padding: 20px 16px; }
+    .type-family .specimen { font-size: 28px; }
+    tbody td, thead th { padding: 10px 8px; font-size: 13px; line-height: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <span class="brand">原子量子 24<span class="ver">v1.5.2</span></span>
+  <div class="nav-chapters">
+    <a href="#ch01">理念</a>
+    <a href="#ch02">Logo</a>
+    <a href="#ch03">色彩</a>
+    <a href="#ch04">字體</a>
+    <a href="#ch05">圖形</a>
+    <a href="#ch06">應用</a>
+    <a href="#ch07">語氣</a>
+    <a href="#ch08">漸層</a>
+    <a href="#ch09">圖示</a>
+    <a href="#ch10">動態</a>
+    <a href="#ch11">下載</a>
+  </div>
+  <span class="nav-lang">2026.04</span>
+</nav>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="eyebrow">Brand Guidelines · Vol. 01.01</div>
+  <h1>原子量子 24</h1>
+  <div class="en">QuantumAtom24</div>
+  <div class="tagline">
+    全時開放邀請<br>
+    <span class="tagline-en">A Standing Invitation, Always Open</span>
+  </div>
+  <div class="cover-logo-wrap">
+    <img class="cover-logo" src="assets/logo.svg" alt="原子量子 24 Logo">
+    <span class="logo-sparkle logo-sparkle--l" aria-hidden="true"></span>
+    <span class="logo-sparkle logo-sparkle--r" aria-hidden="true"></span>
+  </div>
+  <div class="cover-meta">
+    <span>VI 守則手冊 · Visual Identity Manual</span>
+    <span class="v">Version 1.5.2 · 2026-04-23</span>
+  </div>
+</header>
+
+<!-- ============ TOC ============ -->
+<section class="toc">
+  <div class="section-label">
+    <span class="ch-num"><em>§</em></span>
+    <span class="ch-label">Table of Contents</span>
+  </div>
+  <h2>目錄</h2>
+  <ol class="toc-list">
+    <li>
+      <span class="num">01</span>
+      <span class="ttl"><a href="#ch01">品牌理念<span class="sub">Mind Identity · 定位、受眾、個性、Slogan、品牌故事、方針</span></a></span>
+      <span class="page">I</span>
+    </li>
+    <li>
+      <span class="num">02</span>
+      <span class="ttl"><a href="#ch02">Logo<span class="sub">主標誌、DNA、變體、安全空間、最小尺寸、禁用</span></a></span>
+      <span class="page">II</span>
+    </li>
+    <li>
+      <span class="num">03</span>
+      <span class="ttl"><a href="#ch03">色彩系統<span class="sub">Moss & Mineral · Moss／Mist／Amethyst／Stone</span></a></span>
+      <span class="page">III</span>
+    </li>
+    <li>
+      <span class="num">04</span>
+      <span class="ttl"><a href="#ch04">字體系統<span class="sub">Editorial Modern · Noto Serif TC ＋ EB Garamond ＋ Inter</span></a></span>
+      <span class="page">IV</span>
+    </li>
+    <li>
+      <span class="num">05</span>
+      <span class="ttl"><a href="#ch05">輔助圖形<span class="sub">7 件線性資產：Radiance／Contour／Numeral 24／Marks／Mini Crystal</span></a></span>
+      <span class="page">V</span>
+    </li>
+    <li>
+      <span class="num">06</span>
+      <span class="ttl"><a href="#ch06">應用範例<span class="sub">IG 頭貼、IG 貼文模板、FB 粉專封面</span></a></span>
+      <span class="page">VI</span>
+    </li>
+    <li>
+      <span class="num">07</span>
+      <span class="ttl"><a href="#ch07">Tone of Voice<span class="sub">三層結構、允許詞彙、禁用詞彙、語氣範例</span></a></span>
+      <span class="page">VII</span>
+    </li>
+    <li>
+      <span class="num">08</span>
+      <span class="ttl"><a href="#ch08">品牌漸層<span class="sub">Gradients · 三組漸層、角度、用途、禁忌</span></a></span>
+      <span class="page">VIII</span>
+    </li>
+    <li>
+      <span class="num">09</span>
+      <span class="ttl"><a href="#ch09">圖示系統<span class="sub">Iconography · 24×24 grid、stroke 1.5、8 件核心圖示</span></a></span>
+      <span class="page">IX</span>
+    </li>
+    <li>
+      <span class="num">10</span>
+      <span class="ttl"><a href="#ch10">動態設計<span class="sub">Motion · easing、時長梯度、Reels 規範、禁忌</span></a></span>
+      <span class="page">X</span>
+    </li>
+    <li>
+      <span class="num">11</span>
+      <span class="ttl"><a href="#ch11">素材下載<span class="sub">Downloads · Logo／色票／字體／模板</span></a></span>
+      <span class="page">XI</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ CH.01 MI ============ -->
+<section class="chapter" id="ch01">
+  <div class="section-label">
+    <span class="ch-num">Ch. 01</span>
+    <span class="ch-label">Mind Identity</span>
+  </div>
+  <h2>品牌理念<span class="en">Mind Identity</span></h2>
+  <p class="lede">我們賣大型晶簇，就是居家風水擺件。<br>但如果你有看對眼的晶簇，心中仍不確定，可以跟我們聊聊。</p>
+
+  <div class="mi-summary">
+    <div class="hero-key">
+      大型晶簇。居家風水擺件。<br><span class="hero-key-sub">不急。慢慢看。隨時都在。</span>
+    </div>
+    <div class="mi-grid">
+      <div class="item">
+        <div class="k">Positioning · 定位</div>
+        <div class="v">挑自己覺得好看、擺起來舒服的石頭。客人也覺得舒服，就帶回家。</div>
+      </div>
+      <div class="item">
+        <div class="k">Core Audience · 核心受眾</div>
+        <div class="v">家裡想放一件大晶簇的人。可能剛搬家、可能換個空間、可能送自己一個禮物。</div>
+      </div>
+      <div class="item">
+        <div class="k">Personality · 品牌個性</div>
+        <div class="v">真誠 · 一致 · 舒服 · 好聊</div>
+      </div>
+      <div class="item">
+        <div class="k">Slogan</div>
+        <div class="v">全時開放邀請<br><span style="font-family:var(--ff-serif-lat);font-style:italic;font-weight:400;color:rgba(53,66,56,0.55);">A Standing Invitation, Always Open</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>三件事我們不做。</strong>
+    <ul style="margin:12px 0 0;padding-left:22px;">
+      <li>不講功能（招財、擋煞、旺桃花）</li>
+      <li>不做限量推銷（最後一個、快搶、今天不買就沒了）</li>
+      <li>不打折、不季節促銷</li>
+    </ul>
+  </div>
+
+  <h3><span class="num">01.1</span>品牌定位</h3>
+  <p>挑自己覺得好看、擺起來舒服的石頭。客人也覺得舒服，就帶回家。</p>
+  <p>我們不評斷哪塊更好，也不會勸你一定要帶走哪一塊。喜歡就帶；不喜歡，歡迎下次再來看看。</p>
+
+  <table>
+    <thead><tr><th>我們是</th><th>我們不是</th></tr></thead>
+    <tbody>
+      <tr><td>水晶是主體，我們是管道</td><td>水晶是商品，我們是銷售方</td></tr>
+      <tr><td>分享我們感受到的</td><td>保證某種效果</td></tr>
+      <tr><td>有緣才遇見</td><td>推薦你必須擁有</td></tr>
+      <tr><td>談能量、頻率、共振、心輪</td><td>談招財、改運、擋煞、桃花</td></tr>
+      <tr><td>大型晶簇（空間能量中心）</td><td>手串、飾品、雕件、隨身品</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">01.2</span>目標受眾</h3>
+  <table>
+    <thead><tr><th>群體</th><th>描述</th><th>佔比</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A · 感受型</strong>（核心）</td><td>相信直覺；看到晶簇會心動會記得；不懂能量理論也能連結；會說「我被它叫住」</td><td>50%</td></tr>
+      <tr><td>B · 修行／靈性實踐者</td><td>冥想、能量工作、靜心；清楚不同水晶的頻率、屬性；可能是療癒師、老師、諮詢師</td><td>30%</td></tr>
+      <tr><td>C · 空間愛好者</td><td>為家／工作室／諮詢空間添置；需要一個「空間能量中心」；預算願意投大件</td><td>20%</td></tr>
+    </tbody>
+  </table>
+
+  <h4>不是我們的受眾</h4>
+  <ul>
+    <li>來問運勢、想改運、求桃花求財富的人</li>
+    <li>需要老師／命理師指導搭配的人</li>
+    <li>精算 CP 值比價的人</li>
+    <li>完全不相信感受、只看科學認證的人</li>
+    <li>想要小飾品、手串、隨身攜帶品的人</li>
+  </ul>
+
+  <h3><span class="num">01.3</span>品牌個性</h3>
+  <p>個性不是描述，是行為。原子量子 24 的個性，藏在每次出現時做了什麼、沒做什麼。四個維度。</p>
+
+  <table>
+    <thead><tr><th>維度</th><th>內容</th></tr></thead>
+    <tbody>
+      <tr><td><strong>真誠</strong></td><td>規格、瑕疵、價格都透明，沒有藏的空間。</td></tr>
+      <tr><td><strong>一致</strong></td><td>不打折、不限量、不季節促銷。一年到頭就是這個價。</td></tr>
+      <tr><td><strong>舒服</strong></td><td>挑石頭看「擺起來舒不舒服」；跟客人互動也是——不催、不勸、不質問。</td></tr>
+      <tr><td><strong>好聊</strong></td><td>常見問題 AI 回，特殊問題真人回。我們不假裝有 24 小時的小編。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="do-dont">
+    <div class="col do">
+      <h4>會說</h4>
+      <ul>
+        <li>「這顆規格是這樣，照片實拍沒修色」</li>
+        <li>「不確定可以慢慢看，要聊也歡迎」</li>
+        <li>「沒打折，一年到頭就是這個價」</li>
+        <li>主詞常常是水晶：「它⋯⋯」</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>不會說</h4>
+      <ul>
+        <li>「最後一個」「快搶」「今天不買就沒了」</li>
+        <li>「這顆招財／擋煞／旺桃花」</li>
+        <li>「這顆是給你的」（替別人下決定）</li>
+        <li>「這顆超讚」「必買」（推銷用語）</li>
+        <li>批評別人的水晶選擇或信仰方式</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3><span class="num">01.4</span>Slogan</h3>
+  <div class="slogan-hero">
+    <div class="eyebrow">Brand Slogan</div>
+    <div class="headline">全時開放邀請</div>
+    <div class="en">A Standing Invitation, Always Open</div>
+    <div style="margin-top:24px;font-family:var(--ff-serif-cjk);font-weight:400;font-size:18px;letter-spacing:0.18em;color:rgba(53,66,56,0.7);">不急。慢慢看。隨時都在。</div>
+  </div>
+  <h4>為什麼這句話是對的</h4>
+  <ul>
+    <li><strong>「全時」呼應「24」</strong>——品牌名「原子量子 24」的「24」對應「24 小時／全時」</li>
+    <li><strong>「邀請」不是推銷</strong>——把對方當被邀請的客人，不是被銷售的對象</li>
+    <li><strong>「開放」即是「不勉強」</strong>——邀請一直敞開著：你可以來、也可以不來、也可以慢慢來</li>
+    <li><strong>不製造錯過焦慮</strong>——沒有「今天不買就沒了」</li>
+    <li><strong>跟品牌節奏同構</strong>——我們確實在賣，但邀請永遠在</li>
+  </ul>
+
+  <h3><span class="num">01.5</span>品牌故事</h3>
+  <div class="callout">
+    <p>水晶這行有些做法我們不走：催購、限量、講功能。</p>
+    <p>我們只賣大型晶簇，把它當居家風水擺件來挑。挑的時候看自己順不順眼、擺起來舒不舒服。價格透明，不打折，不季節特價。</p>
+    <p style="margin:0;"><strong>你有看對眼的，可以直接帶走；有想多聊的，私訊我們，會本人回。</strong></p>
+  </div>
+
+  <h3><span class="num">01.6</span>品牌方針</h3>
+  <table>
+    <thead><tr><th>原則</th><th>意涵</th></tr></thead>
+    <tbody>
+      <tr><td><strong>01 · 物件有主體</strong></td><td>水晶是存在，不是庫存。用「它」，不是「這件商品」。文案主詞常常是水晶自己。</td></tr>
+      <tr><td><strong>02 · 不催不勸</strong></td><td>不推薦、不匹配、不催促。看對眼就帶；看不對眼，下次再來看看。</td></tr>
+      <tr><td><strong>03 · 規格優先</strong></td><td>產地、重量、瑕疵都寫前面。照片實拍，不修色、不美肌。</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">01.7</span>關於價格</h3>
+  <div class="callout">
+    <p>大型晶簇本來就比小件貴。我們挑的時候花的時間比較多，定的價格合理，但不會打折。</p>
+    <p>一年到頭就是這個價。沒有節日特價、沒有限量促銷。</p>
+    <p style="margin:0;">你問「能便宜一點嗎？」——不能；<br>你問「規格細節能說清楚嗎？」——當然。</p>
+  </div>
+
+  <h3><span class="num">01.8</span>關於客服</h3>
+  <div class="callout">
+    <p>常見問題（訂單、運送、付款）由 AI 客服回覆——快、準、不睡覺。</p>
+    <p>特殊或想聊的問題，私訊我們會收到，由本人回。</p>
+    <p style="margin:0;"><strong>我們不假裝有 24 小時的小編。</strong></p>
+  </div>
+</section>
+
+<!-- ============ CH.02 LOGO ============ -->
+<section class="chapter" id="ch02">
+  <div class="section-label">
+    <span class="ch-num">Ch. 02</span>
+    <span class="ch-label">Primary Logo</span>
+  </div>
+  <h2>Logo<span class="en">Primary Mark</span></h2>
+  <p class="lede">主標誌由使用者手繪、potrace 向量化而來。保留手繪線條與筆觸（包含手寫的「24」）為品牌個性的核心載體。</p>
+
+  <div class="logo-hero">
+    <img src="assets/logo.svg" alt="原子量子 24 Primary Logo">
+    <div class="cn">原子量子 24</div>
+    <div class="en">QuantumAtom24 · Primary Logo</div>
+  </div>
+
+  <h3><span class="num">02.1</span>結構 DNA</h3>
+  <ul>
+    <li><strong>三晶簇</strong>（主峰＋兩副峰）—— 象徵礦物結構、主副從階層</li>
+    <li><strong>光芒輻射</strong> —— 高頻、光的下載、訊息的擴散</li>
+    <li><strong>地面線</strong> —— 晶簇生長的根基、真實的物質世界</li>
+    <li><strong>手寫「24」</strong> —— 全時、24 小時、手寫筆觸保留個人溫度</li>
+  </ul>
+
+  <h3><span class="num">02.2</span>色彩變體</h3>
+  <div class="logo-variants">
+    <div class="variant">
+      <div class="swatch mist"><img src="assets/avatar-A-mist.png" alt="Mist 版"></div>
+      <div class="lbl">A · Mist</div>
+      <div class="sub">主頭貼、長期固定</div>
+    </div>
+    <div class="variant">
+      <div class="swatch ink"><img src="assets/avatar-B-ink.png" alt="Ink 版"></div>
+      <div class="lbl">B · Ink</div>
+      <div class="sub">深色九宮格期替換</div>
+    </div>
+    <div class="variant">
+      <div class="swatch amethyst"><img src="assets/avatar-C-amethyst.png" alt="Amethyst 版"></div>
+      <div class="lbl">C · Amethyst</div>
+      <div class="sub">新品／活動檔期</div>
+    </div>
+  </div>
+
+  <h3><span class="num">02.3</span>安全空間</h3>
+  <p>Logo 周圍留出至少 Logo 寬度 <strong>10% 的空白邊距</strong>。其他元素（文字、輔助圖形、邊框）不得進入此範圍。圖例中虛線為安全邊界。</p>
+  <div class="safe-area">
+    <div class="frame">
+      <img src="assets/logo.svg" alt="Logo with safe area">
+    </div>
+  </div>
+
+  <h3><span class="num">02.4</span>最小尺寸</h3>
+  <table>
+    <thead><tr><th>媒介</th><th>最小尺寸</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>螢幕（網頁／APP）</td><td>40 × 40 px</td><td>低於此尺寸辨識不清，改用 mini-crystal 替代</td></tr>
+      <tr><td>印刷</td><td>12 × 12 mm</td><td>小於此尺寸細線可能斷掉</td></tr>
+      <tr><td>IG 頭貼</td><td>320 × 320 px（上傳 1080×1080）</td><td>Logo 佔版面 76%</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">02.5</span>禁用</h3>
+  <div class="do-dont">
+    <div class="col do">
+      <h4>允許</h4>
+      <ul>
+        <li>單色（Ink、Mist、Amethyst）</li>
+        <li>等比例縮放</li>
+        <li>放在 Mist、Ink、Amethyst、Stone 品牌色背景</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>禁用</h4>
+      <ul>
+        <li>拉長、壓扁、扭曲</li>
+        <li>加外框、加陰影、加漸層</li>
+        <li>用品牌色票以外的顏色</li>
+        <li>把手寫「24」替換成標準字</li>
+        <li>放在低對比或雜亂背景上</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH.03 COLOR ============ -->
+<section class="chapter" id="ch03">
+  <div class="section-label">
+    <span class="ch-num">Ch. 03</span>
+    <span class="ch-label">Color System</span>
+  </div>
+  <h2>色彩系統<span class="en">Moss & Mineral</span></h2>
+  <p class="lede">草木 × 石礦——苔綠當主、霧白為紙、紫晶與石灰當點綴。<br>取代純黑的 Ink，是讓品牌脫離「冷感編輯店」、走向「居家擺件」氣場的最關鍵改動（v1.3.0）。</p>
+
+  <div class="color-grid">
+    <div class="swatch-card">
+      <div class="sw ink"><div class="nm">Moss <span>苔綠</span></div></div>
+      <div class="meta">
+        <div class="hex">#354238</div>
+        <div class="role">主深色——文字、Logo、深底。取代純黑感的 Ink (v1.3.0)</div>
+      </div>
+    </div>
+    <div class="swatch-card">
+      <div class="sw mist"><div class="nm">Mist <span>霧白</span></div></div>
+      <div class="meta">
+        <div class="hex">#EBEBEB</div>
+        <div class="role">紙底色——IG、網站、FB、包裝、所有背景</div>
+      </div>
+    </div>
+    <div class="swatch-card">
+      <div class="sw amethyst"><div class="nm">Amethyst <span>紫晶</span></div></div>
+      <div class="meta">
+        <div class="hex">#9E91B2</div>
+        <div class="role">主重音——標籤、強調、CTA。呼應紫水晶</div>
+      </div>
+    </div>
+    <div class="swatch-card">
+      <div class="sw stone"><div class="nm">Stone <span>石灰</span></div></div>
+      <div class="meta">
+        <div class="hex">#BEB6A6</div>
+        <div class="role">次重音——柔和分區、卡片底、輔助塊</div>
+      </div>
+    </div>
+  </div>
+
+  <h3><span class="num">03.1</span>使用比例</h3>
+  <div class="proportion">
+    <div class="p-ink"></div>
+    <div class="p-mist"></div>
+    <div class="p-stone"></div>
+    <div class="p-amethyst"></div>
+  </div>
+  <div class="proportion-legend">
+    <span><strong>Moss</strong> · 45%</span>
+    <span><strong>Mist</strong> · 40%</span>
+    <span><strong>Stone</strong> · 12%</span>
+    <span><strong>Amethyst</strong> · 3%</span>
+  </div>
+  <ul>
+    <li><strong>Moss ＋ Mist</strong> 是主結構色，占 80–85% 畫面</li>
+    <li><strong>Stone</strong> 占 10–15%（柔和分區、卡片底、次要區塊）</li>
+    <li><strong>Amethyst</strong> 僅占 3–5%（CTA、標籤、新品強調）</li>
+    <li>深色情境（Moss 底反白）：文字／Logo 用 Mist 反白</li>
+  </ul>
+
+  <h3><span class="num">03.2</span>對比與易讀</h3>
+  <p>Moss on Mist 對比達 <strong>AAA</strong> 等級，適合長文字與小字。Amethyst on Mist 對比 <strong>AA Large</strong>，僅用於 18px 以上；小於 18px 的 Amethyst 文字建議改用 Moss。</p>
+
+  <h3><span class="num">03.3</span>禁忌</h3>
+  <ul>
+    <li>不使用純黑 <code>#000000</code>（太冷硬、無溫度——這是 v1.3.0 拿掉 Ink 的原因）</li>
+    <li>不使用純白 <code>#FFFFFF</code>（太亮、破壞 Mist 的中性質感）</li>
+    <li>不使用暖米白系（如 <code>#F4F0E8</code>）——會破壞中性系統的一致性</li>
+    <li>Amethyst 避免大面積使用（會過於夢幻、失去穩重）</li>
+    <li>不加入第五色（曾提案 Rose 粉色作 accent，已撤回——Amethyst 已足夠）</li>
+  </ul>
+
+  <h3><span class="num">03.4</span>命名與變數</h3>
+  <p>CSS 變數沿用 <code>--ink</code> 名稱（不改成 <code>--moss</code>）——「Ink」在程式碼裡仍是「主深色」的語意佔位，只是色相換成苔綠。實作上 <code>var(--ink)</code> 自動拿到 #354238。</p>
+</section>
+
+<!-- ============ CH.04 TYPE ============ -->
+<section class="chapter" id="ch04">
+  <div class="section-label">
+    <span class="ch-num">Ch. 04</span>
+    <span class="ch-label">Typography</span>
+  </div>
+  <h2>字體系統<span class="en">Editorial Modern</span></h2>
+  <p class="lede">主視覺維持宋體＋Garamond 的編輯感，metadata 與 UI 切到中性 sans。全部 Google Fonts、授權 SIL OFL 可商用。</p>
+
+  <h3><span class="num">04.1</span>字體家族</h3>
+  <div class="type-families">
+    <div class="type-family tf-noto-serif-tc">
+      <div class="role">CJK Serif · 主</div>
+      <div class="family-name">Noto Serif TC</div>
+      <div class="specimen">原子量子 24</div>
+      <div class="weights">300 · 400 · 500 · 600　／　主標、內文、引文</div>
+    </div>
+    <div class="type-family tf-eb-garamond">
+      <div class="role">Latin Serif · 主</div>
+      <div class="family-name">EB Garamond</div>
+      <div class="specimen">QuantumAtom <em>24</em></div>
+      <div class="weights">400 · 500 · Italic　／　英文主標、署名、數字</div>
+    </div>
+    <div class="type-family tf-noto-sans-tc">
+      <div class="role">CJK Sans · 副</div>
+      <div class="family-name">Noto Sans TC</div>
+      <div class="specimen">晶簇市集</div>
+      <div class="weights">400 · 500　／　UI、metadata、標籤、按鈕</div>
+    </div>
+    <div class="type-family tf-inter">
+      <div class="role">Latin Sans · 副</div>
+      <div class="family-name">Inter</div>
+      <div class="specimen">QUANTUMATOM</div>
+      <div class="weights">400 · 500　／　英文 UI、大寫 eyebrow、按鈕</div>
+    </div>
+  </div>
+
+  <h3><span class="num">04.2</span>Type Scale</h3>
+  <div class="scale-list">
+    <div class="scale-row s-display-xl">
+      <div class="meta"><span class="stage">Display XL</span>56 / 72 · 600</div>
+      <div class="demo">全時開放邀請</div>
+      <div class="token">--fs-display-xl</div>
+    </div>
+    <div class="scale-row s-display-l">
+      <div class="meta"><span class="stage">Display L</span>40 / 52 · 600</div>
+      <div class="demo">全時開放邀請</div>
+      <div class="token">--fs-display-l</div>
+    </div>
+    <div class="scale-row s-heading">
+      <div class="meta"><span class="stage">Heading</span>24 / 32 · 500</div>
+      <div class="demo">紫水晶洞 · Amethyst Geode</div>
+      <div class="token">--fs-heading</div>
+    </div>
+    <div class="scale-row s-body">
+      <div class="meta"><span class="stage">Body</span>16 / 28 · 400</div>
+      <div class="demo">它高頻而無私，協助整合，下載光的頻率，讓我們成為管道。</div>
+      <div class="token">--fs-body</div>
+    </div>
+    <div class="scale-row s-caption">
+      <div class="meta"><span class="stage">Caption</span>13 / 20 · 400</div>
+      <div class="demo">Amethyst Geode · Brazil · NT$ 2,480</div>
+      <div class="token">--fs-caption</div>
+    </div>
+    <div class="scale-row s-legal">
+      <div class="meta"><span class="stage">Legal</span>11 / 16 · 400</div>
+      <div class="demo">ALL CRYSTALS HAND-PICKED AND ENERGY-CHECKED</div>
+      <div class="token">--fs-legal</div>
+    </div>
+  </div>
+
+  <h3><span class="num">04.3</span>老式數字（Old-style Figures）</h3>
+  <div class="callout">
+    <strong>品牌鐵律：</strong>所有數字都要開 <code>font-feature-settings: "onum" 1;</code>。日期、價格、編號、「Numeral 24」全部適用。關閉 <code>onum</code> 的數字是絕對禁止。
+  </div>
+
+  <h3><span class="num">04.4</span>情境對應</h3>
+  <table>
+    <thead><tr><th>情境</th><th>字體組合</th><th>字級</th></tr></thead>
+    <tbody>
+      <tr><td>IG 封面大字</td><td>Noto Serif TC 600 ＋ EB Garamond italic eyebrow</td><td>Display L / Caption</td></tr>
+      <tr><td>IG 長文內文</td><td>Noto Serif TC 400</td><td>Body</td></tr>
+      <tr><td>日期／metadata</td><td>Inter 500（大寫）＋ Noto Sans TC 400</td><td>Caption</td></tr>
+      <tr><td>產品名稱</td><td>Noto Serif TC 500 ＋ EB Garamond italic 副</td><td>Heading</td></tr>
+      <tr><td>產品價格</td><td>EB Garamond 500 ＋ onum</td><td>Heading / Display L</td></tr>
+      <tr><td>引文卡</td><td>Noto Serif TC 300（Light）</td><td>Display L</td></tr>
+      <tr><td>引文署名</td><td>EB Garamond italic</td><td>Caption</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">04.5</span>禁忌</h3>
+  <ul>
+    <li>不要把 Inter 放大當主標（會變成科技新創簡報）</li>
+    <li>不要混其他 serif（Playfair、Lora 等都不加）</li>
+    <li>不要混手寫體（Caveat、Homemade Apple 等）</li>
+    <li>不要用 Bold 700 以上字重（笨重、失去優雅）</li>
+    <li>宋體不要小於 13px（辨識不清，小字切 sans）</li>
+    <li>不要關掉 <code>onum</code></li>
+  </ul>
+</section>
+
+<!-- ============ CH.05 GRAPHICS ============ -->
+<section class="chapter" id="ch05">
+  <div class="section-label">
+    <span class="ch-num">Ch. 05</span>
+    <span class="ch-label">Auxiliary Graphics</span>
+  </div>
+  <h2>輔助圖形<span class="en">Auxiliary Graphics</span></h2>
+  <p class="lede">不是裝飾。是排版工具。<br>七件圖形都從「居家風水擺件」這個語境長出來——漢字、編號、編輯記號、節氣方塊。Logo 永遠是主角，它們負責讓版面有節奏、有編輯感、有台灣感。</p>
+
+  <div class="graphics-grid">
+    <div class="graphic-card">
+      <div class="frame"><img src="assets/seal-bai.svg" alt="擺字章"></div>
+      <div class="nm">擺字章 · Seal「擺」</div>
+      <div class="fn">seal-bai.svg</div>
+    </div>
+    <div class="graphic-card">
+      <div class="frame"><img src="assets/crystal-section.svg" alt="晶體切面紋"></div>
+      <div class="nm">晶體切面紋 · Crystal Section</div>
+      <div class="fn">crystal-section.svg</div>
+    </div>
+    <div class="graphic-card">
+      <div class="frame"><img src="assets/horizon.svg" alt="地平線"></div>
+      <div class="nm">地平線 · Horizon</div>
+      <div class="fn">horizon.svg</div>
+    </div>
+    <div class="graphic-card">
+      <div class="frame"><img src="assets/numbering.svg" alt="編號方框"></div>
+      <div class="nm">編號方框 · No. 017</div>
+      <div class="fn">numbering.svg</div>
+    </div>
+    <div class="graphic-card">
+      <div class="frame"><img src="assets/signature-vertical.svg" alt="直書品牌簽名"></div>
+      <div class="nm">直書品牌簽名 · Vertical Signature</div>
+      <div class="fn">signature-vertical.svg</div>
+    </div>
+    <div class="graphic-card">
+      <div class="frame"><img src="assets/editorial-marks.svg" alt="編輯記號"></div>
+      <div class="nm">編輯記號 · § / — / ·</div>
+      <div class="fn">editorial-marks.svg</div>
+    </div>
+    <div class="graphic-card">
+      <div class="frame"><img src="assets/jieqi-grid.svg" alt="24 節氣方塊"></div>
+      <div class="nm">24 節氣方塊 · Jieqi Grid</div>
+      <div class="fn">jieqi-grid.svg</div>
+    </div>
+  </div>
+
+  <h3><span class="num">05.1</span>七件圖形 · 為什麼是這七件</h3>
+  <table>
+    <thead><tr><th>圖形</th><th>從哪來</th><th>什麼時候用</th></tr></thead>
+    <tbody>
+      <tr><td><strong>擺字章</strong></td><td>「居家風水擺件」核心字，做成印章方框</td><td>包裝封口、商品標籤、副品牌印</td></tr>
+      <tr><td><strong>晶體切面紋</strong></td><td>大型晶簇橫切的真實紋路，不是發光放射</td><td>背景 texture、紙袋／卡片內裡</td></tr>
+      <tr><td><strong>地平線</strong></td><td>一條穩穩的線，呼應「擺得住」</td><td>章節分隔、版面定錨、印刷物頁腳</td></tr>
+      <tr><td><strong>編號方框</strong></td><td>每件晶簇都有自己的序號 No.</td><td>商品照片角落、規格表、出貨封套</td></tr>
+      <tr><td><strong>直書品牌簽名</strong></td><td>原子量子 24 直排書寫</td><td>包裝署名、感謝卡、收據</td></tr>
+      <tr><td><strong>編輯記號</strong></td><td>§ ／ — ／ · 三件編輯排版用</td><td>段落分隔、章節標、文字排版</td></tr>
+      <tr><td><strong>24 節氣方塊</strong></td><td>呼應品牌名「24」的 24 節氣日曆塊</td><td>節氣貼文、限定 Story、行事曆</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">05.2</span>使用原則</h3>
+  <ul>
+    <li><strong>少用</strong>：一個版面最多兩件，能不用就不用。Logo＋文字永遠優先。</li>
+    <li><strong>不疊</strong>：擺字章與直書簽名不同時出現（兩個都是品牌印，會打架）</li>
+    <li><strong>不變色</strong>：用 Ink 黑為主、Mist 白底為次。Amethyst 只用於擺字章作重音，且一版面只能一處</li>
+  </ul>
+
+  <h3><span class="num">05.3</span>禁忌</h3>
+  <ul>
+    <li>不要把它們當主視覺（永遠是配角）</li>
+    <li>不要拉長壓扁、加陰影、加漸層</li>
+    <li>不要縮到看不清楚（擺字章不小於 32px、編號方框不小於 80px 寬）</li>
+    <li>不要在商品圖上方蓋編輯記號（會搶商品本身的視線）</li>
+  </ul>
+</section>
+
+<!-- ============ CH.06 APPLICATION ============ -->
+<section class="chapter" id="ch06">
+  <div class="section-label">
+    <span class="ch-num">Ch. 06</span>
+    <span class="ch-label">Application</span>
+  </div>
+  <h2>應用範例<span class="en">Application</span></h2>
+  <p class="lede">已完成的三組應用：IG 頭貼（每色兩種版本）、IG 貼文模板、FB 粉絲專頁封面。包裝、名片、網站等項目將於 v1.2 以後補入。</p>
+
+  <h3><span class="num">06.1</span>IG 頭貼</h3>
+  <p>三色（Mist／Ink／Amethyst）× 兩版（無字／含字）= 6 個版本。圓形裁切下純 Logo 版作主頭貼長期使用；含字版備用於需要強化品牌名的場合（限動封面、合作展露）。</p>
+  <div class="avatar-pairs">
+    <div class="pair-row">
+      <div class="pair-label">
+        <div class="pair-name">A · Mist</div>
+        <div class="pair-en">主頭貼 · 長期固定</div>
+        <div class="pair-spec">底色 #EBEBEB · 1080×1080</div>
+      </div>
+      <div class="pair-cell">
+        <div class="pair-frame"><img src="assets/avatar-A-mist.png" alt="Avatar A Mist"></div>
+        <div class="pair-cap">無字版</div>
+      </div>
+      <div class="pair-cell">
+        <div class="pair-frame"><img src="assets/avatar-A-mist-with-text.png" alt="Avatar A Mist with text"></div>
+        <div class="pair-cap">含字版</div>
+      </div>
+    </div>
+    <div class="pair-row">
+      <div class="pair-label">
+        <div class="pair-name">B · Ink</div>
+        <div class="pair-en">深色九宮格替換</div>
+        <div class="pair-spec">底色 #354238 · 1080×1080</div>
+      </div>
+      <div class="pair-cell">
+        <div class="pair-frame dark"><img src="assets/avatar-B-ink.png" alt="Avatar B Ink"></div>
+        <div class="pair-cap">無字版</div>
+      </div>
+      <div class="pair-cell">
+        <div class="pair-frame dark"><img src="assets/avatar-B-ink-with-text.png" alt="Avatar B Ink with text"></div>
+        <div class="pair-cap">含字版</div>
+      </div>
+    </div>
+    <div class="pair-row">
+      <div class="pair-label">
+        <div class="pair-name">C · Amethyst</div>
+        <div class="pair-en">新品／活動檔期</div>
+        <div class="pair-spec">底色 #9E91B2 · 1080×1080</div>
+      </div>
+      <div class="pair-cell">
+        <div class="pair-frame purple"><img src="assets/avatar-C-amethyst.png" alt="Avatar C Amethyst"></div>
+        <div class="pair-cap">無字版</div>
+      </div>
+      <div class="pair-cell">
+        <div class="pair-frame purple"><img src="assets/avatar-C-amethyst-with-text.png" alt="Avatar C Amethyst with text"></div>
+        <div class="pair-cap">含字版</div>
+      </div>
+    </div>
+  </div>
+
+  <h3><span class="num">06.2</span>IG 貼文模板</h3>
+  <p>三套模板混排九宮格不打架。<strong>T1 擺字書封</strong>用於品牌開場、里程碑、壓陣；<strong>T2 規格透明商品卡</strong>是上架主力、把品牌「規格透明」的承諾做進每張貼文；<strong>T3 直球品牌話</strong>填節奏，講品牌想講的話，不寫詩。</p>
+  <div class="tpl-caption">
+    <span><strong>T1</strong>擺字書封</span>
+    <span><strong>T2</strong>規格透明商品卡</span>
+    <span><strong>T3</strong>直球品牌話</span>
+  </div>
+  <div class="ig-posts">
+    <div class="post t1">
+      <div class="t1-top"><span>QA24</span><em>vol. 01</em></div>
+      <div class="t1-char">擺</div>
+      <div class="t1-bottom">
+        <div class="nm">原子量子 24</div>
+        <div class="en">居家風水擺件</div>
+      </div>
+    </div>
+    <div class="post t2">
+      <div class="t2-photo">商品實拍 · 不修色</div>
+      <div class="t2-body">
+        <div>
+          <div class="t2-name">紫水晶洞</div>
+          <div class="t2-no">No. 017</div>
+        </div>
+        <div>
+          <div class="t2-row"><span class="label">產地</span><span class="val">巴西</span></div>
+          <div class="t2-row"><span class="label">尺寸</span><span class="val">12 × 8 × 6 cm</span></div>
+          <div class="t2-row"><span class="label">重量</span><span class="val">680 g</span></div>
+          <div class="t2-row"><span class="label">售價</span><span class="val">NT$ 12,800</span></div>
+        </div>
+        <div class="t2-cta">看對眼歡迎私訊聊聊 →</div>
+      </div>
+    </div>
+    <div class="post t3">
+      <div class="t3-top">No. 023</div>
+      <div class="t3-line">不急。<br>慢慢看。<br>隨時都在。</div>
+      <div class="t3-bottom"><span>原子量子 24</span><span>QA24</span></div>
+    </div>
+  </div>
+  <p class="caption">完整互動預覽見 <a href="_ig-post-templates.html">_ig-post-templates.html</a>（v1.5.0 更新：v1.2.0+v1.3.0 canon 同步完成）。</p>
+
+  <h3><span class="num">06.3</span>FB 粉絲專頁封面</h3>
+  <p>1640×624 桌面尺寸（手機顯示中央 820×360 安全區）。三版依檔期使用——v1 為長期主版、v2 用於 Slogan 強化檔期、v3 為新品上架時左字右照型錄版。</p>
+  <div class="fb-cover-grid">
+    <div class="cv">
+      <img src="assets/fb-cover-v1-mist.png" alt="FB Cover v1 Mist">
+      <div class="nm">v1 · Mist　編輯感書封（長期主版）</div>
+    </div>
+    <div class="cv">
+      <img src="assets/fb-cover-v2-ink.png" alt="FB Cover v2 Ink">
+      <div class="nm">v2 · Moss　Slogan 苔綠底（活動／儀式）</div>
+    </div>
+    <div class="cv">
+      <img src="assets/fb-cover-v3-stone.png" alt="FB Cover v3 Stone">
+      <div class="nm">v3 · Stone　左字右照型錄（新品檔期）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH.07 TONE OF VOICE ============ -->
+<section class="chapter" id="ch07">
+  <div class="section-label">
+    <span class="ch-num">Ch. 07</span>
+    <span class="ch-label">Tone of Voice</span>
+  </div>
+  <h2>說話方式<span class="en">Tone of Voice</span></h2>
+  <p class="lede">第一人稱「我們」。水晶常作為主體。用豐沛的內在感受語言書寫。</p>
+
+  <h3><span class="num">07.1</span>語言三層結構</h3>
+  <table>
+    <thead><tr><th>層級</th><th>名稱</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td><em>Layer 01</em></td><td><strong>水晶自己的訊息</strong></td><td>引用它「說的話」。最感性、最直接。放在文章前段。</td></tr>
+      <tr><td><em>Layer 02</em></td><td><strong>我們的感受與轉述</strong></td><td>溫柔、分享式、不評判。我們扮演傳話者。</td></tr>
+      <tr><td><em>Layer 03</em></td><td><strong>事實與規格</strong></td><td>產地、重量、尺寸。放在後面，支援用，不當賣點。</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">07.2</span>允許詞彙</h3>
+  <div class="do-dont">
+    <div class="col do">
+      <h4>能量系</h4>
+      <ul><li>能量、頻率、共振、高頻、震動、場域</li></ul>
+      <h4 style="margin-top:16px;">療癒系</h4>
+      <ul><li>療癒、淨化、整合、流動、平衡</li></ul>
+      <h4 style="margin-top:16px;">脈輪系</h4>
+      <ul><li>心輪、眉心輪、海底輪、頂輪、喉輪</li></ul>
+      <h4 style="margin-top:16px;">感受系</h4>
+      <ul><li>淡粉色火焰、如水流動、柔軟、心之愛、悸動</li></ul>
+    </div>
+    <div class="col dont">
+      <h4>怪力亂神</h4>
+      <ul><li>招財、開運、擋煞、避邪、轉運、旺夫、旺桃花</li></ul>
+      <h4 style="margin-top:16px;">占卜算命</h4>
+      <ul><li>命盤、八字、流年、紫微、塔羅、運勢</li></ul>
+      <h4 style="margin-top:16px;">商業促銷</h4>
+      <ul><li>必買、必收、最後一顆、錯過不再、限量搶購、超值</li></ul>
+      <h4 style="margin-top:16px;">誇大承諾</h4>
+      <ul><li>保證、一定會、絕對有效、XX 天見效</li></ul>
+    </div>
+  </div>
+
+  <h3><span class="num">07.3</span>語氣範例</h3>
+  <div class="callout">
+    <div class="eyebrow" style="margin-bottom:16px;">Sample · 粉色三摩地水晶</div>
+    <p>初次拿在手裡，感覺到一股淡粉色的火焰在手中，但又像水一般流動的、柔軟的，感覺有一種心之愛、觀音屬性的能量。</p>
+    <p>後來幾次拿在手裡，它提示我，能在空間中療癒，這股療癒的能量可以作用於空間，以及空間中的人，幫助我們彰顯人性的美善——愛的各個面向，比如慷慨、真誠、勇氣、無私……等等。</p>
+    <p style="margin:0;">它給我的詞彙是「心輪的大爆炸」，它表示擁有它，才是真的是「不動產」——它是代表本質的濃縮的精華，彰顯愛的各個面向。</p>
+  </div>
+</section>
+
+<!-- ============ CH.08 GRADIENTS ============ -->
+<section class="chapter" id="ch08">
+  <div class="section-label">
+    <span class="ch-num">Ch. 08</span>
+    <span class="ch-label">Gradients</span>
+  </div>
+  <h2>品牌漸層<span class="en">Gradients</span></h2>
+  <p class="lede">晶簇本身有透光、有層次。漸層是把這個礦物特質拉進視覺裡的方法——光從晶體深處浮出來、霧從石頭表面瀰漫開。三組漸層、各自的角色，超出這三組以外不要再加。</p>
+
+  <h3><span class="num">08.1</span>三組品牌漸層</h3>
+  <div class="gradient-grid">
+    <div class="gradient-card">
+      <div class="swatch grad-deep"><span class="glow">#354238 → #9E91B2</span></div>
+      <div class="name">深晶 <span class="en">Deep Crystal</span></div>
+      <div class="desc">Ink → Amethyst。光從黑色晶體深處透出來的感覺。封面、主視覺背板、Reels 開場。</div>
+      <div class="meta">135° · INK → AMETHYST</div>
+    </div>
+    <div class="gradient-card">
+      <div class="swatch grad-soft"><span class="glow dark">#EBEBEB → #BEB6A6</span></div>
+      <div class="name">柔石 <span class="en">Soft Stone</span></div>
+      <div class="desc">Mist → Stone。霧氣覆在石面上。次級封面、留白過渡、商品照背景。</div>
+      <div class="meta">135° · MIST → STONE</div>
+    </div>
+    <div class="gradient-card">
+      <div class="swatch grad-mystic"><span class="glow">#9E91B2 → #BEB6A6</span></div>
+      <div class="name">霧紗 <span class="en">Mystic Veil</span></div>
+      <div class="desc">Amethyst → Stone。靈性感點綴，紫帶土的低彩過渡。Story 背景、節氣貼文。</div>
+      <div class="meta">135° · AMETHYST → STONE</div>
+    </div>
+  </div>
+
+  <h3><span class="num">08.2</span>使用規則</h3>
+  <table>
+    <thead>
+      <tr><th>規則</th><th>內容</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>角度</td><td>主用 135°（左上→右下，符合「光從上方落入」的物理直覺）；垂直 180° 僅限 Story 背景</td></tr>
+      <tr><td>色站</td><td>不超過 3 個色站。多色站漸層會破壞礦物質感</td></tr>
+      <tr><td>佔比</td><td>單頁面漸層佔比不超過 40%，其餘維持平面色塊</td></tr>
+      <tr><td>對比</td><td>漸層上若放文字，須選漸層中段對比最強處放置</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">08.3</span>禁忌</h3>
+  <div class="do-dont">
+    <div class="col do">
+      <h4>Do</h4>
+      <ul>
+        <li>用 Deep Crystal 做 Reels 開場</li>
+        <li>漸層上方加品牌字體保留 8% 透明黑底襯托</li>
+        <li>漸層做為背板、不做為主體</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>Logo 背景使用任何漸層</li>
+        <li>大段文字底鋪漸層</li>
+        <li>使用三色以外的混入色（粉、藍、綠）</li>
+        <li>漸層搭高彩色區塊（破壞 Moss & Mineral 系統）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>漸層 ≠ 裝飾。</strong>它的功能是替靜態色票補上時間感與深度感——讓你在一張靜態圖裡看見「光在動」。當畫面已有足夠氣氛時，不需要強加漸層。
+  </div>
+</section>
+
+<!-- ============ CH.09 ICONS ============ -->
+<section class="chapter" id="ch09">
+  <div class="section-label">
+    <span class="ch-num">Ch. 09</span>
+    <span class="ch-label">Iconography</span>
+  </div>
+  <h2>圖示系統<span class="en">Iconography</span></h2>
+  <p class="lede">圖示是品牌語言的最小單位。它不是裝飾，是替使用者導路。原子量子 24 的圖示走「線性簡約 × 略帶手感」——不過分幾何、也不過分手繪，介於兩者之間，呼應 Editorial Modern 的克制感。</p>
+
+  <h3><span class="num">09.1</span>規範</h3>
+  <div class="icon-spec">
+    <div class="demo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 21 L8 11 L11 9 L11 21 Z"/>
+        <path d="M11 21 L11 9 L14 7 L17 11 L17 21 Z"/>
+        <path d="M17 21 L17 11 L19 13 L19 21 Z"/>
+        <path d="M8 11 L11 9 L14 7"/>
+      </svg>
+    </div>
+    <div class="specs">
+      <p><strong>Grid</strong>：24 × 24（內含 1px 邊距，實際繪圖區 22×22）</p>
+      <p><strong>Stroke</strong>：1.5 pt（不可改粗，會破壞系統一致性）</p>
+      <p><strong>Cap</strong>：round（圓端終點）</p>
+      <p><strong>Join</strong>：round（圓角接點）</p>
+      <p><strong>Color</strong>：使用 <code>currentColor</code>，由父層 CSS 決定填色</p>
+      <p><strong>Style</strong>：純線性，不填色；轉角自然不過度尖銳</p>
+    </div>
+  </div>
+
+  <h3><span class="num">09.2</span>核心圖示（v1.1.0 · 8 件）</h3>
+  <div class="icon-grid">
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21 L8 11 L11 9 L11 21 Z"/><path d="M11 21 L11 9 L14 7 L17 11 L17 21 Z"/><path d="M17 21 L17 11 L19 13 L19 21 Z"/><path d="M8 11 L11 9 L14 7"/></svg>
+      <div class="icon-name">晶簇</div>
+      <div class="icon-en">Cluster</div>
+    </div>
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 C5 6, 9 4, 12 4 C15 4, 19 6, 22 12 C19 18, 15 20, 12 20 C9 20, 5 18, 2 12 Z"/><circle cx="12" cy="12" r="3"/></svg>
+      <div class="icon-name">眼</div>
+      <div class="icon-en">Eye</div>
+    </div>
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 L9 4.5 C9 3.7, 9.7 3, 10.5 3 C11.3 3, 12 3.7, 12 4.5 L12 10"/><path d="M12 10 L12 3.5 C12 2.7, 12.7 2, 13.5 2 C14.3 2, 15 2.7, 15 3.5 L15 11"/><path d="M15 11 L15 4.5 C15 3.7, 15.7 3, 16.5 3 C17.3 3, 18 3.7, 18 4.5 L18 13"/><path d="M9 11 L9 7 C9 6.2, 8.3 5.5, 7.5 5.5 C6.7 5.5, 6 6.2, 6 7 L6 15 C6 18.3, 8.7 21, 12 21 L14 21 C17.3 21, 20 18.3, 20 15 L20 12"/></svg>
+      <div class="icon-name">手</div>
+      <div class="icon-en">Hand</div>
+    </div>
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5 A8 8 0 1 1 9.5 4 A6.5 6.5 0 0 0 20 14.5 Z"/></svg>
+      <div class="icon-name">月</div>
+      <div class="icon-en">Moon</div>
+    </div>
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 C5 11, 11 5, 19 5 C19 13, 13 19, 5 19 Z"/><path d="M5 19 L13 11"/></svg>
+      <div class="icon-name">葉</div>
+      <div class="icon-en">Leaf</div>
+    </div>
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><line x1="12" y1="3" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21"/><line x1="3" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="7.4" y2="7.4"/><line x1="16.6" y1="16.6" x2="18.4" y2="18.4"/><line x1="5.6" y1="18.4" x2="7.4" y2="16.6"/><line x1="16.6" y1="7.4" x2="18.4" y2="5.6"/></svg>
+      <div class="icon-name">光</div>
+      <div class="icon-en">Light</div>
+    </div>
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+      <div class="icon-name">右箭</div>
+      <div class="icon-en">Arrow</div>
+    </div>
+    <div class="icon-cell">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20 C12 20, 3 14, 3 8.5 C3 6, 5 4, 7.5 4 C9.5 4, 11 5, 12 6.5 C13 5, 14.5 4, 16.5 4 C19 4, 21 6, 21 8.5 C21 14, 12 20, 12 20 Z"/></svg>
+      <div class="icon-name">心</div>
+      <div class="icon-en">Heart</div>
+    </div>
+  </div>
+
+  <h3><span class="num">09.3</span>使用場景</h3>
+  <table>
+    <thead><tr><th>圖示</th><th>場景</th></tr></thead>
+    <tbody>
+      <tr><td>晶簇 Cluster</td><td>商品分類標籤、目錄圖示、品牌應用識別</td></tr>
+      <tr><td>眼 Eye · 手 Hand</td><td>「看見／拿取／感受」相關文案的視覺輔助</td></tr>
+      <tr><td>月 Moon · 光 Light</td><td>節氣貼文、能量主題、夜系/晨系內容區分</td></tr>
+      <tr><td>葉 Leaf · 心 Heart</td><td>淨化、療癒、感謝相關內容</td></tr>
+      <tr><td>右箭 Arrow</td><td>CTA、滑下一張、查看更多</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">09.4</span>禁忌</h3>
+  <div class="do-dont">
+    <div class="col do">
+      <h4>Do</h4>
+      <ul>
+        <li>多個圖示並列時保持同一視覺重量</li>
+        <li>放大時連同 stroke 一起按比例（用 SVG 不要轉 PNG）</li>
+        <li>使用 Ink／Amethyst 兩色為主，Stone 為次</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>填色（破壞線性語言）</li>
+        <li>加陰影、漸變、外框</li>
+        <li>混用其他圖示庫（Material、Feather、Lucide）</li>
+        <li>低於 16px 使用（細節糊掉）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH.10 MOTION ============ -->
+<section class="chapter" id="ch10">
+  <div class="section-label">
+    <span class="ch-num">Ch. 10</span>
+    <span class="ch-label">Motion</span>
+  </div>
+  <h2>動態設計<span class="en">Motion</span></h2>
+  <p class="lede">不寫 18 條規範。三條原則就夠——能被記住，才能被執行。<br>三軸：要不要動（量）／怎麼動（質）／何時動（時機）。</p>
+
+  <h3><span class="num">10.1</span>三條原則</h3>
+  <div class="motion-cards">
+    <div class="motion-card axis-amount">
+      <div class="ms">01</div>
+      <h4>能不動就不動</h4>
+      <div class="motion-bar"></div>
+      <div class="use"><strong>軸 · 量</strong><br>預設靜態。動效不是裝飾。沒理由就不動。</div>
+    </div>
+    <div class="motion-card axis-quality">
+      <div class="ms">02</div>
+      <h4>動起來，慢一點</h4>
+      <div class="motion-bar"></div>
+      <div class="use"><strong>軸 · 質</strong><br>預設 600ms。一致就好——不分快中慢三段。</div>
+    </div>
+    <div class="motion-card axis-timing">
+      <div class="ms">03</div>
+      <h4>只在使用者操作時動</h4>
+      <div class="motion-bar"></div>
+      <div class="use"><strong>軸 · 時機</strong><br>不自動播放、不背景循環、不無限漂浮。<br><span style="opacity:.55;font-size:11px;">（hover 卡片展示）</span></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>判斷時跑這三題：</strong>這裡需不需要動效？／用什麼速度？／自動還是被動觸發？三題答完就有答案。
+  </div>
+  <div class="callout" style="border-left-color: var(--amethyst);">
+    <strong>例外：封面 Logo 晶簇光點脈動。</strong>水晶發光是品牌的核心視覺隱喻，這組循環是「符號本質」的一部分，不是裝飾動效——因此不適用原則 03（不背景循環）。這是唯一已認可的循環動效例外；其他所有地方仍遵守「不自動播放、不背景循環、不無限漂浮」。新增循環動效需有同等層級的品牌敘事理由，才能再開例外。
+  </div>
+
+  <h3><span class="num">10.2</span>實作參考</h3>
+  <p>當動效真的需要存在時，下面這組數字保證跨頁面一致。不是規範，是預設值。</p>
+  <div style="margin: 24px 0;">
+    <div class="easing-row">
+      <span class="label">Easing</span>
+      <span class="curve">cubic-bezier(.4, 0, .2, 1)</span>
+      <span class="use">所有場景</span>
+    </div>
+    <div class="easing-row">
+      <span class="label">時長</span>
+      <span class="curve">600ms</span>
+      <span class="use">所有場景</span>
+    </div>
+    <div class="easing-row">
+      <span class="label">類型</span>
+      <span class="curve">fade · 輕微上移／scale</span>
+      <span class="use">不用 bounce / spring / shake</span>
+    </div>
+    <div class="easing-row">
+      <span class="label">Stagger</span>
+      <span class="curve">120ms</span>
+      <span class="use">列表型內容依序進場</span>
+    </div>
+  </div>
+
+  <h3><span class="num">10.3</span>Scroll Reveal 範例</h3>
+  <p>列表型內容進場時，每張卡延遲 120ms 依序淡入＋上移 16px。</p>
+  <div class="reveal-demo">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+  </div>
+
+  <h3><span class="num">10.4</span>禁忌</h3>
+  <div class="do-dont">
+    <div class="col do">
+      <h4>Do</h4>
+      <ul>
+        <li>fade、輕微上移／下移、scale (95%↔100%)</li>
+        <li>動效有「結束」狀態</li>
+        <li>使用者操作後才動</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>彈跳、抖動、旋轉超過 15°</li>
+        <li>背景循環粒子、星塵、閃光</li>
+        <li>自動播放動畫、自動輪播</li>
+        <li>讓使用者等超過 1 秒才看到內容</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH.11 DOWNLOADS ============ -->
+<section class="chapter" id="ch11">
+  <div class="section-label">
+    <span class="ch-num">Ch. 11</span>
+    <span class="ch-label">Downloads</span>
+  </div>
+  <h2>素材下載<span class="en">Downloads</span></h2>
+  <p class="lede">所有對外協作（攝影師、印刷廠、合作品牌）都從這裡取資料。每張卡片直接呈現實際素材；點擊卡片即下載原檔或開啟新分頁。</p>
+
+  <!-- 11.1 LOGO -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.1 · Logo 標誌</h4>
+      <span class="count">2 件</span>
+    </div>
+    <p class="dl-section-note">向量主標誌為網頁／印刷／所有應用的唯一來源檔。手繪原稿僅供品牌歷史參考，不作為實際應用。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="assets/logo.svg" download>
+        <div class="preview">
+          <span class="type-badge">SVG</span>
+          <img src="assets/logo.svg" alt="Logo" style="width:60%;height:60%;object-fit:contain;">
+        </div>
+        <div class="info">
+          <div class="nm">主標誌</div>
+          <div class="nm-en">Primary Mark</div>
+          <div class="meta">向量 · 無限縮放</div>
+        </div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/quantum-logo-handdrawn.jpg" target="_blank">
+        <div class="preview">
+          <span class="type-badge">JPG</span>
+          <img src="assets/quantum-logo-handdrawn.jpg" alt="Hand drawn">
+        </div>
+        <div class="info">
+          <div class="nm">手繪原稿</div>
+          <div class="nm-en">Hand-drawn Original</div>
+          <div class="meta">設計起點 · 歷史參考</div>
+        </div>
+        <div class="action"><span>檢視</span><span class="arrow">↗</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 11.2 COLOR -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.2 · 色彩</h4>
+      <span class="count">4 色</span>
+    </div>
+    <p class="dl-section-note">點擊任一色卡跳到 Ch.03 查看完整色彩規範（CSS variables、使用比例、對比、禁忌）。CMYK／Pantone 印刷對應值將於 Ch.12 包裝章節定案。</p>
+    <div class="dl-cards">
+      <a class="dl-card color" href="#ch03">
+        <div class="preview" style="background:#354238;"></div>
+        <div class="info">
+          <div class="nm">Moss</div>
+          <div class="nm-en">主深色 · 45%</div>
+          <div class="meta">#354238</div>
+        </div>
+        <div class="action"><span>查看規範</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card color" href="#ch03">
+        <div class="preview" style="background:#EBEBEB;border-bottom:1px solid var(--line-strong);"></div>
+        <div class="info">
+          <div class="nm">Mist</div>
+          <div class="nm-en">紙底色 · 25%</div>
+          <div class="meta">#EBEBEB</div>
+        </div>
+        <div class="action"><span>查看規範</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card color" href="#ch03">
+        <div class="preview" style="background:#9E91B2;"></div>
+        <div class="info">
+          <div class="nm">Amethyst</div>
+          <div class="nm-en">主重音 · 4%</div>
+          <div class="meta">#9E91B2</div>
+        </div>
+        <div class="action"><span>查看規範</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card color" href="#ch03">
+        <div class="preview" style="background:#BEB6A6;"></div>
+        <div class="info">
+          <div class="nm">Stone</div>
+          <div class="nm-en">次重音 · 1%</div>
+          <div class="meta">#BEB6A6</div>
+        </div>
+        <div class="action"><span>查看規範</span><span class="arrow">↗</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 11.3 GRADIENTS -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.3 · 漸層</h4>
+      <span class="count">3 組</span>
+    </div>
+    <p class="dl-section-note">點擊跳到 Ch.08 查看漸層完整規範（角度、佔比、禁忌）。實作直接複製對應 <code>linear-gradient()</code>。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="#ch08">
+        <div class="preview gradient-deep"></div>
+        <div class="info">
+          <div class="nm">深晶</div>
+          <div class="nm-en">Deep Crystal</div>
+          <div class="meta">135° · INK → AMETHYST</div>
+        </div>
+        <div class="action"><span>查看規範</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card" href="#ch08">
+        <div class="preview gradient-soft"></div>
+        <div class="info">
+          <div class="nm">柔石</div>
+          <div class="nm-en">Soft Stone</div>
+          <div class="meta">135° · MIST → STONE</div>
+        </div>
+        <div class="action"><span>查看規範</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card" href="#ch08">
+        <div class="preview gradient-mystic"></div>
+        <div class="info">
+          <div class="nm">霧紗</div>
+          <div class="nm-en">Mystic Veil</div>
+          <div class="meta">135° · AMETHYST → STONE</div>
+        </div>
+        <div class="action"><span>查看規範</span><span class="arrow">↗</span></div>
+      </a>
+    </div>
+  </div>
+  <div class="dl-list">
+    <div class="dl-row">
+      <span class="type">CSS</span>
+      <span class="name">Design Tokens<span class="en">CSS variables</span></span>
+      <span class="desc"><code>--ink #354238 / --mist #EBEBEB / --amethyst #9E91B2 / --stone #BEB6A6</code></span>
+      <span class="link"><a href="#ch03">↗ Ch.03</a></span>
+    </div>
+    <div class="dl-row">
+      <span class="type">HEX</span>
+      <span class="name">印刷對應值<span class="en">CMYK ref</span></span>
+      <span class="desc">CMYK／Pantone 對應留待 Ch.13 包裝章節定案</span>
+      <span class="link" style="opacity:0.5;">─ 待定</span>
+    </div>
+  </div>
+
+  <!-- 11.4 TYPOGRAPHY -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.4 · 字體</h4>
+      <span class="count">4 家族</span>
+    </div>
+    <p class="dl-section-note">全部 Google Fonts 線上載入，SIL OFL 可商用。網頁建議用 <code>&lt;link&gt;</code> 嵌入；印刷可下載字檔安裝至 Adobe／Affinity。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="https://fonts.google.com/noto/specimen/Noto+Serif+TC" target="_blank">
+        <div class="preview" style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:64px;color:var(--ink);background:var(--mist);">永</div>
+        <div class="info">
+          <div class="nm">Noto Serif TC</div>
+          <div class="nm-en">CJK Serif · 主</div>
+          <div class="meta">SIL OFL · 可商用</div>
+        </div>
+        <div class="action"><span>Google Fonts</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card" href="https://fonts.google.com/specimen/EB+Garamond" target="_blank">
+        <div class="preview" style="font-family:'EB Garamond',serif;font-style:italic;font-size:64px;color:var(--ink);background:var(--mist);">Aa</div>
+        <div class="info">
+          <div class="nm">EB Garamond</div>
+          <div class="nm-en">Latin Serif · 主</div>
+          <div class="meta">SIL OFL · 可商用</div>
+        </div>
+        <div class="action"><span>Google Fonts</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card" href="https://fonts.google.com/noto/specimen/Noto+Sans+TC" target="_blank">
+        <div class="preview" style="font-family:'Noto Sans TC',sans-serif;font-weight:500;font-size:64px;color:var(--ink);background:var(--mist);">永</div>
+        <div class="info">
+          <div class="nm">Noto Sans TC</div>
+          <div class="nm-en">CJK Sans · 副</div>
+          <div class="meta">SIL OFL · 可商用</div>
+        </div>
+        <div class="action"><span>Google Fonts</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card" href="https://fonts.google.com/specimen/Inter" target="_blank">
+        <div class="preview" style="font-family:'Inter',sans-serif;font-weight:500;font-size:64px;color:var(--ink);background:var(--mist);">Aa</div>
+        <div class="info">
+          <div class="nm">Inter</div>
+          <div class="nm-en">Latin Sans · 副</div>
+          <div class="meta">SIL OFL · 可商用</div>
+        </div>
+        <div class="action"><span>Google Fonts</span><span class="arrow">↗</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 11.5 GRAPHICS -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.5 · 輔助圖形</h4>
+      <span class="count">7 件 · SVG</span>
+    </div>
+    <p class="dl-section-note">線性向量資產，三大家族（Radiance／Contour／Numeral）＋兩件附屬。使用原則見 Ch.05。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="assets/seal-bai.svg" download>
+        <div class="preview"><span class="type-badge">SVG</span><img src="assets/seal-bai.svg" alt="" style="width:70%;height:70%;object-fit:contain;"></div>
+        <div class="info"><div class="nm">擺字章</div><div class="nm-en">seal-bai</div><div class="meta">印章、副品牌印</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/crystal-section.svg" download>
+        <div class="preview"><span class="type-badge">SVG</span><img src="assets/crystal-section.svg" alt="" style="width:80%;height:80%;object-fit:contain;"></div>
+        <div class="info"><div class="nm">晶體切面紋</div><div class="nm-en">crystal-section</div><div class="meta">背景 texture</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/horizon.svg" download>
+        <div class="preview"><span class="type-badge">SVG</span><img src="assets/horizon.svg" alt="" style="width:90%;height:60%;object-fit:contain;"></div>
+        <div class="info"><div class="nm">地平線</div><div class="nm-en">horizon</div><div class="meta">章節分隔、定錨</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/numbering.svg" download>
+        <div class="preview"><span class="type-badge">SVG</span><img src="assets/numbering.svg" alt="" style="width:80%;height:60%;object-fit:contain;"></div>
+        <div class="info"><div class="nm">編號方框</div><div class="nm-en">numbering · No. 017</div><div class="meta">商品序號封套</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/signature-vertical.svg" download>
+        <div class="preview"><span class="type-badge">SVG</span><img src="assets/signature-vertical.svg" alt="" style="width:30%;height:80%;object-fit:contain;"></div>
+        <div class="info"><div class="nm">直書品牌簽名</div><div class="nm-en">signature-vertical</div><div class="meta">包裝署名、感謝卡</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/editorial-marks.svg" download>
+        <div class="preview"><span class="type-badge">SVG</span><img src="assets/editorial-marks.svg" alt="" style="width:90%;height:50%;object-fit:contain;"></div>
+        <div class="info"><div class="nm">編輯記號</div><div class="nm-en">§ ／ — ／ ·</div><div class="meta">段落分隔、排版</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/jieqi-grid.svg" download>
+        <div class="preview"><span class="type-badge">SVG</span><img src="assets/jieqi-grid.svg" alt="" style="width:90%;height:50%;object-fit:contain;"></div>
+        <div class="info"><div class="nm">24 節氣方塊</div><div class="nm-en">jieqi-grid</div><div class="meta">節氣貼文、行事曆</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 11.6 ICONS -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.6 · 核心圖示</h4>
+      <span class="count">8 件 · v1.1.0</span>
+    </div>
+    <p class="dl-section-note">24×24 grid · stroke 1.5 · round cap/join · currentColor 控色。完整使用規範見 Ch.09。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="assets/icons/cluster.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21 L8 11 L11 9 L11 21 Z"/><path d="M11 21 L11 9 L14 7 L17 11 L17 21 Z"/><path d="M17 21 L17 11 L19 13 L19 21 Z"/><path d="M8 11 L11 9 L14 7"/></svg></div>
+        <div class="info"><div class="nm">晶簇</div><div class="nm-en">cluster</div><div class="meta">商品分類</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/icons/eye.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 C5 6, 9 4, 12 4 C15 4, 19 6, 22 12 C19 18, 15 20, 12 20 C9 20, 5 18, 2 12 Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="info"><div class="nm">眼</div><div class="nm-en">eye</div><div class="meta">看見、感受</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/icons/hand.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 L9 4.5 C9 3.7, 9.7 3, 10.5 3 C11.3 3, 12 3.7, 12 4.5 L12 10"/><path d="M12 10 L12 3.5 C12 2.7, 12.7 2, 13.5 2 C14.3 2, 15 2.7, 15 3.5 L15 11"/><path d="M15 11 L15 4.5 C15 3.7, 15.7 3, 16.5 3 C17.3 3, 18 3.7, 18 4.5 L18 13"/><path d="M9 11 L9 7 C9 6.2, 8.3 5.5, 7.5 5.5 C6.7 5.5, 6 6.2, 6 7 L6 15 C6 18.3, 8.7 21, 12 21 L14 21 C17.3 21, 20 18.3, 20 15 L20 12"/></svg></div>
+        <div class="info"><div class="nm">手</div><div class="nm-en">hand</div><div class="meta">拿取、觸摸</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/icons/moon.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5 A8 8 0 1 1 9.5 4 A6.5 6.5 0 0 0 20 14.5 Z"/></svg></div>
+        <div class="info"><div class="nm">月</div><div class="nm-en">moon</div><div class="meta">夜系、節氣</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/icons/leaf.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 C5 11, 11 5, 19 5 C19 13, 13 19, 5 19 Z"/><path d="M5 19 L13 11"/></svg></div>
+        <div class="info"><div class="nm">葉</div><div class="nm-en">leaf</div><div class="meta">淨化、自然</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/icons/light.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><line x1="12" y1="3" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21"/><line x1="3" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="7.4" y2="7.4"/><line x1="16.6" y1="16.6" x2="18.4" y2="18.4"/><line x1="5.6" y1="18.4" x2="7.4" y2="16.6"/><line x1="16.6" y1="7.4" x2="18.4" y2="5.6"/></svg></div>
+        <div class="info"><div class="nm">光</div><div class="nm-en">light</div><div class="meta">能量、晨系</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/icons/arrow-right.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg></div>
+        <div class="info"><div class="nm">右箭</div><div class="nm-en">arrow-right</div><div class="meta">CTA、下一步</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/icons/heart.svg" download>
+        <div class="preview"><svg class="icon-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20 C12 20, 3 14, 3 8.5 C3 6, 5 4, 7.5 4 C9.5 4, 11 5, 12 6.5 C13 5, 14.5 4, 16.5 4 C19 4, 21 6, 21 8.5 C21 14, 12 20, 12 20 Z"/></svg></div>
+        <div class="info"><div class="nm">心</div><div class="nm-en">heart</div><div class="meta">感謝、療癒</div></div>
+        <div class="action"><span>下載 SVG</span><span class="arrow">↓</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 11.7 IG AVATARS -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.7 · IG 頭貼</h4>
+      <span class="count">3 色 × 2 版 = 6 件</span>
+    </div>
+    <p class="dl-section-note">每色提供無字／含字兩版本，1080×1080 PNG。圓形裁切下純 Logo 版作主頭貼長期使用，含字版備用於需要強化品牌名的場合。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="assets/avatar-A-mist.png" download>
+        <div class="preview"><span class="type-badge">PNG</span><img src="assets/avatar-A-mist.png" alt="A · Mist 無字"></div>
+        <div class="info"><div class="nm">A · Mist · 無字</div><div class="nm-en">主頭貼 · 長期固定</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/avatar-A-mist-with-text.png" download>
+        <div class="preview"><span class="type-badge">PNG</span><img src="assets/avatar-A-mist-with-text.png" alt="A · Mist 含字"></div>
+        <div class="info"><div class="nm">A · Mist · 含字</div><div class="nm-en">合作露出 · 限動封面</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/avatar-B-ink.png" download>
+        <div class="preview dark"><span class="type-badge">PNG</span><img src="assets/avatar-B-ink.png" alt="B · Ink 無字"></div>
+        <div class="info"><div class="nm">B · Ink · 無字</div><div class="nm-en">深色九宮格替換</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/avatar-B-ink-with-text.png" download>
+        <div class="preview dark"><span class="type-badge">PNG</span><img src="assets/avatar-B-ink-with-text.png" alt="B · Ink 含字"></div>
+        <div class="info"><div class="nm">B · Ink · 含字</div><div class="nm-en">夜間調性／儀式檔期</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/avatar-C-amethyst.png" download>
+        <div class="preview amethyst"><span class="type-badge">PNG</span><img src="assets/avatar-C-amethyst.png" alt="C · Amethyst 無字"></div>
+        <div class="info"><div class="nm">C · Amethyst · 無字</div><div class="nm-en">新品／活動檔期</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/avatar-C-amethyst-with-text.png" download>
+        <div class="preview amethyst"><span class="type-badge">PNG</span><img src="assets/avatar-C-amethyst-with-text.png" alt="C · Amethyst 含字"></div>
+        <div class="info"><div class="nm">C · Amethyst · 含字</div><div class="nm-en">活動檔期主視覺</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 11.8 FB COVERS -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.8 · FB 粉專封面</h4>
+      <span class="count">3 版</span>
+    </div>
+    <p class="dl-section-note">820×312 桌面尺寸；安全區中央（手機顯示比例 640×360 會左右裁）。三版依檔期使用。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="assets/fb-cover-v1-mist.png" download>
+        <div class="preview" style="aspect-ratio:820/312;background:var(--mist);"><span class="type-badge">PNG</span><img src="assets/fb-cover-v1-mist.png" alt="FB Cover v1"></div>
+        <div class="info"><div class="nm">v1 · Mist</div><div class="nm-en">編輯感橫幅 · 主推</div><div class="meta">820 × 312</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/fb-cover-v2-ink.png" download>
+        <div class="preview dark" style="aspect-ratio:820/312;"><span class="type-badge">PNG</span><img src="assets/fb-cover-v2-ink.png" alt="FB Cover v2"></div>
+        <div class="info"><div class="nm">v2 · Ink</div><div class="nm-en">深色氛圍 · 儀式／夜間</div><div class="meta">820 × 312</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+      <a class="dl-card" href="assets/fb-cover-v3-stone.png" download>
+        <div class="preview stone" style="aspect-ratio:820/312;"><span class="type-badge">PNG</span><img src="assets/fb-cover-v3-stone.png" alt="FB Cover v3"></div>
+        <div class="info"><div class="nm">v3 · Stone</div><div class="nm-en">商品情境 · 新品檔期</div><div class="meta">820 × 312</div></div>
+        <div class="action"><span>下載 PNG</span><span class="arrow">↓</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 11.9 IG POST TEMPLATES & PREVIEWS -->
+  <div class="dl-section">
+    <div class="dl-section-head">
+      <h4>11.9 · 應用模板原檔</h4>
+      <span class="count">3 件 · HTML</span>
+    </div>
+    <p class="dl-section-note">完整互動預覽（hover、放大檢視）的 HTML 原檔。協作方可直接打開、改文案、瀏覽器截圖匯出。</p>
+    <div class="dl-cards">
+      <a class="dl-card" href="_ig-post-templates.html" target="_blank">
+        <div class="preview" style="background:var(--paper);"><span class="type-badge">HTML</span>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:75%;">
+            <div style="aspect-ratio:1;background:var(--mist);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif-cjk);font-size:9px;color:var(--ink);">原子量子</div>
+            <div style="aspect-ratio:1;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif-lat);font-style:italic;font-size:11px;color:var(--amethyst);">No. 17</div>
+            <div style="aspect-ratio:1;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif-cjk);font-size:8px;color:var(--mist);">引言</div>
+          </div>
+        </div>
+        <div class="info"><div class="nm">IG 貼文三模板</div><div class="nm-en">post · brand / product / quote</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>檢視原檔</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card" href="_ig-avatar-preview.html" target="_blank">
+        <div class="preview" style="background:var(--paper);"><span class="type-badge">HTML</span>
+          <div style="display:flex;gap:8px;"><div style="width:44px;height:44px;border-radius:50%;background:var(--mist);border:1px solid var(--line);"></div><div style="width:44px;height:44px;border-radius:50%;background:var(--ink);"></div><div style="width:44px;height:44px;border-radius:50%;background:var(--amethyst);"></div></div>
+        </div>
+        <div class="info"><div class="nm">IG 頭貼預覽</div><div class="nm-en">avatar preview · 3 色</div><div class="meta">1080 × 1080</div></div>
+        <div class="action"><span>檢視原檔</span><span class="arrow">↗</span></div>
+      </a>
+      <a class="dl-card" href="_fb-cover-preview.html" target="_blank">
+        <div class="preview" style="background:var(--paper);"><span class="type-badge">HTML</span>
+          <div style="display:flex;flex-direction:column;gap:6px;width:75%;"><div style="height:30px;background:var(--mist);border:1px solid var(--line);"></div><div style="height:30px;background:var(--ink);"></div><div style="height:30px;background:var(--stone);"></div></div>
+        </div>
+        <div class="info"><div class="nm">FB 封面預覽</div><div class="nm-en">cover preview · 3 版</div><div class="meta">820 × 312</div></div>
+        <div class="action"><span>檢視原檔</span><span class="arrow">↗</span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>協作協議。</strong>本手冊與所有資產為原子量子 24 專有；外部合作方僅限該次合作專案使用，不得轉作其他用途、不得再散佈。
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <img class="foot-logo" src="assets/logo.svg" alt="">
+  <div class="wm">原子量子 24</div>
+  <div class="en">QuantumAtom24 · A Standing Invitation, Always Open</div>
+  <div class="meta">
+    Brand Guidelines · <span class="v">Version 1.5.2</span> · 2026-04-23<br>
+    © 2026 QuantumAtom24. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

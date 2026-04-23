@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>FB Cover Render</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1640px; height: 100%; overflow: hidden; }
+  body { background: #BEB6A6; font-feature-settings: "onum" 1; }
+
+  .cover {
+    position: fixed;
+    top: 0; left: 0;
+    width: 1640px;
+    height: 624px;
+    overflow: hidden;
+    display: none;
+  }
+  .cover.v3 { display: grid; }
+
+  /* ===================================
+     v1 · Mist 主版（編輯感橫式書封）
+     =================================== */
+  .v1 {
+    background: #EBEBEB;
+    color: #354238;
+  }
+  .v1 .inner {
+    width: 100%; height: 100%;
+    padding: 80px 100px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .v1 .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(31,32,36,0.18);
+    padding-bottom: 14px;
+  }
+  .v1 .top .left {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 0.18em;
+    color: rgba(31,32,36,0.55);
+  }
+  .v1 .top .right {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    color: rgba(31,32,36,0.55);
+  }
+  .v1 .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .v1 .main {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    font-size: 110px;
+    line-height: 1.25;
+    letter-spacing: 0.18em;
+  }
+  .v1 .sub {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+    color: rgba(31,32,36,0.55);
+    margin-top: 24px;
+  }
+  .v1 .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px solid rgba(31,32,36,0.18);
+    padding-top: 14px;
+  }
+  .v1 .bottom .name {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.42em;
+  }
+  .v1 .bottom .qa {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: #9E91B2;
+    letter-spacing: 0.1em;
+  }
+
+  /* ===================================
+     v2 · Ink 直書 Slogan（深色儀式版）
+     =================================== */
+  .v2 {
+    background: #354238;
+    color: #EBEBEB;
+  }
+  .v2 .inner {
+    width: 100%; height: 100%;
+    padding: 60px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    position: relative;
+  }
+  .v2 .top {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    letter-spacing: 0.25em;
+    color: rgba(235,235,235,0.45);
+    border-top: 1px solid rgba(235,235,235,0.18);
+    border-bottom: 1px solid rgba(235,235,235,0.18);
+    padding: 8px 32px;
+  }
+  .v2 .vertical {
+    display: flex;
+    gap: 48px;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 400;
+    font-size: 88px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .v2 .vertical span {
+    display: block;
+  }
+  .v2 .en {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 0.2em;
+    color: rgba(235,235,235,0.5);
+  }
+  .v2 .corner-left {
+    position: absolute;
+    bottom: 50px; left: 100px;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: rgba(235,235,235,0.4);
+  }
+  .v2 .corner-right {
+    position: absolute;
+    bottom: 50px; right: 100px;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.42em;
+    color: rgba(235,235,235,0.55);
+  }
+
+  /* ===================================
+     v3 · Stone 商品留白版（內嵌文字框）
+     =================================== */
+  .v3 {
+    background: linear-gradient(135deg, #C9C2B2 0%, #BEB6A6 60%, #A89F8A 100%);
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 38% 1fr;
+    grid-template-rows: 1fr;
+    gap: 40px;
+    height: 100vh;
+  }
+  .v3 .text-side {
+    background: #EBEBEB;
+    padding: 40px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .v3 .text-side .top {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    letter-spacing: 0.22em;
+    color: #9E91B2;
+    border-bottom: 1px solid rgba(31,32,36,0.18);
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+  }
+  .v3 .text-side .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .v3 .text-side .name {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .v3 .text-side .sub {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: rgba(31,32,36,0.65);
+    margin-bottom: 28px;
+  }
+  .v3 .text-side .specs {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    color: rgba(31,32,36,0.55);
+    line-height: 1.8;
+  }
+  .v3 .text-side .specs span {
+    display: block;
+  }
+  .v3 .text-side .meta {
+    border-top: 1px solid rgba(31,32,36,0.18);
+    padding-top: 14px;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.42em;
+  }
+  .v3 .photo-side {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(31,32,36,0.4);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .v3 .photo-side .badge {
+    position: absolute;
+    top: 50px; right: 60px;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    color: rgba(31,32,36,0.55);
+    border: 1px solid rgba(31,32,36,0.3);
+    padding: 6px 18px;
+  }
+</style>
+</head>
+<body>
+
+<!-- v3 · Stone -->
+<div class="cover v3" id="v3">
+  <div class="text-side">
+    <div class="top">No. 017 · 新品到</div>
+    <div class="body">
+      <div class="name">紫水晶洞</div>
+      <div class="sub">巴西 · Amethyst Geode</div>
+      <div class="specs">
+        <span>尺寸 12 × 8 × 6 cm</span>
+        <span>重量 680 g</span>
+        <span>NT$ 12,800（不打折）</span>
+      </div>
+    </div>
+    <div class="meta">原 子 量 子 24</div>
+  </div>
+  <div class="photo-side">
+    <div class="badge">商品實拍位置</div>
+    PHOTO · NOT MOCKED
+  </div>
+</div>
+
+</body>
+</html>

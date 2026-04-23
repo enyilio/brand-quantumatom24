@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原子量子 24 · IG 頭貼原檔（6 件）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Inter:wght@400;500&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #354238;
+    --mist: #EBEBEB;
+    --amethyst: #9E91B2;
+    --paper: #F5F5F5;
+    --line: rgba(53,66,56,0.12);
+    --ff-serif-cjk: 'Noto Serif TC', serif;
+    --ff-serif-lat: 'EB Garamond', 'Times New Roman', serif;
+    --ff-sans-lat:  'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    padding: 64px 32px 96px;
+    font-family: var(--ff-sans-lat);
+    -webkit-font-smoothing: antialiased;
+    color: var(--ink);
+  }
+  .hdr {
+    max-width: 1200px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  .hdr .eyebrow {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-bottom: 12px;
+  }
+  .hdr h1 {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .hdr .sub {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(53,66,56,0.55);
+  }
+
+  .row-label {
+    max-width: 1200px;
+    margin: 40px auto 16px;
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .row-label strong { color: var(--ink); font-weight: 500; margin-right: 14px; }
+
+  .grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card .sq {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10%;
+    border: 1px solid var(--line);
+  }
+  .card .sq img { width: 68%; height: auto; }
+  .card .sq.with-text img { width: 50%; }
+  .card .sq .name-cjk {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 0.4em;
+    line-height: 1;
+    padding-left: 0.4em;
+  }
+  .card .cap {
+    font-size: 12px;
+    color: rgba(53,66,56,0.6);
+    letter-spacing: 0.08em;
+  }
+  .card .cap strong { color: var(--ink); font-weight: 500; }
+
+  /* A · Mist 淡底 · 苔綠 Logo */
+  .sq.mist { background: var(--mist); color: var(--ink); }
+  /* B · Moss 苔綠底 · Mist 反白 Logo */
+  .sq.moss { background: var(--ink); color: var(--mist); }
+  /* C · Amethyst 紫底 · Mist 反白 Logo */
+  .sq.amethyst { background: var(--amethyst); color: var(--mist); }
+
+  .ig-strip {
+    max-width: 1200px;
+    margin: 72px auto 0;
+    padding: 28px 32px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .ig-strip h3 {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(53,66,56,0.55);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .ig-strip .circles {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .ig-profile {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .ig-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .ig-circle.mist { background: var(--mist); }
+  .ig-circle.moss { background: var(--ink); }
+  .ig-circle.amethyst { background: var(--amethyst); }
+  .ig-circle img { width: 68%; height: auto; }
+  .ig-meta .handle {
+    font-family: var(--ff-sans-lat);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .ig-meta .bio {
+    font-family: var(--ff-serif-cjk);
+    font-size: 12px;
+    color: rgba(53,66,56,0.6);
+  }
+
+  .note {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding: 24px 28px;
+    background: var(--mist);
+    border-left: 3px solid var(--amethyst);
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(53,66,56,0.75);
+  }
+  .note strong { color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 960px) {
+    body { padding: 40px 20px 72px; }
+    .grid { grid-template-columns: 1fr; gap: 32px; }
+    .card .sq .name-cjk { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="eyebrow">QuantumAtom24 · IG Avatar</div>
+  <h1>IG 頭貼原檔</h1>
+  <p class="sub">三版配色 × 含字／不含字　·　共 6 件　·　1080 × 1080 PNG</p>
+</header>
+
+<div class="row-label"><strong>無字版</strong>主視覺 Logo 置中（A / B / C 三色）</div>
+<main class="grid">
+  <div class="card">
+    <div class="sq mist"><img src="assets/logo.svg" alt="Logo Moss"></div>
+    <div class="cap"><strong>A · Mist 淡底</strong>　日常使用、商品貼文、IG 主頭貼</div>
+  </div>
+  <div class="card">
+    <div class="sq moss"><img src="assets/logo-mist.svg" alt="Logo Mist reverse"></div>
+    <div class="cap"><strong>B · Moss 苔綠底</strong>　重要公告、品牌故事、長期主版</div>
+  </div>
+  <div class="card">
+    <div class="sq amethyst"><img src="assets/logo-mist.svg" alt="Logo Mist reverse"></div>
+    <div class="cap"><strong>C · Amethyst 紫底</strong>　節氣檔期、靈性主題、活動期間</div>
+  </div>
+</main>
+
+<div class="row-label"><strong>含字版</strong>Logo + 原子量子 24（A / B / C 三色）</div>
+<main class="grid">
+  <div class="card">
+    <div class="sq mist with-text">
+      <img src="assets/logo.svg" alt="Logo Moss">
+      <div class="name-cjk">原子量子24</div>
+    </div>
+    <div class="cap"><strong>A · Mist 含字</strong>　正式場合、新朋友初次認識</div>
+  </div>
+  <div class="card">
+    <div class="sq moss with-text">
+      <img src="assets/logo-mist.svg" alt="Logo Mist reverse">
+      <div class="name-cjk">原子量子24</div>
+    </div>
+    <div class="cap"><strong>B · Moss 含字</strong>　深色底簽名版、圓形以外的應用場景</div>
+  </div>
+  <div class="card">
+    <div class="sq amethyst with-text">
+      <img src="assets/logo-mist.svg" alt="Logo Mist reverse">
+      <div class="name-cjk">原子量子24</div>
+    </div>
+    <div class="cap"><strong>C · Amethyst 含字</strong>　節氣長文主視覺、靈性主題活動</div>
+  </div>
+</main>
+
+<div class="ig-strip">
+  <h3>IG Profile 圓形顯示模擬（72×72）</h3>
+  <div class="circles">
+    <div class="ig-profile">
+      <div class="ig-circle mist"><img src="assets/logo.svg" alt=""></div>
+      <div class="ig-meta"><div class="handle">quantumatom24</div><div class="bio">原子量子 24 · 居家風水擺件</div></div>
+    </div>
+    <div class="ig-profile">
+      <div class="ig-circle moss"><img src="assets/logo-mist.svg" alt=""></div>
+      <div class="ig-meta"><div class="handle">quantumatom24</div><div class="bio">原子量子 24 · 居家風水擺件</div></div>
+    </div>
+    <div class="ig-profile">
+      <div class="ig-circle amethyst"><img src="assets/logo-mist.svg" alt=""></div>
+      <div class="ig-meta"><div class="handle">quantumatom24</div><div class="bio">原子量子 24 · 居家風水擺件</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <strong>使用方式：</strong>1080×1080 方形 PNG 原檔見 <code>assets/avatar-*.png</code>；若需重新渲染，單獨開啟 <code>_avatar-A-mist.html</code> / <code>_avatar-B-ink.html</code> / <code>_avatar-C-amethyst.html</code> 系列檔以 headless Chrome 截圖即可。<br>
+  <strong>對應手冊章節：</strong><a href="index.html#ch06">Ch.06 · 應用範例</a>
+</div>
+
+</body>
+</html>

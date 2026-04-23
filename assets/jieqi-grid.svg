@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" fill="none" stroke="currentColor" stroke-width="0.8">
+  <g font-family="'Noto Serif TC', serif" font-weight="400" font-size="9" fill="currentColor" text-anchor="middle" stroke="none">
+    <!-- 上排 · 春夏（01–12） -->
+    <rect x="2" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="21" y="36">立春</text><text x="21" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">01</text>
+    <rect x="42" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="61" y="36">雨水</text><text x="61" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">02</text>
+    <rect x="82" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="101" y="36">驚蟄</text><text x="101" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">03</text>
+    <rect x="122" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="141" y="36">春分</text><text x="141" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">04</text>
+    <rect x="162" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="181" y="36">清明</text><text x="181" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">05</text>
+    <rect x="202" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="221" y="36">穀雨</text><text x="221" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">06</text>
+    <rect x="242" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="261" y="36">立夏</text><text x="261" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">07</text>
+    <rect x="282" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="301" y="36">小滿</text><text x="301" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">08</text>
+    <rect x="322" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="341" y="36">芒種</text><text x="341" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">09</text>
+    <rect x="362" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="381" y="36">夏至</text><text x="381" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">10</text>
+    <rect x="402" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="421" y="36">小暑</text><text x="421" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">11</text>
+    <rect x="442" y="10" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="461" y="36">大暑</text><text x="461" y="50" font-family="'EB Garamond',serif" font-style="italic" font-size="8">12</text>
+    <!-- 下排 · 秋冬（13–24） -->
+    <rect x="2" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="21" y="116">立秋</text><text x="21" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">13</text>
+    <rect x="42" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="61" y="116">處暑</text><text x="61" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">14</text>
+    <rect x="82" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="101" y="116">白露</text><text x="101" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">15</text>
+    <rect x="122" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="141" y="116">秋分</text><text x="141" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">16</text>
+    <rect x="162" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="181" y="116">寒露</text><text x="181" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">17</text>
+    <rect x="202" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="221" y="116">霜降</text><text x="221" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">18</text>
+    <rect x="242" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="261" y="116">立冬</text><text x="261" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">19</text>
+    <rect x="282" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="301" y="116">小雪</text><text x="301" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">20</text>
+    <rect x="322" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="341" y="116">大雪</text><text x="341" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">21</text>
+    <rect x="362" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="381" y="116">冬至</text><text x="381" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">22</text>
+    <rect x="402" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="421" y="116">小寒</text><text x="421" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">23</text>
+    <rect x="442" y="90" width="38" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/><text x="461" y="116">大寒</text><text x="461" y="130" font-family="'EB Garamond',serif" font-style="italic" font-size="8">24</text>
+  </g>
+</svg>

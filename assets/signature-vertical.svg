@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 360" fill="none">
+  <text x="40" y="50" font-family="'Noto Serif TC', serif" font-weight="500" font-size="32" fill="currentColor" text-anchor="middle" letter-spacing="6">原</text>
+  <text x="40" y="100" font-family="'Noto Serif TC', serif" font-weight="500" font-size="32" fill="currentColor" text-anchor="middle" letter-spacing="6">子</text>
+  <text x="40" y="150" font-family="'Noto Serif TC', serif" font-weight="500" font-size="32" fill="currentColor" text-anchor="middle" letter-spacing="6">量</text>
+  <text x="40" y="200" font-family="'Noto Serif TC', serif" font-weight="500" font-size="32" fill="currentColor" text-anchor="middle" letter-spacing="6">子</text>
+  <line x1="32" y1="220" x2="48" y2="220" stroke="currentColor" stroke-width="1"/>
+  <text x="40" y="260" font-family="'EB Garamond', serif" font-style="italic" font-weight="500" font-size="34" fill="currentColor" text-anchor="middle">2</text>
+  <text x="40" y="300" font-family="'EB Garamond', serif" font-style="italic" font-weight="500" font-size="34" fill="currentColor" text-anchor="middle">4</text>
+  <line x1="20" y1="330" x2="60" y2="330" stroke="currentColor" stroke-width="0.8"/>
+  <text x="40" y="350" font-family="'EB Garamond', serif" font-style="italic" font-size="10" fill="currentColor" text-anchor="middle" letter-spacing="2">QA24</text>
+</svg>
