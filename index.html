@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-<title>原子量子 24 · VI 守則手冊 · v1.5.2</title>
+<title>原子量子 24 · VI 守則手冊 · v1.1.0</title>
 <meta name="description" content="QuantumAtom24 · 原子量子 24 · 全時開放邀請 · A Standing Invitation, Always Open · 品牌視覺識別手冊">
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -341,6 +341,34 @@
     border-bottom: 1px solid var(--line);
   }
   tbody tr:last-child td { border-bottom: none; }
+
+  /* code blocks · v1.1.0 Ch.12 用 */
+  code {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+    font-size: 0.88em;
+    background: rgba(53, 66, 56, 0.05);
+    padding: 1px 6px;
+    border-radius: 2px;
+    color: var(--ink);
+    word-break: break-word;
+  }
+  pre {
+    background: rgba(53, 66, 56, 0.04);
+    border-left: 3px solid var(--amethyst);
+    padding: 18px 22px;
+    margin: 18px 0;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 22px;
+  }
+  pre code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 13px;
+    color: var(--ink);
+    white-space: pre;
+  }
 
   /* ===== LIST ===== */
   ul, ol {
@@ -1648,7 +1676,7 @@
 <body>
 
 <nav class="top-nav">
-  <span class="brand">原子量子 24<span class="ver">v1.5.2</span></span>
+  <span class="brand">原子量子 24<span class="ver">v1.1.0</span></span>
   <div class="nav-chapters">
     <a href="#ch01">理念</a>
     <a href="#ch02">Logo</a>
@@ -1661,6 +1689,7 @@
     <a href="#ch09">圖示</a>
     <a href="#ch10">動態</a>
     <a href="#ch11">下載</a>
+    <a href="#ch12">網站</a>
   </div>
   <span class="nav-lang">2026.04</span>
 </nav>
@@ -1681,7 +1710,7 @@
   </div>
   <div class="cover-meta">
     <span>VI 守則手冊 · Visual Identity Manual</span>
-    <span class="v">Version 1.5.2 · 2026-04-23</span>
+    <span class="v">Version 1.1.0 · 2026-04-28</span>
   </div>
 </header>
 
@@ -1747,6 +1776,11 @@
       <span class="num">11</span>
       <span class="ttl"><a href="#ch11">素材下載<span class="sub">Downloads · Logo／色票／字體／模板</span></a></span>
       <span class="page">XI</span>
+    </li>
+    <li>
+      <span class="num">12</span>
+      <span class="ttl"><a href="#ch12">網站設計規範<span class="sub">Web Design · Header／頁面節奏／字體階層／按鈕／響應式／SEO</span></a></span>
+      <span class="page">XII</span>
     </li>
   </ol>
 </section>
@@ -3082,13 +3116,195 @@
   </div>
 </section>
 
+<!-- ============ CH.12 WEB DESIGN ============ -->
+<section class="chapter" id="ch12">
+  <div class="section-label">
+    <span class="ch-num">Ch. 12</span>
+    <span class="ch-label">Web Design</span>
+  </div>
+  <h2>網站設計規範<span class="en">Web Design</span></h2>
+  <p class="lede">手冊本身是個網頁，但網站的應用範圍超過它——電商、Landing Page、IG bio 連結頁、節氣特刊。<br>這章把品牌系統的 Logo／色彩／字體／動效規範延伸到網頁介面語言，讓每個觸點看起來都是同一個品牌。</p>
+
+  <h3><span class="num">12.1</span>設計原則</h3>
+  <p>網站是品牌對外的第一接點。任何網站元素都不能脫離前面 11 章的規範自行長出來。這章不發明新東西，只把既有規範翻譯成網頁實作語言。</p>
+  <table>
+    <thead><tr><th>原則</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td><strong>一切回到系統</strong></td><td>Logo 用 Ch.02／色用 Ch.03／字用 Ch.04／漸層 Ch.08／圖示 Ch.09／動效 Ch.10。網站不是新品牌，是既有品牌的另一個容器。</td></tr>
+      <tr><td><strong>手繪原稿不進實際應用</strong></td><td><code>logo.svg</code>（Moss 填色 vector 版）是網站可用的唯一 Logo。<code>quantum-logo-handdrawn.jpg</code> 只在「品牌歷史展示」場景出現，不放 header／footer／favicon／OG image。</td></tr>
+      <tr><td><strong>克制即是品牌</strong></td><td>遵循 Ch.10「能不動就不動」。網站不堆動效、不堆裝飾、不堆漸層。留白多於填滿。</td></tr>
+      <tr><td><strong>無障礙是硬規範</strong></td><td>品牌個性是「真誠、舒服、好聊」——不能只做給好視力、好網速、好滑鼠的人看。AAA 對比、focus visible、semantic HTML、alt text 全部強制。</td></tr>
+      <tr><td><strong>速度也是設計</strong></td><td>字體 preconnect、圖片 SVG 優先、靜態為主。不裝 JS 框架、不裝分析腳本以外的第三方。</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="num">12.2</span>Header 頁首</h3>
+  <p>Header 是網站每一頁都會看到的「品牌簽到處」，必須一致到肉眼難察的程度。</p>
+  <table>
+    <thead><tr><th>屬性</th><th>Desktop（&gt; 720px）</th><th>Mobile（≤ 720px）</th></tr></thead>
+    <tbody>
+      <tr><td>高度</td><td>64px</td><td>56px</td></tr>
+      <tr><td>Logo 高度</td><td>32px</td><td>28px</td></tr>
+      <tr><td>Logo 與 Wordmark 間距</td><td>12px</td><td>10px</td></tr>
+      <tr><td>左右 padding</td><td>24px</td><td>16px</td></tr>
+      <tr><td>背景</td><td colspan="2"><code>var(--mist)</code> #EBEBEB（避免純白 #FFFFFF——會讓品牌灰調丟失）</td></tr>
+      <tr><td>底部分割線</td><td colspan="2">1px solid <code>rgba(53,66,56,0.12)</code></td></tr>
+      <tr><td>Sticky 行為</td><td colspan="2"><code>position: sticky; top: 0</code>。手機若有 IG／FB in-app browser 收下分頁列建議改 fixed</td></tr>
+      <tr><td>Wordmark 字級</td><td>14px</td><td>13px</td></tr>
+      <tr><td>Wordmark 字距</td><td colspan="2">letter-spacing 0.06em，font-weight 500</td></tr>
+      <tr><td>Wordmark 字體</td><td colspan="2">Noto Serif TC（中文）；不能用粗體斜體裝飾</td></tr>
+    </tbody>
+  </table>
+  <p>布局：Logo + Wordmark 左貼齊，navigation 右貼齊。中間留空。</p>
+  <div class="do-dont">
+    <div class="col do">
+      <h4>Do</h4>
+      <ul>
+        <li>Logo SVG（vector Moss）</li>
+        <li>Logo 與 Wordmark 共同視覺中心對齊</li>
+        <li>背景純色 Mist</li>
+        <li>navigation 字級與 Wordmark 一致或略小</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>用手繪 JPG 當 header Logo</li>
+        <li>Logo 置中（破壞編輯感的起讀方向）</li>
+        <li>背景純白或加陰影</li>
+        <li>Wordmark 用粗體／斜體／全大寫裝飾</li>
+        <li>Header 背景換顏色（每頁不同）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3><span class="num">12.3</span>頁面節奏</h3>
+  <p>跟手冊本體（你正在看的這份）共用同一套節奏：</p>
+  <table>
+    <thead><tr><th>屬性</th><th>值</th></tr></thead>
+    <tbody>
+      <tr><td>容器最大寬度</td><td><code>max-width: 1200px</code> · 變數名 <code>--col-w</code></td></tr>
+      <tr><td>Container padding · desktop（&gt; 960px）</td><td>96px 48px</td></tr>
+      <tr><td>Container padding · tablet（721-960px）</td><td>80px 32px</td></tr>
+      <tr><td>Container padding · mobile（401-720px）</td><td>64px 24px</td></tr>
+      <tr><td>Container padding · 超小（≤ 400px）</td><td>56px 16px</td></tr>
+      <tr><td>Section 之間分隔</td><td>1px solid <code>var(--line)</code> · 顏色 <code>rgba(53,66,56,0.12)</code></td></tr>
+      <tr><td>內部元素垂直節奏</td><td>8px grid（8 / 16 / 24 / 32 / 48 / 64 / 96）</td></tr>
+    </tbody>
+  </table>
+  <p>原則：vertical rhythm 不要小於 8px，不要使用奇數（不要 13、15、17px）。Padding 跟 margin 都吃 8 grid。</p>
+
+  <h3><span class="num">12.4</span>字體階層（Web）</h3>
+  <p>延續 Ch.04 字體系統，但對應網頁螢幕（非印刷）。網頁的 line-height 通常比印刷鬆 5-10%，因為螢幕閱讀更累。</p>
+  <table>
+    <thead><tr><th>用途</th><th>Token</th><th>Font-size · desktop</th><th>Font-size · mobile</th><th>Line-height</th><th>Letter-spacing</th><th>字體</th></tr></thead>
+    <tbody>
+      <tr><td>Display XL（封面標題）</td><td><code>--fs-display-xl</code></td><td>64px</td><td>36px</td><td>1.18-1.25</td><td>0.04em</td><td>Noto Serif TC 600</td></tr>
+      <tr><td>Display L（章節 h2）</td><td><code>--fs-display-l</code></td><td>48px</td><td>30px</td><td>1.25</td><td>0.04em</td><td>Noto Serif TC 500</td></tr>
+      <tr><td>Heading（小節 h3）</td><td><code>--fs-heading</code></td><td>24px</td><td>22px</td><td>1.4</td><td>0.04em</td><td>Noto Serif TC 500</td></tr>
+      <tr><td>Body</td><td><code>--fs-body</code></td><td>16px</td><td>15-16px</td><td>1.75</td><td>0</td><td>Noto Serif TC 400</td></tr>
+      <tr><td>Caption</td><td><code>--fs-caption</code></td><td>13px</td><td>13px</td><td>1.7</td><td>0.05em</td><td>Noto Sans TC 400</td></tr>
+      <tr><td>Legal（footer / micro）</td><td><code>--fs-legal</code></td><td>11px</td><td>11px</td><td>1.6</td><td>0.18em uppercase</td><td>Inter</td></tr>
+    </tbody>
+  </table>
+  <p><strong>中英混排規則：</strong></p>
+  <ul>
+    <li>引言、書名級副標 → EB Garamond italic</li>
+    <li>UI label、metadata、編號 → Inter（letter-spacing 0.18em + uppercase 編輯感）</li>
+    <li>不在同一段落混用三套以上字體</li>
+    <li>單篇文章中文一律 Noto Serif TC 400／500，不換字重</li>
+  </ul>
+
+  <h3><span class="num">12.5</span>連結 · 按鈕 · 互動</h3>
+  <h4>Link 連結</h4>
+  <pre><code>a {
+  color: var(--ink);                    /* Moss */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--amethyst); }     /* 紫晶 hover */
+a:focus-visible {
+  outline: 2px solid var(--amethyst);
+  outline-offset: 2px;
+}</code></pre>
+
+  <h4>Button · 三個層級</h4>
+  <table>
+    <thead><tr><th>類型</th><th>用途</th><th>樣式</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Primary</strong></td><td>主要 CTA（完成購買、訂閱、發送訊息）</td><td>背景 <code>var(--ink)</code> Moss、字色 <code>var(--mist)</code>、padding 14px 28px、border-radius <strong>0</strong>（方角，不圓化）</td></tr>
+      <tr><td><strong>Secondary</strong></td><td>次要動作（瀏覽更多、回到上一步）</td><td>背景 transparent、邊框 1px solid <code>var(--ink)</code>、字色 <code>var(--ink)</code>、hover 反轉</td></tr>
+      <tr><td><strong>Tertiary</strong></td><td>純文字連結帶箭頭（檢視原檔、了解更多）</td><td>無背景無框、字色 <code>var(--ink)</code>、附 ↗（外部）或 → 圖示</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Hover &amp; Active</h4>
+  <p>所有互動元素 transition 一律 <code>200ms cubic-bezier(.4, 0, .2, 1)</code>。Hover 顏色變化幅度不超過 10%。Click 不縮放、不彈跳——遵循 Ch.10「動起來慢一點」。</p>
+
+  <h4>Focus（無障礙）</h4>
+  <p>所有可聚焦元素（連結、按鈕、表單欄位）必須有可見的 focus 樣式：<code>outline: 2px solid var(--amethyst); outline-offset: 2px;</code>。不可只用 <code>:hover</code> 而拿掉 <code>:focus</code>——鍵盤使用者就無法操作。</p>
+
+  <h3><span class="num">12.6</span>Footer 頁尾</h3>
+  <p>Footer 是品牌的「離站簽名」。提供導航、政策連結、品牌的最後一次發聲。</p>
+  <table>
+    <thead><tr><th>屬性</th><th>值</th></tr></thead>
+    <tbody>
+      <tr><td>背景</td><td><code>var(--mist)</code>（與 header 同色，視覺整體感）</td></tr>
+      <tr><td>Padding · desktop</td><td>80px 48px</td></tr>
+      <tr><td>Padding · mobile</td><td>56px 24px</td></tr>
+      <tr><td>結構</td><td>左：Logo 28px + 品牌簽名 / 中：navigation（SHOP / CARE / POLICY 三欄）/ 右：social</td></tr>
+      <tr><td>Mobile 結構</td><td>三欄改單欄垂直堆疊</td></tr>
+      <tr><td>連結字級</td><td>Caption 13px</td></tr>
+      <tr><td>內部分隔線</td><td>1px solid <code>var(--line)</code></td></tr>
+      <tr><td>Copyright 行</td><td>Legal 11px、置中、上方 1px 分隔線後</td></tr>
+    </tbody>
+  </table>
+  <p><strong>選用：</strong>v1.2.0 起新增的「直書品牌簽名」（<code>signature-vertical.svg</code>）可以放在 footer 左下角作為視覺重音，但不必每頁都用——主要在「about」「品牌故事」「節氣專欄」這類偏編輯感頁面才出現。</p>
+
+  <h3><span class="num">12.7</span>響應式斷點（RWD）</h3>
+  <p>網站不能只測一台機器就出貨。最少四個斷點要過。</p>
+  <table>
+    <thead><tr><th>Breakpoint</th><th>適用裝置</th><th>關鍵調整</th></tr></thead>
+    <tbody>
+      <tr><td>≤ 400px</td><td>iPhone SE 1 代、小型 Android</td><td>section padding 收到 56px 16px、表格 cells padding 縮、字體卡片字級降階、表格／長字串允許 break-word</td></tr>
+      <tr><td>401-720px</td><td>大多數手機（iPhone 12-15、現代 Android）</td><td>章節改單欄、grid 改 1fr、Display L 改 30px、heading 二行分行</td></tr>
+      <tr><td>721-960px</td><td>平板直式、小桌面</td><td>大多元素回到桌面樣式但 padding 略收</td></tr>
+      <tr><td>961-1200px</td><td>標準桌面</td><td>容器吃滿，padding 96px 48px</td></tr>
+      <tr><td>&gt; 1200px</td><td>大桌面</td><td>容器留 max-width 1200，兩側自然留白</td></tr>
+    </tbody>
+  </table>
+  <p><strong>硬規範：</strong>網頁文字最小 13px（Caption），不能再小。Body 不能小於 15px。任何元素在 320px 寬度（最極端）下不能橫向溢出。</p>
+
+  <h3><span class="num">12.8</span>Metadata · SEO · Favicon</h3>
+  <p>每個頁面都要有完整的 meta 設定，否則 IG 分享、Google 搜尋、社交預覽都會看起來很業餘。</p>
+  <table>
+    <thead><tr><th>項目</th><th>規範</th></tr></thead>
+    <tbody>
+      <tr><td><code>&lt;title&gt;</code></td><td>模板：<code>{頁名} | 原子量子 24 | 全時開放邀請</code>。最長 60 字以內</td></tr>
+      <tr><td><code>&lt;meta name="description"&gt;</code></td><td>該頁實際內容摘要，70-160 字。Slogan 自然帶到結尾</td></tr>
+      <tr><td>Open Graph image</td><td>1200×630 px。用 vi-manual <code>_fb-cover-preview.html</code> 為基底重新渲染。每個重點頁面（首頁、商品分類、節氣專欄）都該有自己的 OG image</td></tr>
+      <tr><td><code>&lt;meta name="robots"&gt;</code></td><td>VI 守則手冊：<code>noindex, nofollow, noarchive</code>（內部資料）。電商正式頁：<code>index, follow</code></td></tr>
+      <tr><td>Favicon</td><td><code>assets/logo.svg</code>（vector，自動適應深淺色 dark mode）。fallback 用 32×32 PNG</td></tr>
+      <tr><td>字體 preconnect</td><td><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</code> + <code>https://fonts.gstatic.com</code> · 兩條都要</td></tr>
+      <tr><td><code>&lt;html lang&gt;</code></td><td><code>zh-Hant</code>（繁中）</td></tr>
+      <tr><td>Charset</td><td><code>UTF-8</code></td></tr>
+      <tr><td>Viewport</td><td><code>width=device-width, initial-scale=1.0</code></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>本章與既有頁面落差。</strong>quantumatom24.com（電商主站）目前是 WooCommerce 主題輕度客製，部分項目（header logo 用手繪 JPG、字級不規則、padding 不齊）尚未完全遵循本章規範。下一輪電商主題改版時依本章重做。
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer class="site-foot">
   <img class="foot-logo" src="assets/logo.svg" alt="">
   <div class="wm">原子量子 24</div>
   <div class="en">QuantumAtom24 · A Standing Invitation, Always Open</div>
   <div class="meta">
-    Brand Guidelines · <span class="v">Version 1.5.2</span> · 2026-04-23<br>
+    Brand Guidelines · <span class="v">Version 1.1.0</span> · 2026-04-28<br>
     © 2026 QuantumAtom24. All rights reserved.
   </div>
 </footer>
