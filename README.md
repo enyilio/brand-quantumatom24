@@ -1,8 +1,8 @@
-# 原子量子 24 · VI 守則手冊
+# 原子量子24 · VI 守則手冊
 
 > 讓大型晶簇找到有緣人的管道 · A Standing Invitation, Always Open
 
-原子量子 24（QuantumAtom24）品牌視覺識別手冊。部署於 Cloudflare Pages。
+原子量子24（QuantumAtom24）品牌視覺識別手冊。部署於 Cloudflare Pages。
 
 ## 入口
 
@@ -10,7 +10,7 @@
 
 ## 品牌核心
 
-- **中文名**：原子量子 24
+- **中文名**：原子量子24
 - **英文名**：QuantumAtom24
 - **Slogan**：全時開放邀請 · A Standing Invitation, Always Open
 - **通路**：[Instagram @quantumatom24](https://instagram.com/quantumatom24)
@@ -19,6 +19,6 @@
 
 ## 授權
 
-本 repo 的品牌設計（Logo、色票、文案、Slogan、手繪原稿）為原子量子 24 專有——未經授權不得複製、衍生或商業使用。
+本 repo 的品牌設計（Logo、色票、文案、Slogan、手繪原稿）為原子量子24 專有——未經授權不得複製、衍生或商業使用。
 
 引用的開源字體為 SIL OFL 授權，可商用。
