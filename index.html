@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-<title>原子量子24 · VI 守則手冊 · v1.3.0</title>
+<title>原子量子24 · VI 守則手冊 · v1.4.0</title>
 <meta name="description" content="QuantumAtom24 · 原子量子24 · 全時開放邀請 · A Standing Invitation, Always Open · 品牌視覺識別手冊">
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -341,6 +341,620 @@
     border-bottom: 1px solid var(--line);
   }
   tbody tr:last-child td { border-bottom: none; }
+
+  /* ===== CH.11 WEB DESIGN · v1.4.0 編輯感重排 ===== */
+  .ch11-module {
+    margin-top: 96px;
+    padding-top: 64px;
+    border-top: 1px solid var(--line);
+  }
+  #ch11 .ch11-module:first-of-type {
+    margin-top: 32px;
+    padding-top: 0;
+    border-top: none;
+  }
+  .ch11-module > h3 + p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: rgba(53, 66, 56, 0.78);
+    max-width: 760px;
+    margin-bottom: 32px;
+  }
+  .ch11-module .sub-block {
+    margin-top: 56px;
+  }
+  .ch11-module .sub-block-label {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* 11.1 Principles grid */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 40px;
+    margin: 8px 0;
+  }
+  .principle-card {
+    border-left: 2px solid var(--ink);
+    padding: 4px 0 4px 24px;
+  }
+  .principle-card .num {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--amethyst);
+    margin-bottom: 6px;
+  }
+  .principle-card h4 {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .principle-card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(53, 66, 56, 0.72);
+    margin: 0;
+  }
+
+  /* Spec list (key-value) */
+  .spec-list {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 0 32px;
+    margin: 16px 0;
+  }
+  .spec-list dt {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(53, 66, 56, 0.55);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .spec-list dd {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* 11.2 Header mock */
+  .header-mock {
+    background: white;
+    border: 1px solid var(--line);
+    margin: 16px 0 24px;
+    overflow: hidden;
+  }
+  .header-mock-bar {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 0 24px;
+    background: var(--mist);
+    border-bottom: 1px solid rgba(53, 66, 56, 0.12);
+    gap: 12px;
+  }
+  .header-mock-bar img { height: 32px; width: auto; }
+  .header-mock-bar .wm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .header-mock-bar .nav {
+    margin-left: auto;
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(53, 66, 56, 0.55);
+    display: flex;
+    gap: 24px;
+  }
+  .header-mock-body {
+    padding: 32px 24px;
+    color: rgba(53, 66, 56, 0.4);
+    font-size: 13px;
+    font-style: italic;
+    font-family: var(--ff-serif-lat);
+    text-align: center;
+  }
+
+  /* 11.3 Spacing scale viz */
+  .scale-viz { margin: 12px 0; }
+  .scale-viz-row {
+    display: grid;
+    grid-template-columns: 100px 70px 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .scale-viz-row:last-child { border-bottom: none; }
+  .scale-viz-row .token {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--amethyst);
+  }
+  .scale-viz-row .px {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(53, 66, 56, 0.55);
+  }
+  .scale-viz-row .bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .scale-viz-row .bar {
+    height: 8px;
+    background: var(--ink);
+    flex-shrink: 0;
+  }
+  .scale-viz-row .use {
+    font-size: 13px;
+    color: rgba(53, 66, 56, 0.65);
+  }
+
+  /* 11.4 Type scale demo */
+  .type-scale-demo { margin: 12px 0; }
+  .type-scale-row {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .type-scale-row:last-child { border-bottom: none; }
+  .type-scale-row .sample { color: var(--ink); }
+  .type-scale-row .meta {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    text-align: right;
+  }
+  .type-scale-row .meta strong {
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-weight: 500;
+  }
+  .type-scale-row .meta .desc {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: rgba(53, 66, 56, 0.6);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--ff-serif-cjk);
+    line-height: 1.5;
+  }
+  .ts-display-xl { font-family: var(--ff-serif-cjk); font-weight: 600; font-size: 56px; line-height: 1.18; letter-spacing: 0.04em; }
+  .ts-display-l { font-family: var(--ff-serif-cjk); font-weight: 500; font-size: 40px; line-height: 1.25; letter-spacing: 0.04em; }
+  .ts-heading { font-family: var(--ff-serif-cjk); font-weight: 500; font-size: 24px; line-height: 1.4; letter-spacing: 0.04em; }
+  .ts-subhead { font-family: var(--ff-serif-cjk); font-weight: 500; font-size: 18px; line-height: 1.45; letter-spacing: 0.03em; }
+  .ts-body-l { font-family: var(--ff-serif-cjk); font-weight: 400; font-size: 16px; line-height: 1.75; }
+  .ts-body { font-family: var(--ff-serif-cjk); font-weight: 400; font-size: 15px; line-height: 1.65; letter-spacing: 0.02em; }
+  .ts-body-s { font-family: var(--ff-serif-cjk); font-weight: 400; font-size: 14px; line-height: 1.55; letter-spacing: 0.02em; }
+  .ts-caption { font-family: var(--ff-sans-cjk); font-weight: 400; font-size: 13px; line-height: 1.7; letter-spacing: 0.05em; }
+  .ts-legal { font-family: var(--ff-sans-lat); font-size: 11px; line-height: 1.6; letter-spacing: 0.18em; text-transform: uppercase; }
+  .ts-emph-amt { font-family: var(--ff-serif-lat); font-style: italic; font-size: 17px; color: var(--amethyst); font-feature-settings: "onum" 1; }
+  .ts-emph-price { font-family: var(--ff-serif-lat); font-style: italic; font-size: 15px; color: var(--ink); font-feature-settings: "onum" 1; }
+
+  /* 11.5 Button demos */
+  .btn-demo-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .btn-demo-row:last-child { border-bottom: none; }
+  .btn-demo-row .meta {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+  }
+  .btn-demo-row .meta strong {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+  }
+  .btn-demo-row .meta .desc {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(53, 66, 56, 0.6);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--ff-serif-cjk);
+    line-height: 1.6;
+  }
+  .btn-demo-row .demos {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-spec {
+    font-family: var(--ff-sans-lat), var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 200ms cubic-bezier(.4, 0, .2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-spec--primary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 10px 21px;
+  }
+  .btn-spec--primary:hover {
+    background: var(--ink);
+    color: var(--mist);
+  }
+  .btn-spec--cta-ink {
+    background: var(--ink);
+    color: var(--mist);
+    border: none;
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+  .btn-spec--cta-ink:hover { background: rgba(53, 66, 56, 0.85); }
+  .btn-spec--cta-amethyst {
+    background: var(--amethyst);
+    color: var(--mist);
+    border: none;
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+  .btn-spec--cta-amethyst:hover { background: rgba(158, 145, 178, 0.85); }
+  .btn-spec--tertiary {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    letter-spacing: 0.05em;
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .btn-spec--tertiary:hover { color: var(--amethyst); }
+  .btn-spec--focused {
+    outline: 2px solid var(--amethyst);
+    outline-offset: 2px;
+  }
+
+  /* Link demo */
+  .link-demo {
+    padding: 18px 24px;
+    background: rgba(53, 66, 56, 0.03);
+    border-left: 3px solid var(--amethyst);
+    margin: 16px 0;
+    font-size: 15px;
+    line-height: 2;
+  }
+  .link-demo a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .link-demo a:hover { color: var(--amethyst); }
+
+  /* Order table mock (11.5) */
+  .order-mock {
+    border: 1px solid var(--line);
+    margin: 16px 0;
+    background: white;
+  }
+  .order-mock table { width: 100%; margin: 0; }
+  .order-mock thead th {
+    font-family: var(--ff-sans-lat);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(53, 66, 56, 0.7);
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--stone);
+    background: rgba(190, 182, 166, 0.1);
+    font-weight: 500;
+  }
+  .order-mock thead th:last-child { text-align: center; width: 40%; }
+  .order-mock tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(190, 182, 166, 0.4);
+    font-family: var(--ff-serif-cjk);
+    font-size: 15px;
+    color: var(--ink);
+    vertical-align: top;
+  }
+  .order-mock tbody td.price {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-feature-settings: "onum" 1;
+    text-align: center;
+  }
+  .order-mock tfoot td {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: rgba(53, 66, 56, 0.85);
+    border-bottom: 1px solid rgba(190, 182, 166, 0.4);
+  }
+  .order-mock tfoot td.value {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-feature-settings: "onum" 1;
+    text-align: center;
+    color: var(--ink);
+    font-size: 15px;
+  }
+  .order-mock tfoot td.value-cjk {
+    font-family: var(--ff-serif-cjk);
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    color: var(--ink);
+  }
+  .order-mock tfoot tr.total td {
+    border-top: 2px solid var(--stone);
+    border-bottom: none;
+    padding-top: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .order-mock tfoot tr.total td.value {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--amethyst);
+    font-weight: 400;
+  }
+
+  /* 11.6 Footer mock */
+  .footer-mock {
+    background: var(--mist);
+    border: 1px solid var(--line);
+    padding: 56px 32px 24px;
+    margin: 16px 0;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .footer-mock .col h5 {
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amethyst);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .footer-mock .col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-mock .col li {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink);
+  }
+  .footer-mock .brand-col img {
+    height: 28px;
+    width: auto;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .footer-mock .brand-col .wm {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .footer-mock .brand-col .slogan {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(53, 66, 56, 0.6);
+  }
+
+  /* 11.7 Breakpoint viz */
+  .bp-viz { margin: 12px 0; }
+  .bp-viz-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .bp-viz-row:last-child { border-bottom: none; }
+  .bp-viz-row .bp-label {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--amethyst);
+  }
+  .bp-viz-row .bp-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bp-viz-row .bp-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .bp-viz-row .bp-bar .visual {
+    height: 4px;
+    background: var(--ink);
+    border-radius: 2px;
+  }
+  .bp-viz-row .bp-bar .device {
+    font-family: var(--ff-serif-cjk);
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .bp-viz-row .bp-note {
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(53, 66, 56, 0.65);
+  }
+
+  /* 11.8 SEO mock */
+  .seo-mock-search {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 22px 28px;
+    margin: 16px 0;
+    max-width: 600px;
+  }
+  .seo-mock-search .url {
+    font-family: var(--ff-sans-lat);
+    font-size: 12px;
+    color: rgba(53, 66, 56, 0.5);
+    margin-bottom: 4px;
+  }
+  .seo-mock-search .title-line {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 18px;
+    color: #1a0dab;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin-bottom: 8px;
+  }
+  .seo-mock-search .desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(53, 66, 56, 0.7);
+  }
+
+  /* 11.9 Color usage */
+  .ratio-bar {
+    display: flex;
+    height: 64px;
+    margin: 16px 0;
+    border: 1px solid var(--line);
+    font-family: var(--ff-sans-lat);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .ratio-bar .seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    padding: 0 12px;
+  }
+  .ratio-bar .seg .label-pct { font-weight: 500; }
+  .ratio-bar .seg .label-name { font-size: 10px; opacity: 0.7; letter-spacing: 0.15em; }
+  .ratio-bar .seg.s-mist { flex: 80; background: var(--mist); color: var(--ink); border-right: 1px solid rgba(53, 66, 56, 0.06); }
+  .ratio-bar .seg.s-stone { flex: 13; background: var(--stone); color: var(--ink); border-right: 1px solid rgba(53, 66, 56, 0.06); }
+  .ratio-bar .seg.s-amethyst { flex: 5; background: var(--amethyst); color: var(--mist); }
+
+  .color-usage {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 28px 32px;
+    margin: 16px 0;
+  }
+  .color-usage .swatch {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--line);
+  }
+  .color-usage .info { padding: 4px 0; }
+  .color-usage .info .name {
+    font-family: var(--ff-serif-cjk);
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .color-usage .info .hex {
+    font-family: var(--ff-serif-lat);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--amethyst);
+    margin-bottom: 10px;
+  }
+  .color-usage .info .uses {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(53, 66, 56, 0.72);
+  }
+
+  /* RWD for Ch.11 modules */
+  @media (max-width: 720px) {
+    .ch11-module { margin-top: 64px; padding-top: 48px; }
+    .ch11-module .sub-block { margin-top: 40px; }
+    .principles-grid { grid-template-columns: 1fr; gap: 24px; }
+    .spec-list { grid-template-columns: 1fr; gap: 0; }
+    .spec-list dt { padding: 16px 0 4px; border-bottom: none; }
+    .spec-list dd { padding: 0 0 16px; border-bottom: 1px solid var(--line); }
+    .scale-viz-row { grid-template-columns: 70px 50px 1fr; gap: 12px; padding: 12px 0; }
+    .scale-viz-row .use { font-size: 12px; }
+    .type-scale-row { grid-template-columns: 1fr; gap: 12px; padding: 20px 0; }
+    .type-scale-row .meta { text-align: left; }
+    .ts-display-xl { font-size: 36px; }
+    .ts-display-l { font-size: 28px; }
+    .btn-demo-row { grid-template-columns: 1fr; gap: 16px; padding: 20px 0; }
+    .footer-mock { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px 24px; }
+    .bp-viz-row { grid-template-columns: 90px 1fr; gap: 16px; }
+    .order-mock thead th, .order-mock tbody td, .order-mock tfoot td { padding: 12px 12px; font-size: 13px; }
+    .header-mock-bar { padding: 0 16px; height: 56px; gap: 10px; }
+    .header-mock-bar img { height: 28px; }
+    .header-mock-bar .wm { font-size: 13px; }
+    .header-mock-bar .nav { display: none; }
+    .color-usage { grid-template-columns: 60px 1fr; gap: 20px 24px; }
+    .color-usage .swatch { width: 60px; height: 60px; }
+  }
 
   /* code blocks · v1.1.0 Ch.11 用 */
   code {
@@ -1760,7 +2374,7 @@
 <nav class="top-nav">
   <a href="#" class="brand-group">
     <img class="brand-logo" src="assets/logo.svg" alt="原子量子24 Logo">
-    <span class="brand">原子量子24<span class="ver">v1.3.0</span></span>
+    <span class="brand">原子量子24<span class="ver">v1.4.0</span></span>
   </a>
   <div class="nav-chapters">
     <a href="#ch01">理念</a>
@@ -1800,7 +2414,7 @@
   </div>
   <div class="cover-meta">
     <span>VI 守則手冊 · Visual Identity Manual</span>
-    <span class="v">Version 1.3.0 · 2026-04-28</span>
+    <span class="v">Version 1.4.0 · 2026-04-28</span>
   </div>
 </header>
 
@@ -2820,264 +3434,511 @@
   <h2>網站設計規範<span class="en">Web Design</span></h2>
   <p class="lede">手冊本身是個網頁，但網站的應用範圍超過它——電商、Landing Page、IG bio 連結頁、節氣特刊。<br>這章把品牌系統的 Logo／色彩／字體／動效規範延伸到網頁介面語言，讓每個觸點看起來都是同一個品牌。</p>
 
-  <h3><span class="num">11.1</span>設計原則</h3>
-  <p>網站是品牌對外的第一接點。任何網站元素都不能脫離前面 11 章的規範自行長出來。這章不發明新東西，只把既有規範翻譯成網頁實作語言。</p>
-  <table>
-    <thead><tr><th>原則</th><th>說明</th></tr></thead>
-    <tbody>
-      <tr><td><strong>一切回到系統</strong></td><td>Logo 用 Ch.02／色用 Ch.03／字用 Ch.04／漸層 Ch.08／圖示 Ch.09／動效 Ch.10。網站不是新品牌，是既有品牌的另一個容器。</td></tr>
-      <tr><td><strong>手繪原稿不進實際應用</strong></td><td><code>logo.svg</code>（Moss 填色 vector 版）是網站可用的唯一 Logo。<code>quantum-logo-handdrawn.jpg</code> 只在「品牌歷史展示」場景出現，不放 header／footer／favicon／OG image。</td></tr>
-      <tr><td><strong>克制即是品牌</strong></td><td>遵循 Ch.10「能不動就不動」。網站不堆動效、不堆裝飾、不堆漸層。留白多於填滿。</td></tr>
-      <tr><td><strong>無障礙是硬規範</strong></td><td>品牌個性是「真誠、舒服、好聊」——不能只做給好視力、好網速、好滑鼠的人看。AAA 對比、focus visible、semantic HTML、alt text 全部強制。</td></tr>
-      <tr><td><strong>速度也是設計</strong></td><td>字體 preconnect、圖片 SVG 優先、靜態為主。不裝 JS 框架、不裝分析腳本以外的第三方。</td></tr>
-    </tbody>
-  </table>
-
-  <h3><span class="num">11.2</span>Header 頁首</h3>
-  <p>Header 是網站每一頁都會看到的「品牌簽到處」，必須一致到肉眼難察的程度。</p>
-  <table>
-    <thead><tr><th>屬性</th><th>Desktop（&gt; 720px）</th><th>Mobile（≤ 720px）</th></tr></thead>
-    <tbody>
-      <tr><td>高度</td><td>64px</td><td>56px</td></tr>
-      <tr><td>Logo 高度</td><td>32px</td><td>28px</td></tr>
-      <tr><td>Logo 與 Wordmark 間距</td><td>12px</td><td>10px</td></tr>
-      <tr><td>左右 padding</td><td>24px</td><td>16px</td></tr>
-      <tr><td>背景</td><td colspan="2"><code>var(--mist)</code> #EBEBEB（避免純白 #FFFFFF——會讓品牌灰調丟失）</td></tr>
-      <tr><td>底部分割線</td><td colspan="2">1px solid <code>rgba(53,66,56,0.12)</code></td></tr>
-      <tr><td>Sticky 行為</td><td colspan="2"><code>position: sticky; top: 0</code>。手機若有 IG／FB in-app browser 收下分頁列建議改 fixed</td></tr>
-      <tr><td>Wordmark 字級</td><td>14px</td><td>13px</td></tr>
-      <tr><td>Wordmark 字距</td><td colspan="2">letter-spacing 0.06em，font-weight 500</td></tr>
-      <tr><td>Wordmark 字體</td><td colspan="2">Noto Serif TC（中文）；不能用粗體斜體裝飾</td></tr>
-    </tbody>
-  </table>
-  <p>布局：Logo + Wordmark 左貼齊，navigation 右貼齊。中間留空。</p>
-  <div class="do-dont">
-    <div class="col do">
-      <h4>Do</h4>
-      <ul>
-        <li>Logo SVG（vector Moss）</li>
-        <li>Logo 與 Wordmark 共同視覺中心對齊</li>
-        <li>背景純色 Mist</li>
-        <li>navigation 字級與 Wordmark 一致或略小</li>
-      </ul>
-    </div>
-    <div class="col dont">
-      <h4>Don't</h4>
-      <ul>
-        <li>用手繪 JPG 當 header Logo</li>
-        <li>Logo 置中（破壞編輯感的起讀方向）</li>
-        <li>背景純白或加陰影</li>
-        <li>Wordmark 用粗體／斜體／全大寫裝飾</li>
-        <li>Header 背景換顏色（每頁不同）</li>
-      </ul>
+  <div class="ch11-module">
+    <h3><span class="num">11.1</span>設計原則</h3>
+    <p>網站是品牌對外的第一接點。任何網站元素都不能脫離前面 11 章的規範自行長出來——這章不發明新東西，只把既有規範翻譯成網頁實作語言。</p>
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="num">01</div>
+        <h4>一切回到系統</h4>
+        <p>Logo 用 Ch.02／色用 Ch.03／字用 Ch.04／漸層 Ch.08／圖示 Ch.09／動效 Ch.10。網站不是新品牌，是既有品牌的另一個容器。</p>
+      </div>
+      <div class="principle-card">
+        <div class="num">02</div>
+        <h4>手繪原稿不進實際應用</h4>
+        <p><code>logo.svg</code>（Moss 填色 vector 版）是網站可用的唯一 Logo。<code>quantum-logo-handdrawn.jpg</code> 只在「品牌歷史展示」場景出現，不放 header／footer／favicon／OG image。</p>
+      </div>
+      <div class="principle-card">
+        <div class="num">03</div>
+        <h4>克制即是品牌</h4>
+        <p>遵循 Ch.10「能不動就不動」。網站不堆動效、不堆裝飾、不堆漸層。留白多於填滿。</p>
+      </div>
+      <div class="principle-card">
+        <div class="num">04</div>
+        <h4>無障礙是硬規範</h4>
+        <p>品牌個性「真誠、舒服、好聊」——不能只做給好視力、好網速、好滑鼠的人看。AAA 對比、focus visible、semantic HTML、alt text 全部強制。</p>
+      </div>
+      <div class="principle-card">
+        <div class="num">05</div>
+        <h4>速度也是設計</h4>
+        <p>字體 preconnect、圖片 SVG 優先、靜態為主。不裝 JS 框架、不裝分析腳本以外的第三方。</p>
+      </div>
     </div>
   </div>
 
-  <h3><span class="num">11.3</span>頁面節奏</h3>
-  <p>跟手冊本體（你正在看的這份）共用同一套節奏：</p>
-  <table>
-    <thead><tr><th>屬性</th><th>值</th></tr></thead>
-    <tbody>
-      <tr><td>容器最大寬度</td><td><code>max-width: 1200px</code> · 變數名 <code>--col-w</code></td></tr>
-      <tr><td>Container padding · desktop（&gt; 960px）</td><td>96px 48px</td></tr>
-      <tr><td>Container padding · tablet（721-960px）</td><td>80px 32px</td></tr>
-      <tr><td>Container padding · mobile（401-720px）</td><td>64px 24px</td></tr>
-      <tr><td>Container padding · 超小（≤ 400px）</td><td>56px 16px</td></tr>
-      <tr><td>Section 之間分隔</td><td>1px solid <code>var(--line)</code> · 顏色 <code>rgba(53,66,56,0.12)</code></td></tr>
-      <tr><td>內部元素垂直節奏</td><td>8px grid（基礎單位）</td></tr>
-    </tbody>
-  </table>
+  <div class="ch11-module">
+    <h3><span class="num">11.2</span>Header 頁首</h3>
+    <p>Header 是網站每一頁都會看到的「品牌簽到處」，必須一致到肉眼難察的程度。</p>
 
-  <h4>間距 Scale（CSS Tokens）</h4>
-  <p>所有 padding／margin／gap 從以下 8px scale 取值。元件級組合見 §11.5、§11.9。</p>
-  <table>
-    <thead><tr><th>Token</th><th>px</th><th>典型用途</th></tr></thead>
-    <tbody>
-      <tr><td><code>--sp-1</code></td><td>4</td><td>icon-text gap、行內字距補正</td></tr>
-      <tr><td><code>--sp-2</code></td><td>8</td><td>緊湊內間距、表單欄位 row gap</td></tr>
-      <tr><td><code>--sp-3</code></td><td>12</td><td>小元素 padding、tag pill</td></tr>
-      <tr><td><code>--sp-4</code></td><td>16</td><td>預設區塊內 padding、文字段落間距</td></tr>
-      <tr><td><code>--sp-5</code></td><td>24</td><td>卡片內 padding（舒適）、區塊標題 → 內容間距</td></tr>
-      <tr><td><code>--sp-6</code></td><td>32</td><td>大區塊 padding、section 之間間距</td></tr>
-      <tr><td><code>--sp-7</code></td><td>48</td><td>主要 section 之間、頁面 vertical rhythm</td></tr>
-      <tr><td><code>--sp-8</code></td><td>64</td><td>hero / footer 大留白、section break</td></tr>
-      <tr><td><code>--sp-9</code></td><td>80</td><td>hero 大留白（首頁專屬）</td></tr>
-    </tbody>
-  </table>
-  <p><strong>原則：</strong>Padding 跟 margin 都從 scale 內取值，不憑感覺定（避免出現 padding: 5px 7px 這種）。同元件內不混不同階（如卡片 padding 24/16/20 三邊不一致）。</p>
-  <p><strong>允許例外（須記錄）：</strong>表格 cell 垂直 padding 14px（訂單表格視覺最佳值，測試結果）；按鈕 outline 補償邊框 padding 10px 21px / 6px 13px（base − 1px 補 1px border 視覺一致）。</p>
+    <div class="sub-block">
+      <div class="sub-block-label">Live Demo</div>
+      <div class="header-mock">
+        <div class="header-mock-bar">
+          <img src="assets/logo.svg" alt="">
+          <span class="wm">原子量子24</span>
+          <span class="nav"><span>首頁</span><span>商品</span><span>關於</span></span>
+        </div>
+        <div class="header-mock-body">— 頁面內容區 —</div>
+      </div>
+      <p>布局：Logo + Wordmark 左貼齊，navigation 右貼齊。中間留空。</p>
+    </div>
 
-  <h3><span class="num">11.4</span>字體階層（Web）</h3>
-  <p>延續 Ch.04 字體系統，但對應網頁螢幕（非印刷）。網頁的 line-height 通常比印刷鬆 5-10%，因為螢幕閱讀更累。Web 端在 Ch.04 主階梯之外多出<strong>中間階</strong>（14 / 15 / 17 / 18px），用來覆蓋表格 td、表單值、卡片內文這些高頻 web 元件——這些尺寸在 IG / 印刷層級用不到，但 web 上不寫死規範就會每次拍腦袋。</p>
+    <div class="sub-block">
+      <div class="sub-block-label">規格</div>
+      <dl class="spec-list">
+        <dt>高度</dt><dd>Desktop 64px · Mobile 56px</dd>
+        <dt>Logo 高度</dt><dd>Desktop 32px · Mobile 28px</dd>
+        <dt>Logo 與 Wordmark 間距</dt><dd>Desktop 12px · Mobile 10px</dd>
+        <dt>左右 padding</dt><dd>Desktop 24px · Mobile 16px</dd>
+        <dt>背景</dt><dd><code>var(--mist)</code> #EBEBEB（避免純白會讓品牌灰調丟失）</dd>
+        <dt>底部分割線</dt><dd>1px solid <code>rgba(53,66,56,0.12)</code></dd>
+        <dt>Sticky 行為</dt><dd><code>position: sticky; top: 0</code></dd>
+        <dt>Wordmark 字級</dt><dd>Desktop 14px · Mobile 13px · letter-spacing 0.06em · weight 500</dd>
+        <dt>Wordmark 字體</dt><dd>Noto Serif TC（中文）；不能用粗體斜體裝飾</dd>
+      </dl>
+    </div>
 
-  <h4>主階梯</h4>
-  <table>
-    <thead><tr><th>用途</th><th>Token</th><th>Font-size · desktop</th><th>Font-size · mobile</th><th>Line-height</th><th>Letter-spacing</th><th>字體</th></tr></thead>
-    <tbody>
-      <tr><td>Display XL（封面標題）</td><td><code>--fs-display-xl</code></td><td>64px</td><td>36px</td><td>1.18-1.25</td><td>0.04em</td><td>Noto Serif TC 600</td></tr>
-      <tr><td>Display L（章節 h2）</td><td><code>--fs-display-l</code></td><td>48px</td><td>30px</td><td>1.25</td><td>0.04em</td><td>Noto Serif TC 500</td></tr>
-      <tr><td>Heading（小節 h3）</td><td><code>--fs-heading</code></td><td>24px</td><td>22px</td><td>1.4</td><td>0.04em</td><td>Noto Serif TC 500</td></tr>
-      <tr><td><strong>Subhead</strong>（卡片小標、區塊次標）</td><td><code>--fs-subhead</code></td><td>18px</td><td>17px</td><td>1.45</td><td>0.03em</td><td>Noto Serif TC 500</td></tr>
-      <tr><td>Body L（長文段落、品牌敘述）</td><td><code>--fs-body-l</code></td><td>16px</td><td>15-16px</td><td>1.75</td><td>0</td><td>Noto Serif TC 400</td></tr>
-      <tr><td><strong>Body</strong>（預設內文、表格 td、表單值 — 最高頻）</td><td><code>--fs-body</code></td><td><strong>15px</strong></td><td>15px</td><td>1.65</td><td>0.02em</td><td>Noto Serif TC 400</td></tr>
-      <tr><td>Body S（次要文字、表單 label、metadata）</td><td><code>--fs-body-s</code></td><td>14px</td><td>14px</td><td>1.55</td><td>0.02em</td><td>Noto Serif TC 400</td></tr>
-      <tr><td>Caption</td><td><code>--fs-caption</code></td><td>13px</td><td>13px</td><td>1.7</td><td>0.05em</td><td>Noto Sans TC 400</td></tr>
-      <tr><td>Legal（footer / micro）</td><td><code>--fs-legal</code></td><td>11px</td><td>11px</td><td>1.6</td><td>0.18em uppercase</td><td>Inter</td></tr>
-    </tbody>
-  </table>
+    <div class="sub-block">
+      <div class="sub-block-label">Do / Don't</div>
+      <div class="do-dont">
+        <div class="col do">
+          <h4>Do</h4>
+          <ul>
+            <li>Logo SVG（vector Moss）</li>
+            <li>Logo 與 Wordmark 共同視覺中心對齊</li>
+            <li>背景純色 Mist</li>
+            <li>Navigation 字級與 Wordmark 一致或略小</li>
+          </ul>
+        </div>
+        <div class="col dont">
+          <h4>Don't</h4>
+          <ul>
+            <li>用手繪 JPG 當 header Logo</li>
+            <li>Logo 置中（破壞編輯感的起讀方向）</li>
+            <li>背景純白或加陰影</li>
+            <li>Wordmark 用粗體／斜體／全大寫裝飾</li>
+            <li>Header 背景每頁換顏色</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <h4>強調級（不在主階，用於高頻數字強調）</h4>
-  <table>
-    <thead><tr><th>用途</th><th>Font-size</th><th>字體</th><th>顏色</th><th>原則</th></tr></thead>
-    <tbody>
-      <tr><td>訂單總計、重點金額</td><td>17px</td><td>EB Garamond italic</td><td><code>var(--amethyst)</code></td><td>比 Body 大 2px、用色彩+斜體強調，<strong>不靠尺寸跳大</strong></td></tr>
-      <tr><td>商品價格（單品）</td><td>15-17px</td><td>EB Garamond italic</td><td><code>var(--ink)</code></td><td>跟所在 row 的 body 級對齊或 +2px</td></tr>
-    </tbody>
-  </table>
+  <div class="ch11-module">
+    <h3><span class="num">11.3</span>頁面節奏</h3>
+    <p>跟手冊本體（你正在看的這份）共用同一套節奏——這是「網站身體的呼吸」，把垂直空間量化成 token 後就不需要每次拍腦袋。</p>
 
-  <p><strong>級距邏輯：</strong>64 → 48 → 24 → 18 → 16 → 15 → 14 → 13 → 11，相鄰階梯比例 ≤ 1.5（Display XL → L → Heading 的主標跳躍除外）。<strong>禁止跳躍：</strong>不要出現 13 → 21 這種 1.6+ 比例的字級組合，視覺重量會失衡。</p>
+    <div class="sub-block">
+      <div class="sub-block-label">容器與 Padding</div>
+      <dl class="spec-list">
+        <dt>容器最大寬度</dt><dd><code>max-width: 1200px</code> · 變數名 <code>--col-w</code></dd>
+        <dt>Desktop &gt; 960px</dt><dd>96px 48px</dd>
+        <dt>Tablet 721 – 960px</dt><dd>80px 32px</dd>
+        <dt>Mobile 401 – 720px</dt><dd>64px 24px</dd>
+        <dt>超小 ≤ 400px</dt><dd>56px 16px</dd>
+        <dt>Section 分隔</dt><dd>1px solid <code>var(--line)</code> · <code>rgba(53,66,56,0.12)</code></dd>
+      </dl>
+    </div>
 
-  <h4>中英混排規則（重要）</h4>
-  <p>含 <code>font-style: italic</code> 的元件混入中文，瀏覽器會把中文走 fallback 偽斜體（傾斜度跟英文真斜體不同，視覺嚴重不一致）。在 PHP / JS 模板渲染時要動態判斷內容類型：</p>
+    <div class="sub-block">
+      <div class="sub-block-label">間距 Scale · 視覺化</div>
+      <p>所有 padding／margin／gap 從以下 8px scale 取值。每條 bar 是該 token 的實際 px 寬度。</p>
+      <div class="scale-viz">
+        <div class="scale-viz-row">
+          <span class="token">--sp-1</span><span class="px">4 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 4px;"></div><span class="use">icon-text gap、行內字距補正</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-2</span><span class="px">8 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 8px;"></div><span class="use">緊湊內間距、表單欄位 row gap</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-3</span><span class="px">12 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 12px;"></div><span class="use">小元素 padding、tag pill</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-4</span><span class="px">16 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 16px;"></div><span class="use">預設區塊內 padding、文字段落間距</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-5</span><span class="px">24 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 24px;"></div><span class="use">卡片內 padding、標題 → 內容間距</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-6</span><span class="px">32 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 32px;"></div><span class="use">大區塊 padding、section 之間間距</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-7</span><span class="px">48 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 48px;"></div><span class="use">主要 section 之間、頁面 vertical rhythm</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-8</span><span class="px">64 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 64px;"></div><span class="use">hero／footer 大留白、section break</span></div>
+        </div>
+        <div class="scale-viz-row">
+          <span class="token">--sp-9</span><span class="px">80 px</span>
+          <div class="bar-wrap"><div class="bar" style="width: 80px;"></div><span class="use">hero 大留白（首頁專屬）</span></div>
+        </div>
+      </div>
+      <p><strong>原則：</strong>從 scale 內取值，不憑感覺定（避免 padding: 5px 7px 這種）。同元件內不混不同階。</p>
+      <p><strong>允許例外（須記錄）：</strong>表格 cell 14px（訂單表格視覺最佳值）；按鈕 outline 補償 padding 10px 21px（base − 1px 補 1px border 視覺一致）。</p>
+    </div>
+  </div>
+
+  <div class="ch11-module">
+    <h3><span class="num">11.4</span>字體階層（Web）</h3>
+    <p>延續 Ch.04 字體系統，但對應網頁螢幕（非印刷）——line-height 比印刷鬆 5-10%。Web 端在 Ch.04 主階梯之外多出<strong>中間階</strong>（14 / 15 / 17 / 18px），用來覆蓋表格 td、表單值、卡片內文這些高頻元件。</p>
+
+    <div class="sub-block">
+      <div class="sub-block-label">主階梯 · Live Demo</div>
+      <div class="type-scale-demo">
+        <div class="type-scale-row">
+          <div class="sample ts-display-xl">原子量子24</div>
+          <div class="meta"><strong>Display XL</strong>64 / 36 px<span class="desc">封面標題 · Noto Serif TC 600</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-display-l">網站設計規範</div>
+          <div class="meta"><strong>Display L</strong>48 / 30 px<span class="desc">章節 h2 · Noto Serif TC 500</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-heading">頁面節奏</div>
+          <div class="meta"><strong>Heading</strong>24 / 22 px<span class="desc">小節 h3 · Noto Serif TC 500</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-subhead">卡片小標、區塊次標</div>
+          <div class="meta"><strong>Subhead</strong>18 / 17 px<span class="desc">--fs-subhead · Noto Serif TC 500</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-body-l">水晶有它自己的去處——我們只是看見了。長文段落用這級。</div>
+          <div class="meta"><strong>Body L</strong>16 px<span class="desc">長文段落、品牌敘述</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-body">預設內文、表格 td、表單值——最高頻使用，是網站的「主旋律」。</div>
+          <div class="meta"><strong>Body</strong>15 px<span class="desc">最高頻 · 預設值</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-body-s">次要文字、表單 label、metadata 用這級</div>
+          <div class="meta"><strong>Body S</strong>14 px<span class="desc">次要 · 補充</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-caption">圖說、卡片副資訊、區塊備註</div>
+          <div class="meta"><strong>Caption</strong>13 px<span class="desc">Noto Sans TC 400 · letter-spacing 0.05em</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample ts-legal">FOOTER · MICRO · COPYRIGHT</div>
+          <div class="meta"><strong>Legal</strong>11 px<span class="desc">Inter · 全大寫 · letter-spacing 0.18em</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-block">
+      <div class="sub-block-label">強調級 · 高頻數字強調</div>
+      <div class="type-scale-demo">
+        <div class="type-scale-row">
+          <div class="sample"><span class="ts-emph-amt">NT$ 12,800</span></div>
+          <div class="meta"><strong>訂單總計</strong>17 px italic<span class="desc">EB Garamond italic · color Amethyst · 比 Body 大 2px</span></div>
+        </div>
+        <div class="type-scale-row">
+          <div class="sample"><span class="ts-emph-price">NT$ 2,480</span></div>
+          <div class="meta"><strong>單品價格</strong>15 – 17 px italic<span class="desc">EB Garamond italic · color Ink · 跟 row body 對齊或 +2px</span></div>
+        </div>
+      </div>
+      <p><strong>原則：</strong>不靠尺寸跳大，用色彩 + 斜體強調。級距邏輯：64 → 48 → 24 → 18 → 16 → 15 → 14 → 13 → 11，相鄰階梯比例 ≤ 1.5。<strong>禁止跳躍：</strong>不要出現 13 → 21 這種 1.6+ 比例的字級組合。</p>
+    </div>
+
+    <div class="sub-block">
+      <div class="sub-block-label">中英混排規則</div>
+      <p>含 <code>font-style: italic</code> 的元件混入中文，瀏覽器會把中文走 fallback 偽斜體（傾斜度跟英文真斜體不同，視覺嚴重不一致）。在 PHP / JS 模板渲染時要動態判斷內容類型：</p>
 <pre><code>// PHP 動態切字體
 $is_cjk = preg_match('/[\x{4e00}-\x{9fff}]/u', $value);
 $font = $is_cjk
     ? "font-family:'Noto Serif TC','PingFang TC',serif;"
     : "font-family:'EB Garamond',Georgia,serif; font-style:italic;";</code></pre>
-  <ul>
-    <li>引言、書名級副標 → EB Garamond italic（<strong>純英文 / 數字才用</strong>）</li>
-    <li>UI label、metadata、編號 → Inter（letter-spacing 0.18em + uppercase 編輯感）</li>
-    <li>表格 tfoot value 含中文（如「郵寄或宅配」「ATM 匯款轉帳」）→ Noto Serif TC normal，<strong>不要套 italic</strong></li>
-    <li>純數字（金額、追蹤碼、編號）→ EB Garamond italic + onum</li>
-    <li>不在同一段落混用三套以上字體</li>
-    <li>單篇文章中文一律 Noto Serif TC 400／500，不換字重</li>
-  </ul>
+      <ul>
+        <li>引言、書名級副標 → EB Garamond italic（<strong>純英文 / 數字才用</strong>）</li>
+        <li>UI label、metadata、編號 → Inter（letter-spacing 0.18em + uppercase 編輯感）</li>
+        <li>表格 tfoot value 含中文（如「郵寄或宅配」「ATM 匯款轉帳」）→ Noto Serif TC normal，<strong>不要套 italic</strong></li>
+        <li>純數字（金額、追蹤碼、編號）→ EB Garamond italic + onum</li>
+        <li>不在同一段落混用三套以上字體</li>
+        <li>單篇文章中文一律 Noto Serif TC 400／500，不換字重</li>
+      </ul>
+    </div>
+  </div>
 
-  <h3><span class="num">11.5</span>連結 · 按鈕 · 互動</h3>
-  <h4>Link 連結</h4>
-  <pre><code>a {
+  <div class="ch11-module">
+    <h3><span class="num">11.5</span>連結 · 按鈕 · 互動</h3>
+    <p><strong>編輯感主導：outline 為預設、實心保留給單頁主 CTA。</strong>Editorial Modern 的視覺重量靠 typography 不靠色塊，按鈕沿用相同邏輯——大多數按鈕應該安靜地讓出主舞台給內容，只有「需要被看見的最後一個動作」才實心。</p>
+
+    <div class="sub-block">
+      <div class="sub-block-label">Link 連結</div>
+      <div class="link-demo">
+        <p>水晶有它自己的去處——<a href="#ch11">查看完整品牌故事</a>。我們是中間那個傳話的人。</p>
+        <p>每顆晶簇都有自己的編號，<a href="#ch11">點此查詢配送進度</a>。</p>
+      </div>
+<pre><code>a {
   color: var(--ink);                    /* Moss */
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
 }
-a:hover { color: var(--amethyst); }     /* 紫晶 hover */
+a:hover { color: var(--amethyst); }
 a:focus-visible {
   outline: 2px solid var(--amethyst);
   outline-offset: 2px;
 }</code></pre>
+    </div>
 
-  <h4>Button · 三個層級</h4>
-  <p><strong>編輯感主導：outline 為預設、實心保留給單頁主 CTA。</strong>Editorial Modern 的視覺重量靠 typography 不靠色塊，按鈕沿用相同邏輯——大多數按鈕應該安靜地讓出主舞台給內容，只有「需要被看見的最後一個動作」才實心。</p>
-  <table>
-    <thead><tr><th>類型</th><th>用途</th><th>樣式</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Primary</strong>（outline，<strong>預設</strong>）</td><td>大多數按鈕：「查詢配送」「列印訂單」「修改地址」「複製號碼」這類功能性動作</td><td>背景 transparent、邊框 1px solid <code>var(--ink)</code>、字色 <code>var(--ink)</code>、padding 10px 21px（補 1px border）、hover 反轉填實 Ink + 字 Mist</td></tr>
-      <tr><td><strong>CTA</strong>（實心，<strong>一頁最多一處</strong>）</td><td>單頁主動作：「完成購買」「完成邀請」「加入購物車」</td><td>背景 <code>var(--ink)</code>（Ink 主導）或 <code>var(--amethyst)</code>（紫晶強調）、字色 <code>var(--mist)</code>、padding 14px 28px</td></tr>
-      <tr><td><strong>Tertiary</strong>（純文字 + 圖示）</td><td>瀏覽更多、回到上一步、外部連結</td><td>無背景無框、字色 <code>var(--ink)</code>、附 ↗（外部）或 → 圖示</td></tr>
-    </tbody>
-  </table>
+    <div class="sub-block">
+      <div class="sub-block-label">Button · 三個層級</div>
+      <div class="btn-demo-row">
+        <div class="meta">
+          <strong>Primary（outline）</strong>預設層級
+          <span class="desc">大多數功能性按鈕：查詢配送、列印訂單、修改地址、複製號碼</span>
+        </div>
+        <div class="demos">
+          <button class="btn-spec btn-spec--primary">查詢配送</button>
+          <button class="btn-spec btn-spec--primary">列印訂單</button>
+        </div>
+      </div>
+      <div class="btn-demo-row">
+        <div class="meta">
+          <strong>CTA（實心）</strong>一頁最多一處
+          <span class="desc">單頁主動作：完成購買、完成邀請、加入購物車。Ink 主導或 Amethyst 強調二選一。</span>
+        </div>
+        <div class="demos">
+          <button class="btn-spec btn-spec--cta-ink">完成購買</button>
+          <button class="btn-spec btn-spec--cta-amethyst">完成邀請</button>
+        </div>
+      </div>
+      <div class="btn-demo-row">
+        <div class="meta">
+          <strong>Tertiary（純文字）</strong>低權重
+          <span class="desc">瀏覽更多、回到上一步、外部連結</span>
+        </div>
+        <div class="demos">
+          <button class="btn-spec btn-spec--tertiary">瀏覽更多 →</button>
+          <button class="btn-spec btn-spec--tertiary">外部連結 ↗</button>
+        </div>
+      </div>
+      <div class="btn-demo-row">
+        <div class="meta">
+          <strong>Focus 狀態</strong>無障礙硬規範
+          <span class="desc">所有可聚焦元素必須有可見 focus 樣式：紫晶 outline 2px + offset 2px</span>
+        </div>
+        <div class="demos">
+          <button class="btn-spec btn-spec--primary btn-spec--focused">查詢配送</button>
+          <button class="btn-spec btn-spec--cta-ink btn-spec--focused">完成購買</button>
+        </div>
+      </div>
+    </div>
 
-  <h4>共通樣式</h4>
-  <ul>
-    <li>所有按鈕 <strong>border-radius: 0</strong>（直角，不圓化）</li>
-    <li>所有按鈕 letter-spacing 0.05–0.16em（依尺寸大小）</li>
-    <li>字體 Inter Medium 500（英文）/ Noto Serif TC 500（中文）</li>
-    <li>transition: <code>200ms cubic-bezier(.4, 0, .2, 1)</code>，hover 顏色變化幅度不超過 10%</li>
-    <li>不縮放、不彈跳、不發光—— Ch.10「動起來慢一點」延伸</li>
-  </ul>
+    <div class="sub-block">
+      <div class="sub-block-label">共通樣式</div>
+      <ul>
+        <li>所有按鈕 <strong>border-radius: 0</strong>（直角，不圓化）</li>
+        <li>letter-spacing 0.05 – 0.16em（依尺寸）</li>
+        <li>字體 Inter Medium 500（英文）／ Noto Serif TC 500（中文）</li>
+        <li>transition <code>200ms cubic-bezier(.4, 0, .2, 1)</code>，hover 顏色變化幅度不超過 10%</li>
+        <li>不縮放、不彈跳、不發光——Ch.10「動起來慢一點」延伸</li>
+      </ul>
+    </div>
 
-  <h4>Focus（無障礙硬規範）</h4>
-  <p>所有可聚焦元素（連結、按鈕、表單欄位）必須有可見的 focus 樣式：<code>outline: 2px solid var(--amethyst); outline-offset: 2px;</code>。不可只用 <code>:hover</code> 而拿掉 <code>:focus</code>——鍵盤使用者就無法操作。</p>
+    <div class="sub-block">
+      <div class="sub-block-label">表格規範（Tabular）· Live Demo</div>
+      <p>訂單摘要、購物車、明細列表這類 web 表格 — 字級／字體／對齊／顏色完整對照：</p>
+      <div class="order-mock">
+        <table>
+          <thead>
+            <tr><th>商品</th><th>金額</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>紫水晶洞 · 巴西<br><span style="font-family: var(--ff-serif-lat); font-style: italic; font-size: 13px; color: var(--amethyst);">No. 017</span></td><td class="price">NT$ 12,800</td></tr>
+            <tr><td>白水晶簇 · 阿肯色州<br><span style="font-family: var(--ff-serif-lat); font-style: italic; font-size: 13px; color: var(--amethyst);">No. 023</span></td><td class="price">NT$ 8,400</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td>小計</td><td class="value">NT$ 21,200</td></tr>
+            <tr><td>配送方式</td><td class="value-cjk">郵寄或宅配</td></tr>
+            <tr><td>運費</td><td class="value">NT$ 200</td></tr>
+            <tr class="total"><td>合計</td><td class="value">NT$ 21,400</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <p><strong>欄寬：</strong>訂單摘要兩欄結構統一 <strong>60% / 40%</strong>。<strong>禁止 colspan</strong> 製造 3 欄結構（會讓 tfoot 跟 thead 對不齊，這是踩過的雷）。</p>
+      <p><strong>row 分隔：</strong>border-bottom 1px solid <code>rgba(190, 182, 166, 0.4)</code>。tfoot 總計列上方加 2px solid <code>var(--stone)</code> 加重視覺權重。</p>
+    </div>
+  </div>
 
-  <h4>表格規範（Tabular）</h4>
-  <p>訂單摘要、購物車、明細列表這類 web 表格規範：</p>
-  <table>
-    <thead><tr><th>區段</th><th>字級</th><th>顏色 / 字體</th><th>對齊</th></tr></thead>
-    <tbody>
-      <tr><td>thead label</td><td>Caption 13px</td><td>Inter Medium、color Ink、opacity 0.7</td><td>商品左 / 價格欄置中</td></tr>
-      <tr><td>tbody 商品名</td><td>Body 15px</td><td>Noto Serif TC、color Ink</td><td>左</td></tr>
-      <tr><td>tbody 價格</td><td>Body 15px</td><td>EB Garamond italic、color Ink</td><td>右欄置中</td></tr>
-      <tr><td>tfoot 普通 label</td><td>Body S 14px</td><td>color Ink、opacity 0.8</td><td>左</td></tr>
-      <tr><td>tfoot 普通 value（中文）</td><td>Body 15px</td><td><strong>Noto Serif TC normal</strong>（避偽斜體）</td><td>右欄置中</td></tr>
-      <tr><td>tfoot 普通 value（數字）</td><td>Body 15px</td><td>EB Garamond italic、color Ink</td><td>右欄置中</td></tr>
-      <tr><td>tfoot 總計 label</td><td>Body 15px</td><td>color Ink、weight 500</td><td>左</td></tr>
-      <tr><td>tfoot 總計 value</td><td>強調 17px</td><td>EB Garamond italic、color Amethyst</td><td>右欄置中</td></tr>
-    </tbody>
-  </table>
-  <p><strong>欄寬：</strong>訂單摘要兩欄結構統一 <strong>60% / 40%</strong>（商品 / 價格）。thead/tbody/tfoot 必須在同一個 <code>&lt;table&gt;</code>，或各自設一致 width。<strong>禁止 colspan</strong> 製造 3 欄結構（會讓 tfoot 跟 thead 對不齊，這是踩過的雷）。</p>
-  <p><strong>row 分隔：</strong>border-bottom 1px solid <code>rgba(190, 182, 166, 0.4)</code>（Stone 0.4 透明）。tfoot 總計列上方加 1px solid <code>var(--stone)</code> 加重視覺權重。</p>
+  <div class="ch11-module">
+    <h3><span class="num">11.6</span>Footer 頁尾</h3>
+    <p>Footer 是品牌的「離站簽名」。提供導航、政策連結、品牌的最後一次發聲。</p>
 
-  <h3><span class="num">11.6</span>Footer 頁尾</h3>
-  <p>Footer 是品牌的「離站簽名」。提供導航、政策連結、品牌的最後一次發聲。</p>
-  <table>
-    <thead><tr><th>屬性</th><th>值</th></tr></thead>
-    <tbody>
-      <tr><td>背景</td><td><code>var(--mist)</code>（與 header 同色，視覺整體感）</td></tr>
-      <tr><td>Padding · desktop</td><td>80px 48px</td></tr>
-      <tr><td>Padding · mobile</td><td>56px 24px</td></tr>
-      <tr><td>結構</td><td>左：Logo 28px + 品牌簽名 / 中：navigation（SHOP / CARE / POLICY 三欄）/ 右：social</td></tr>
-      <tr><td>Mobile 結構</td><td>三欄改單欄垂直堆疊</td></tr>
-      <tr><td>連結字級</td><td>Caption 13px</td></tr>
-      <tr><td>內部分隔線</td><td>1px solid <code>var(--line)</code></td></tr>
-      <tr><td>Copyright 行</td><td>Legal 11px、置中、上方 1px 分隔線後</td></tr>
-    </tbody>
-  </table>
-  <p><strong>選用：</strong>v1.2.0 起新增的「直書品牌簽名」（<code>signature-vertical.svg</code>）可以放在 footer 左下角作為視覺重音，但不必每頁都用——主要在「about」「品牌故事」「節氣專欄」這類偏編輯感頁面才出現。</p>
+    <div class="sub-block">
+      <div class="sub-block-label">Live Demo</div>
+      <div class="footer-mock">
+        <div class="col brand-col">
+          <img src="assets/logo.svg" alt="">
+          <div class="wm">原子量子24</div>
+          <div class="slogan">全時開放邀請<br>A Standing Invitation, Always Open</div>
+        </div>
+        <div class="col">
+          <h5>Shop</h5>
+          <ul><li>所有商品</li><li>當期限定</li><li>訂單查詢</li></ul>
+        </div>
+        <div class="col">
+          <h5>Care</h5>
+          <ul><li>淨化指南</li><li>退換貨政策</li><li>聯絡我們</li></ul>
+        </div>
+        <div class="col">
+          <h5>Policy</h5>
+          <ul><li>隱私權</li><li>使用條款</li><li>Cookies</li></ul>
+        </div>
+      </div>
+    </div>
 
-  <h3><span class="num">11.7</span>響應式斷點（RWD）</h3>
-  <p>網站不能只測一台機器就出貨。最少四個斷點要過。</p>
-  <table>
-    <thead><tr><th>Breakpoint</th><th>適用裝置</th><th>關鍵調整</th></tr></thead>
-    <tbody>
-      <tr><td>≤ 400px</td><td>iPhone SE 1 代、小型 Android</td><td>section padding 收到 56px 16px、表格 cells padding 縮、字體卡片字級降階、表格／長字串允許 break-word</td></tr>
-      <tr><td>401-720px</td><td>大多數手機（iPhone 12-15、現代 Android）</td><td>章節改單欄、grid 改 1fr、Display L 改 30px、heading 二行分行</td></tr>
-      <tr><td>721-960px</td><td>平板直式、小桌面</td><td>大多元素回到桌面樣式但 padding 略收</td></tr>
-      <tr><td>961-1200px</td><td>標準桌面</td><td>容器吃滿，padding 96px 48px</td></tr>
-      <tr><td>&gt; 1200px</td><td>大桌面</td><td>容器留 max-width 1200，兩側自然留白</td></tr>
-    </tbody>
-  </table>
-  <p><strong>硬規範：</strong>網頁文字最小 13px（Caption），不能再小。Body 不能小於 15px。任何元素在 320px 寬度（最極端）下不能橫向溢出。</p>
+    <div class="sub-block">
+      <div class="sub-block-label">規格</div>
+      <dl class="spec-list">
+        <dt>背景</dt><dd><code>var(--mist)</code>（與 header 同色，視覺整體感）</dd>
+        <dt>Padding</dt><dd>Desktop 80px 48px · Mobile 56px 24px</dd>
+        <dt>結構</dt><dd>左：Logo 28px + 品牌簽名 / 中：navigation 三欄（Shop / Care / Policy）/ 右：social</dd>
+        <dt>Mobile 結構</dt><dd>三欄改單欄垂直堆疊</dd>
+        <dt>連結字級</dt><dd>Caption 13px</dd>
+        <dt>內部分隔線</dt><dd>1px solid <code>var(--line)</code></dd>
+        <dt>Copyright 行</dt><dd>Legal 11px、置中、上方 1px 分隔線</dd>
+      </dl>
+      <p><strong>選用：</strong>「直書品牌簽名」（<code>signature-vertical.svg</code>）可放在 footer 左下角作為視覺重音，但不必每頁都用——主要在「about」「品牌故事」「節氣專欄」這類偏編輯感頁面才出現。</p>
+    </div>
+  </div>
 
-  <h3><span class="num">11.8</span>Metadata · SEO · Favicon</h3>
-  <p>每個頁面都要有完整的 meta 設定，否則 IG 分享、Google 搜尋、社交預覽都會看起來很業餘。</p>
-  <table>
-    <thead><tr><th>項目</th><th>規範</th></tr></thead>
-    <tbody>
-      <tr><td><code>&lt;title&gt;</code></td><td>模板：<code>{頁名} | 原子量子24 | 全時開放邀請</code>。最長 60 字以內</td></tr>
-      <tr><td><code>&lt;meta name="description"&gt;</code></td><td>該頁實際內容摘要，70-160 字。Slogan 自然帶到結尾</td></tr>
-      <tr><td>Open Graph image</td><td>1200×630 px。用 vi-manual <code>_fb-cover-preview.html</code> 為基底重新渲染。每個重點頁面（首頁、商品分類、節氣專欄）都該有自己的 OG image</td></tr>
-      <tr><td><code>&lt;meta name="robots"&gt;</code></td><td>VI 守則手冊：<code>noindex, nofollow, noarchive</code>（內部資料）。電商正式頁：<code>index, follow</code></td></tr>
-      <tr><td>Favicon</td><td><code>assets/logo.svg</code>（vector，自動適應深淺色 dark mode）。fallback 用 32×32 PNG</td></tr>
-      <tr><td>字體 preconnect</td><td><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</code> + <code>https://fonts.gstatic.com</code> · 兩條都要</td></tr>
-      <tr><td><code>&lt;html lang&gt;</code></td><td><code>zh-Hant</code>（繁中）</td></tr>
-      <tr><td>Charset</td><td><code>UTF-8</code></td></tr>
-      <tr><td>Viewport</td><td><code>width=device-width, initial-scale=1.0</code></td></tr>
-    </tbody>
-  </table>
+  <div class="ch11-module">
+    <h3><span class="num">11.7</span>響應式斷點（RWD）</h3>
+    <p>網站不能只測一台機器就出貨。最少五個斷點要過。</p>
 
-  <h3><span class="num">11.9</span>色彩使用情境</h3>
-  <p>承接 Ch.03 主色票（Ink / Mist / Stone / Amethyst），落地到 web 元件具體使用——同樣的色票在不同元件位置承擔不同角色，這節寫死對照表，避免每次「Ink 用在哪」要重新判斷。</p>
+    <div class="bp-viz">
+      <div class="bp-viz-row">
+        <div class="bp-label">≤ 400 px</div>
+        <div class="bp-content">
+          <div class="bp-bar"><div class="visual" style="width: 25%;"></div><span class="device">iPhone SE 1 代、小型 Android</span></div>
+          <div class="bp-note">section padding 收到 56px 16px、表格 cells padding 縮、字體卡片字級降階、長字串允許 break-word</div>
+        </div>
+      </div>
+      <div class="bp-viz-row">
+        <div class="bp-label">401 – 720 px</div>
+        <div class="bp-content">
+          <div class="bp-bar"><div class="visual" style="width: 45%;"></div><span class="device">iPhone 12-15、現代 Android</span></div>
+          <div class="bp-note">章節改單欄、grid 改 1fr、Display L 改 30px、heading 二行分行</div>
+        </div>
+      </div>
+      <div class="bp-viz-row">
+        <div class="bp-label">721 – 960 px</div>
+        <div class="bp-content">
+          <div class="bp-bar"><div class="visual" style="width: 60%;"></div><span class="device">平板直式、小桌面</span></div>
+          <div class="bp-note">大多元素回到桌面樣式但 padding 略收</div>
+        </div>
+      </div>
+      <div class="bp-viz-row">
+        <div class="bp-label">961 – 1200 px</div>
+        <div class="bp-content">
+          <div class="bp-bar"><div class="visual" style="width: 80%;"></div><span class="device">標準桌面</span></div>
+          <div class="bp-note">容器吃滿，padding 96px 48px</div>
+        </div>
+      </div>
+      <div class="bp-viz-row">
+        <div class="bp-label">&gt; 1200 px</div>
+        <div class="bp-content">
+          <div class="bp-bar"><div class="visual" style="width: 100%;"></div><span class="device">大桌面</span></div>
+          <div class="bp-note">容器留 max-width 1200，兩側自然留白</div>
+        </div>
+      </div>
+    </div>
+    <p><strong>硬規範：</strong>網頁文字最小 13px（Caption），不能再小。Body 不能小於 15px。任何元素在 320px 寬度（最極端）下不能橫向溢出。</p>
+  </div>
 
-  <h4>占比鐵律</h4>
-  <ul>
-    <li><strong>Ink + Mist 80–85%</strong> — 結構底色（背景 + 主文字）</li>
-    <li><strong>Stone 10–15%</strong> — 柔和分區（細線、次要區塊背景、disabled、skeleton）</li>
-    <li><strong>Amethyst 3–5%</strong> — CTA / 強調 / 標籤（一頁最多一處主強調）</li>
-  </ul>
+  <div class="ch11-module">
+    <h3><span class="num">11.8</span>Metadata · SEO · Favicon</h3>
+    <p>每個頁面都要有完整的 meta 設定，否則 IG 分享、Google 搜尋、社交預覽都會看起來很業餘。</p>
 
-  <h4>各色使用對照</h4>
-  <table>
-    <thead><tr><th>色</th><th>用途</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Ink #354238</strong></td><td>所有主要文字 / Logo / 表單底線 / 按鈕 outline 邊框 / 表格分隔粗線 / outline 按鈕 hover 填實</td></tr>
-      <tr><td><strong>Mist #EBEBEB</strong></td><td>頁面背景 / Ink 實心按鈕內反白文字 / footer 區塊底色</td></tr>
-      <tr><td><strong>Stone #BEB6A6</strong></td><td>表格 row border-bottom（hairline）/ 次要區塊背景（淡 0.4 透明）/ disabled state / loading skeleton</td></tr>
-      <tr><td><strong>Amethyst #9E91B2</strong></td><td>單頁主 CTA / 訂單總計值 / 高優先標籤背景 / link hover 紫 / 區塊小標 label 色（如「訂購人資訊」「運送地址」）</td></tr>
-    </tbody>
-  </table>
+    <div class="sub-block">
+      <div class="sub-block-label">Google 搜尋結果預覽</div>
+      <div class="seo-mock-search">
+        <div class="url">brand.quantumatom24.com</div>
+        <div class="title-line">原子量子24 · VI 守則手冊 — 全時開放邀請</div>
+        <div class="desc">讓大型晶簇找到有緣人的管道。原子量子24 品牌視覺識別手冊：色票、字體、Logo、應用範例、網站設計規範。全時開放邀請。</div>
+      </div>
+    </div>
 
-  <h4>CSS Tokens</h4>
+    <div class="sub-block">
+      <div class="sub-block-label">規格</div>
+      <dl class="spec-list">
+        <dt>&lt;title&gt;</dt><dd>模板：<code>{頁名} | 原子量子24 | 全時開放邀請</code>。最長 60 字以內</dd>
+        <dt>&lt;meta description&gt;</dt><dd>該頁實際內容摘要，70-160 字。Slogan 自然帶到結尾</dd>
+        <dt>Open Graph image</dt><dd>1200 × 630 px。用 vi-manual <code>_fb-cover-preview.html</code> 為基底重新渲染。每個重點頁面（首頁、商品分類、節氣專欄）都該有自己的 OG image</dd>
+        <dt>&lt;meta name="robots"&gt;</dt><dd>VI 守則手冊：<code>noindex, nofollow, noarchive</code>（內部資料）。電商正式頁：<code>index, follow</code></dd>
+        <dt>Favicon</dt><dd><code>assets/logo.svg</code>（vector，自動適應深淺色 dark mode）。fallback 用 32×32 PNG</dd>
+        <dt>字體 preconnect</dt><dd><code>https://fonts.googleapis.com</code> + <code>https://fonts.gstatic.com</code> · 兩條都要</dd>
+        <dt>&lt;html lang&gt;</dt><dd><code>zh-Hant</code>（繁中）</dd>
+        <dt>Charset</dt><dd><code>UTF-8</code></dd>
+        <dt>Viewport</dt><dd><code>width=device-width, initial-scale=1.0</code></dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="ch11-module">
+    <h3><span class="num">11.9</span>色彩使用情境</h3>
+    <p>承接 Ch.03 主色票（Ink / Mist / Stone / Amethyst），落地到 web 元件具體使用——同樣的色票在不同元件位置承擔不同角色，這節寫死對照，避免每次「Ink 用在哪」要重新判斷。</p>
+
+    <div class="sub-block">
+      <div class="sub-block-label">占比鐵律 · 視覺化</div>
+      <div class="ratio-bar">
+        <div class="seg s-mist"><span class="label-pct">80–85%</span><span class="label-name">Ink + Mist</span></div>
+        <div class="seg s-stone"><span class="label-pct">10–15%</span><span class="label-name">Stone</span></div>
+        <div class="seg s-amethyst"><span class="label-pct">3–5%</span><span class="label-name">Amethyst</span></div>
+      </div>
+      <ul>
+        <li><strong>Ink + Mist</strong> — 結構底色（背景 + 主文字）</li>
+        <li><strong>Stone</strong> — 柔和分區（細線、次要區塊背景、disabled、skeleton）</li>
+        <li><strong>Amethyst</strong> — CTA / 強調 / 標籤（一頁最多一處主強調）</li>
+      </ul>
+    </div>
+
+    <div class="sub-block">
+      <div class="sub-block-label">各色使用對照</div>
+      <div class="color-usage">
+        <div class="swatch" style="background: #354238;"></div>
+        <div class="info">
+          <div class="name">Ink — Moss 苔綠</div>
+          <div class="hex">#354238</div>
+          <div class="uses">所有主要文字、Logo、表單底線、按鈕 outline 邊框、表格分隔粗線、outline 按鈕 hover 填實</div>
+        </div>
+      </div>
+      <div class="color-usage">
+        <div class="swatch" style="background: #EBEBEB;"></div>
+        <div class="info">
+          <div class="name">Mist — 霧白</div>
+          <div class="hex">#EBEBEB</div>
+          <div class="uses">頁面背景、Ink 實心按鈕內反白文字、footer 區塊底色、header 背景</div>
+        </div>
+      </div>
+      <div class="color-usage">
+        <div class="swatch" style="background: #BEB6A6;"></div>
+        <div class="info">
+          <div class="name">Stone — 石灰</div>
+          <div class="hex">#BEB6A6</div>
+          <div class="uses">表格 row border-bottom（hairline）、次要區塊背景（淡 0.4 透明）、disabled state、loading skeleton</div>
+        </div>
+      </div>
+      <div class="color-usage">
+        <div class="swatch" style="background: #9E91B2;"></div>
+        <div class="info">
+          <div class="name">Amethyst — 紫晶</div>
+          <div class="hex">#9E91B2</div>
+          <div class="uses">單頁主 CTA、訂單總計值、高優先標籤背景、link hover 紫、區塊小標 label 色（如「訂購人資訊」「運送地址」）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-block">
+      <div class="sub-block-label">CSS Tokens</div>
 <pre><code>:root {
   --c-ink:      #354238;
   --c-mist:     #EBEBEB;
@@ -3090,14 +3951,18 @@ a:focus-visible {
   --c-ink-08:   rgba(53, 66, 56, 0.08);
   --c-ink-18:   rgba(53, 66, 56, 0.18);
 }</code></pre>
+    </div>
 
-  <h4>禁忌</h4>
-  <ul>
-    <li>不使用純黑 #000 / 純白 #FFF（Ch.03 規定）</li>
-    <li>Amethyst 一頁最多一處主強調，多了會變裝飾、失去 CTA 力道</li>
-    <li>不要用色彩傳 error（紅色驚悚色禁用）—— error state 用 Ink + 文字提示 + 細紅線（<code>#a55, opacity:0.6</code>）替代</li>
-    <li>Hover 不要色彩跳變 —— 統一 0.2s ease 漸變</li>
-  </ul>
+    <div class="sub-block">
+      <div class="sub-block-label">禁忌</div>
+      <ul>
+        <li>不使用純黑 #000 / 純白 #FFF（Ch.03 規定）</li>
+        <li>Amethyst 一頁最多一處主強調，多了會變裝飾、失去 CTA 力道</li>
+        <li>不要用色彩傳 error（紅色驚悚色禁用）—— error state 用 Ink + 文字提示 + 細紅線（<code>#a55, opacity:0.6</code>）替代</li>
+        <li>Hover 不要色彩跳變 —— 統一 200ms cubic-bezier 漸變</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 
@@ -3503,7 +4368,7 @@ a:focus-visible {
   <div class="wm">原子量子24</div>
   <div class="en">QuantumAtom24 · A Standing Invitation, Always Open</div>
   <div class="meta">
-    Brand Guidelines · <span class="v">Version 1.3.0</span> · 2026-04-28<br>
+    Brand Guidelines · <span class="v">Version 1.4.0</span> · 2026-04-28<br>
     © 2026 QuantumAtom24. All rights reserved.
   </div>
 </footer>
